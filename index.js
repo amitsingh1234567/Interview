@@ -6,7 +6,6 @@ const crypto = require('crypto');
 const fs = require('fs')
 const app = express();
 
-// const key = 'mongodb+srv://amit-singh_1:9576435668@cluster0.49vnb.mongodb.net/Graphql?retryWrites=true&w=majority'
 // /role-group-list
 // const key = 'mongodb://localhost:27017/test'
 app.use(bodyParser.json());
