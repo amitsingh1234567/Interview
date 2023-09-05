@@ -104,7 +104,7 @@
 
 // Q. 7 
 // const findDuplicateElement = () => {
-//     let arr = [1,5,8,5,9,8,1, 8];
+//     let arr = [1,5,8,5,9,8,1,8];
 //     let result = arr.filter((item, indexe) => arr.indexOf(item) != indexe);
 //     console.log(result);
 // }
@@ -364,7 +364,7 @@
 // missingOddNum()
 
 
-// Q.23 Swaip number without third variable
+// Q. 23 Swaip number without third variable
 // const swaipNum = () => {
 //     let a = 5;
 //     let b = 10;
@@ -379,3 +379,237 @@
 
 // }
 // swaipNum()
+
+
+//  Q. 24 Async Await question
+// function asyncFunction1() {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve('Result from asyncFunction1');
+//       }, 1000);
+//     });
+//   }
+  
+//   function asyncFunction2(data) {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(`Result from asyncFunction2 with data: ${data}`);
+//       }, 500);
+//     });
+//   }
+  
+//   function asyncFunction3(data) {
+//     return new Promise((resolve, reject) => {
+//       setTimeout(() => {
+//         resolve(`Result from asyncFunction3 with data: ${data}`);
+//       }, 800);
+//     });
+//   }
+  
+//   // Converting to async/await
+//   async function main() {
+//     try {
+//       const result1 = await asyncFunction1();
+//       console.log(result1);
+  
+//       const result2 = await asyncFunction2(result1);
+//       console.log(result2);
+  
+//       const result3 = await asyncFunction3(result2);
+//       console.log(result3);
+//     } catch (error) {
+//       console.error('An error occurred:', error);
+//     }
+//   }
+  
+//   // Call the async main function
+//   main();
+
+// Q. 25 Reverse string word wise 
+// const reverseStr = () => {
+//     let str = 'This is Javascript Code';
+//     str = str.split(" ");
+//     const reverseStrArr = [];
+
+//     for(let i = 0; i < str.length; i++){
+//         let newStr = str[i];
+//         reverseStrArr.push(newStr.split("").reverse().join(""))
+//     }
+//    let result =  reverseStrArr.join(" ")
+//    console.log('result :>> ', result);
+// }
+
+// reverseStr()
+
+
+// Q. 26 Find max occuring character
+// const maxOccuringChar = () => {
+//     let str = 'This is Javascript Code and you to find max char';
+//     str = str.split("");
+//     let obj = {};
+
+//     for(let i = 0; i < str.length; i++){
+//         if(str[i] != ' '){
+//             if(!obj[str[i]]){
+//                 obj[str[i]] = 1
+//             }else{
+//                 obj[str[i]] =  obj[str[i]] +  1
+//             }
+//         }
+//     }
+
+//     let max = -Infinity; // Initialize max with the smallest possible number
+//     let keyName = '';
+//     for(let key in obj){
+//         if(obj[key] > max ){
+//             max = obj[key];
+//             keyName = key;
+//         }
+//     }
+
+//     let result = { [keyName]: max };
+//     console.log('result :>> ', result);
+// }
+
+// maxOccuringChar()
+
+// Q. 27 Display letter in alphabetical order
+// Input = "apple"
+// Output = "aelpp"
+// const letterAlphaOrder = () => {
+//     let str = "apple";
+//     let result = str.split("").sort().join("");
+//     console.log('result :>> ', result);
+// }
+
+// letterAlphaOrder()
+
+// Q. 28 Print factorial number
+// const getFactorialNum = () => {
+//     const input = 5;
+//     let fact = 1;
+//     if(input < 0)
+//     return console.log(`Factorial of ${input} is not possible`)
+    
+//     for(let i=1; i<=input; i++){
+//         fact = i * fact;
+//     }
+//     console.log('fact :>> ', fact);
+// }
+// getFactorialNum()
+
+// Q. 29
+// function isPrime(n) {
+//     if (n <= 1)
+//         return false;
+
+//     // Check from 2 to n-1
+//     for (let i = 2; i < n; i++){
+//         if (n % i == 0)
+//             return false;
+//     }
+
+//     return true;
+// }
+
+// console.log(isPrime(10))
+
+// Q. 30
+// function isEvenOrOdd(number) {
+//     if (number % 2 === 0) {
+//       return "Even";
+//     } else {
+//       return "Odd";
+//     }
+//   }
+
+// Q. 31 
+// function printFibonacciSeries(n) {
+//     let fibArray = [];
+//     fibArray[0] = 0;
+//     fibArray[1] = 1;
+  
+//     for (let i = 2; i < n; i++) {
+//       fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+//     }
+  
+//     return fibArray;
+//   }
+  
+//   // Example usage:
+//   const n = 10; // Change this to the desired number of Fibonacci numbers
+//   const fibonacciSeries = printFibonacciSeries(n);
+//   console.log(fibonacciSeries.join(', '));
+
+// Q. 32 Find the factor of given number    
+// const findFactor = () => {
+//     const num = 10;
+//     for(let i = 0; i <=num; i++){
+//         if(num % i == 0){
+//             console.log(i);
+//         }
+//     }
+// }
+// findFactor()
+
+// Q. 33 How to compare two array
+// const compareTwoArr = () => {
+//     let arr1 = [1,2,3,4,5]
+//     let arr2 = [1,3,2,5,4]
+    
+//    let status = arr1.every((item) => {
+//        return arr2.includes(item)
+//     });
+//     console.log('status :>> ', status);
+// }
+
+// compareTwoArr()
+
+// Q 34 Find common value between two array
+// const findIntersection = () => {
+//     let arr1 = [1,2,3,4,4,5,5]
+//     let arr2 = [10,12,3,4,4,5]
+
+//    let result = arr1.filter((item) => {
+//        return arr2.includes(item)
+//     })
+//     result = [...new Set(result)];
+//     console.log('result :>> ', result);
+// }
+
+// findIntersection()
+
+// Q. 35 Find UNION of two arrays
+// function getUnion() {
+//     let arr1 = [1,2,6,8,17];
+//     let arr2 = [4,8,6,9,19,12,17];
+//     let mergedArr = [...arr1, ...arr2];
+//     let result = [...new Set(mergedArr)]
+//     console.log('result :>> ', result);
+// }
+
+// getUnion();
+
+// Q. 36 How to check the given input is Array or Not
+// const checkArr = (input) => {
+//     let result = Array.isArray(input);
+//     console.log('result :>> ', result);
+//  }
+//  checkArr([])
+//  checkArr({})
+
+// Q. 37 How to check given number is Integer
+// const checkInteger = () => {
+//     const input = 15.5;
+//     // Inbuild
+//       let result = Number.isInteger(input);
+//       console.log('result :>> ', result);
+    
+//     // Custom 
+//         if(input % 1 == 0)
+//         console.log('true :>> ', true);
+//         else
+//         console.log('false :>> ', false);
+// }
+
+// checkInteger()
