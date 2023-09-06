@@ -673,3 +673,77 @@
 // }
 // const matrix = [[4,1,3], [2,-4,0], [5,9,2]];
 // console.log(zeroMatrix(matrix, 3));
+
+// Q. 40
+// const sortMatrix = (matrix, n) => {
+//     /*
+//         5   4   7           1  2  3
+//         1   3   8  ------>  4  5  6
+//         2   9   6           7  8  9
+//     */
+//     let k = 0;
+//     let temp = []
+//     for(let r=0; r<n; r++){
+//         for(let c=0; c<n; c++){
+//             temp.push(matrix[r][c])
+//         }
+//     }
+//     temp.reverse();
+
+//     for(let r=0; r<n; r++){
+//         for(let c=0; c<n; c++){
+//             matrix[r][c] = temp[k++]
+//         }
+//     }
+
+//     // Print Matrix formate
+//     for(let r=0; r<n; r++){
+//         let result = '';
+//         for(let c=0; c<n; c++){
+//             result +="  "+ matrix[r][c]
+//         }
+//         console.log(result)
+//     }
+// }
+
+// const matrix = [ [ 5, 4, 7 ], [ 1, 3, 8 ], [ 2, 9, 6 ] ];
+// const n = 3;
+// sortMatrix(matrix, n)
+
+// Q. 41 Rotate matrix by 90 degrees 
+// const rotateMatrix = (matrix, n) => {
+//     /*
+//         1  2  3           7  4  1
+//         4  5  6  ------>  8  5  2
+//         7  8  9           9  6  3
+//     */
+//    let arr = [];
+//     for(let r=0; r<n; r++){
+//         let k = r;
+//         let newArr = [];
+//         for(let c=0; c<n; c++){
+//             newArr.push(matrix[c][k])
+//         }   
+//         arr.push(newArr);
+//         newArr = [];
+//     }
+
+//     let reverseArr = [];
+
+//     for(let r=0; r<n; r++){
+//         reverseArr.push(arr[r].reverse())
+//     }
+
+//     // Print Matrix Formate
+//     for(let r=0; r<n; r++){
+//         let result = ''
+//         for(let c=0; c<n; c++){
+//             result += "  "+reverseArr[r][c];
+//         }
+//         console.log(result);
+//     }
+// }
+
+// const matrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+// const n = 3;
+// rotateMatrix(matrix, n);
