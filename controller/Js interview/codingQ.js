@@ -1,3 +1,13 @@
+// const arr = [5,6,1,3,8,2];
+// for(let i = 0; i<arr.length; i++){
+//     if(arr[i] > arr[i+1]){
+//         let temp = arr[i+1];
+//         arr[i+1] = arr[i];
+//         arr[i] = temp;
+//         i = -1;
+//     }
+// }
+
 // Q. 1
 // const sortingArr = () => {
 //     let arr = [5,8,9,6,2,7,1];
@@ -18,12 +28,12 @@
 
 // Q. 2
 // const sortingArrObj = () => {
-//     let arr = [
-//         {name: 'Greet', gender: 'Male'},
-//         {name: 'Abhisek', gender: 'Male'},
-//         {name: 'Rohit', gender: 'Male'},
-//         {name: 'Ruhi', gender: 'Feamle'},
-//     ];
+    // let arr = [
+    //     {name: 'Greet', gender: 'Male'},
+    //     {name: 'Abhisek', gender: 'Male'},
+    //     {name: 'Rohit', gender: 'Male'},
+    //     {name: 'Ruhi', gender: 'Feamle'},
+    // ];
     
 //     for(let i = 0; i<arr.length; i++){
 //         for(let j = 0; j < arr.length-1; j++){
@@ -148,12 +158,12 @@
 
 // Q. 9 Remove undefined and null from object
 // const removeUndNul = () => {
-//     const obj = {
-//         a: 1,
-//         b: null,
-//         c: undefined,
-//         d: 2
-//     }
+    // const obj = {
+    //     a: 1,
+    //     b: null,
+    //     c: undefined,
+    //     d: 2
+    // }
 //     let newObj = {};
 
 //     for(let key in obj){
@@ -300,29 +310,36 @@
 // count()
 
 // Q. 19 
-// const sum = () => {
-//     const nums = [2, 7, 11, 15];
-//     const target = 18;
-//     result = [];
-
-//     for(let i = 0; i<nums.length; i++){
-//         for(let j = 0; j<nums.length; j++){
-//             let sum = nums[i] + nums[j];
-//             if(sum == target){
-//                 result.push(i)
-//                 result.push(j)
-//                 return result;
-//             }
-//         }
+// function twoSum(nums, target) {
+//     const numToIndexMap = {}; // Create a map to store numbers and their indices
+  
+//     for (let i = 0; i < nums.length; i++) {
+//       console.log('numToIndexMap :>> ', numToIndexMap);
+//       const complement = target - nums[i];
+//       console.log('complement :>> ', complement);
+  
+//       // Check if the complement exists in the map
+//       if (numToIndexMap.hasOwnProperty(complement)) {
+//         // Return the indices of the two numbers that add up to the target
+//         return [numToIndexMap[complement], i];
+//       }
+//       // Store the current number and its index in the map
+//       numToIndexMap[nums[i]] = i;
 //     }
-// }
-
-// console.log(sum())
+  
+//     // If no solution is found, return an empty array or handle the error as needed
+//     return [];
+//   }
+  
+//   // Example usage:
+//   const nums = [2, 7, 11, 15];
+//   const target = 22;
+//   const result = twoSum(nums, target);
+//   console.log(result); 
 
 
 // Q. 20 Rotate the array by two places
 // const input = [2,7,11,4,-2];
-// const output = [11,4,-2,2,7];
 
 // let slicedItem = input.splice(input.length - 2, 2)
 // input.unshift(...slicedItem)
@@ -747,3 +764,147 @@
 // const matrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
 // const n = 3;
 // rotateMatrix(matrix, n);
+
+// Q. 42 Check given string is Anagram or Not
+// const isAnagram = () => {
+//     let firstWord = 'Mary';
+//     let secondWore = 'rmAy';
+
+//     firstWord =  firstWord.toLocaleLowerCase().split("").sort().join("")
+//     secondWore = secondWore.toLocaleLowerCase().split("").sort().join("")
+
+//     if(firstWord == secondWore){
+//         console.log('Anagaram')
+//     }else{
+//         console.log('Not Anagoram')
+//     }
+// }
+
+// isAnagram()
+
+// Q. 43 Display only non repeaing value
+// const getNonRepeatingValue = () => {
+//     let arr = [1,2,3,5,6,2,6,8,9,8]
+
+//     let obj = {};
+
+//     for(let i = 0; i<arr.length; i++){
+//         if(!obj.hasOwnProperty(arr[i])){
+//             obj[arr[i]] = 1;
+//         }else{
+//             obj[arr[i]] = obj[arr[i]] + 1;
+//         }
+//     }
+//    let result = arr.filter((item, index) => obj[item] == 1)
+//    console.log('result :>> ', result);
+// }
+
+// getNonRepeatingValue()
+
+// Q. 44 Write a program for valid braickets
+// function isValid(s) {
+//     const stack = [];
+//     const bracketPairs = {
+//       ')': '(',
+//       '}': '{',
+//       ']': '[',
+//     };
+  
+//     for (let i = 0; i < s.length; i++) {
+//       const char = s[i];
+//       if (char in bracketPairs) {
+//         // If it's a closing bracket
+//         const topElement = stack.pop(); // Use '#' as a placeholder for an empty stack
+//         if (bracketPairs[char] !== topElement) {
+//           return false;
+//         }
+//       } else {
+//         // If it's an opening bracket, push it onto the stack
+//         stack.push(char);
+//       }
+//     }
+    
+//     // If the stack is empty, it means all brackets were matched
+//     return stack.length === 0;
+//   }
+  
+//   // Example usage:
+//   const input1 = "(("; // Valid
+//   const input2 = "()[]{}"; // Valid
+//   const input3 = "(]"; // Invalid
+//   const input4 = "([)]"; // Invalid
+//   const input5 = "{[]}"; // Valid
+  
+//   console.log(isValid(input1)); // true
+//   console.log(isValid(input2)); // true
+//   console.log(isValid(input3)); // false
+//   console.log(isValid(input4)); // false
+//   console.log(isValid(input5)); // true
+
+
+// Q. 45 How to reverse number
+// function reverseNumber(number) {
+//     // Convert the number to a string
+//     const numberString = number.toString();
+  
+//     // Reverse the string
+//     const reversedString = numberString.split('').reverse().join('');
+  
+//     // Convert the reversed string back to a number
+//     const reversedNumber = parseFloat(reversedString);
+  
+//     return reversedNumber;
+//   }
+  
+//   // Example usage:
+//   const originalNumber = 12345;
+//   const reversed = reverseNumber(originalNumber);
+//   console.log(reversed); // Outputs: 54321
+
+
+// Q. 46 Write a program of fizzBuzz to 100 number
+// function fizzBuzz(limit) {
+//     for (let i = 1; i <= limit; i++) {
+//       // Check for multiples of both 3 and 5 first
+//       if (i % 3 === 0 && i % 5 === 0) {
+//         console.log("FizzBuzz");
+//       } 
+//       // Check for multiples of 3
+//       else if (i % 3 === 0) {
+//         console.log("Fizz");
+//       }
+//       // Check for multiples of 5
+//       else if (i % 5 === 0) {
+//         console.log("Buzz");
+//       } 
+//       // If not a multiple of 3 or 5, print the number
+//       else {
+//         console.log(i);
+//       }
+//     }
+//   }
+  
+//   // Call the fizzBuzz function with a limit of 100
+//   fizzBuzz(100);
+
+
+// Q. 47 Call, Apply, Bind
+// const person_1 = {
+//     name: "Rahul",
+//     age: 25
+// }
+
+// const person_2 = {
+//     name: "Mohit",
+//     age: 26
+// }
+
+// function displayPersonDetails(state, country){
+//     console.log('Name ::>',this.name)
+//     console.log('Age ::>',this.age)
+//     console.log('State ::>',state)
+//     console.log('Country ::>',country)
+// }
+
+// const callMeLetter = displayPersonDetails.apply(person_2, ['Bihar', 'India']);
+// // callMeLetter()

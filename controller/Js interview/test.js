@@ -1,47 +1,21 @@
-const rotateMatrix = (matrix, n) => {
-    /*
-        1  2  3           7  4  1
-        4  5  6  ------>  8  5  2
-        7  8  9           9  6  3
-    */
-   let arr = [];
-    for(let r=0; r<n; r++){
-        let k = r;
-        let newArr = [];
-        for(let c=0; c<n; c++){
-            newArr.push(matrix[c][k])
-        }   
-        arr.push(newArr);
-        newArr = [];
-    }
+let junkFood = [
+{"pizza":"Chicago Pizza"},
+{"sandwich":"veg sandwich"},
+{"sandwich":"veg sandwich"},
+{"pizza":"Chicago Pizza"},
+{"pizza":"Chicago Pizza"},
+{"softdrink":"Coca cola"}
+]
 
-    let reverseArr = [];
-
-    for(let r=0; r<n; r++){
-        reverseArr.push(arr[r].reverse())
-    }
-
-    // Print Matrix Formate
-    for(let r=0; r<n; r++){
-        let result = ''
-        for(let c=0; c<n; c++){
-            result += "  "+reverseArr[r][c];
+let uniqueJunkFood = [];
+let obj = {};
+for(let i = 0; i < junkFood.length; i++){
+    let obj2 = junkFood[i]
+    for(let key in obj2){
+        if(!obj[key]){
+            obj[key] = true;
+            uniqueJunkFood.push({[key]: obj2[key]})
         }
-        console.log(result);
     }
 }
-
-  
-const matrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
-const n = 3;
-rotateMatrix(matrix, n)
-
-
-const greet = () => {
-
-}
-
-// console.log(greet());
-
-
-
+console.log('uniqueJunkFood :>> ', uniqueJunkFood);
