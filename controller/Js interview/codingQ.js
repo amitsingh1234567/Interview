@@ -8,6 +8,18 @@
 //     }
 // }
 
+// n = 5;
+// for i in range(n):
+// for j in range(i+1):
+// x = 0;
+// for k in range(j):
+// x = x+n-k
+// if j%2 ==0:
+// print(x+i-j+1, end=" ")
+// else:
+// print(x+n-i, end="")
+// print()
+
 // Q. 1
 // const sortingArr = () => {
 //     let arr = [5,8,9,6,2,7,1];
@@ -908,3 +920,203 @@
 
 // const callMeLetter = displayPersonDetails.apply(person_2, ['Bihar', 'India']);
 // // callMeLetter()
+
+// Q. 48 How many way to create Object 
+// const obj1 = {};
+// const obj2 = new Object();
+// const obj3 = Object.create({});
+
+// Q. 49 How make imutable object
+// const frzObj = Object.freeze({name: 'Mohit', age: 25, email: 'mohit@yopmail.com'})
+// frzObj.name = 'Shubham';
+// frzObj.age = 15;
+// console.log('frzObj :>> ', frzObj);
+
+// Q.50 How to make imutable object on only one key
+// const person = {
+//     name: "John",
+//     age: 25,
+//     aadharNumber: "1234-5678-9012"
+//   };
+
+// Object.defineProperty(person, 'aadharNumber', {
+//     value: person.aadharNumber,
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+// });
+
+// person.name = 'Due'
+// person.age = 15
+// person.aadharNumber = '1234-5678-90121111'
+// console.log('person :>> ', person);
+
+// Q. 51 How to make imutable object using deep freez
+// function deepFreeze(obj) {
+//     Object.keys(obj).forEach(key => {
+//         if(typeof obj[key] == 'object'){
+//             deepFreeze(obj[key])
+//         }
+//     });
+//     Object.freeze(obj);
+// }
+//   let myObject = {
+//     key1: 'value1',
+//     key2: {
+//       nestedKey1: 'nestedValue1',
+//       nestedKey2: {
+//         deepKey: 'deepValue'
+//       }
+//     },
+//     key3: [1, 2, 3]
+//   };
+
+//   deepFreeze(myObject)
+//   myObject.key2.nestedKey1 = 'efefeuuehuihthtrhtrhrthrth'
+//   console.log('myObject :>> ', myObject);
+
+// Q. 52 How to make imutable object where you can't add property
+// let obj = {
+//     name: "Amit",
+//     email: 'amit@yopmail.com',
+//     address: {
+//         city: 'Noida',
+//         phoneNum: '957643588',
+//     }
+// };
+
+// Object.seal(obj)
+
+// Q. 53 What is curry function
+// function sum(a) {
+//     return function(b){
+//         return function(c){
+//             return a+b+c;
+//         }
+//     }
+// };
+
+// const result = sum(2)(3)(4);
+// console.log(result)
+
+// Q. 54 What is High Order function
+// function getNum(num1, num2, sum) {
+//     return sum(num1, num2);
+// }
+
+// function sum(num1, num2){
+//     return num1 + num2;
+// }
+
+// const result = getNum(5, 6, sum)
+// console.log(result)
+
+// Q. 55 What is prototype 
+// const obj1 = {
+//     name: 'Mohit',
+//     age: 25,
+//     email: 'mohit@yopmail.com'
+// };
+
+// const obj2 = {
+//     city: 'Noida',
+//     street: 'sector-15',
+//     __proto__: obj1
+// };
+
+// console.log(obj2.email)
+
+// Q. 56 Find Second Largest Number
+// function secondLargest(arr){
+//     if(arr.length <3)
+//     return "Invalid Input";
+
+//     arr.sort();
+    
+//     for(let i=arr.length - 2; i>=0; i--){
+//         if(arr[i] != arr[arr.length - 1]){
+//             console.log(i)
+//             console.log(arr.length - 1)
+//             return "Second largest number: "+arr[i];
+//         }
+//     }
+//     return "There is no any second larggest number";
+// }
+
+// const arr = [5,9,6,4,2,8];
+// const result = secondLargest(arr);
+// console.log(result)
+
+// Q. 57 Third Largest Number
+// function thirdLargest(arr) {
+//     if(arr.length < 3)
+//     return "Invalid Input";
+
+//     var first  = Number.MIN_SAFE_INTEGER;
+//     var second = Number.MIN_SAFE_INTEGER;
+//     var third  = Number.MIN_SAFE_INTEGER;
+
+//     for(let i = 0; i<arr.length; i++){
+//         if(first <= arr[i]){
+//             third  = second;
+//             second = first;
+//             first  = arr[i];
+//         }else if(second <= arr[i]){
+//             third = second;
+//             second = arr[i];
+//         }else if(third <= arr[i]){
+//             third = arr[i];
+//         }
+//     }
+//     return "Third largest element is:- "+ third;
+
+// };
+
+// const arr = [4,19,18,2,1,6];
+// // const arr = [5,8,9,15,1,16];
+// const result = thirdLargest(arr);
+// console.log(result);
+
+// Q. 58
+// function printTrangle(rows){
+//     for(let i= 1; i<=rows; i++){
+//         let row = '';
+        
+//         for(let j = 1; j<=rows - i; j++){
+//             row += ' ';
+//         }
+
+//         for(let k = 1; k <= i * 2 - 1; k++){
+//             row += '*';
+//         }
+//         console.log(row);
+//     }
+// }
+
+// const k = 5;
+// printTrangle(k)
+
+// Q. 59
+// function printNumberTrangle(rows) {
+//     for(let i = 1; i <= rows; i++){
+//         let row = '';
+
+//     for(let j = 1; j <= rows - i; j++){
+//         row += ' ';
+//     } 
+    
+//     // Add descending order
+//     for(let k = i; k >= 1; k--){
+//         row += k;
+//     }
+
+//     // Add ascending number
+//     for(let l = 2; l <= i; l++){
+//         row += l;
+//     }
+//     console.log(row);
+// }
+// }
+
+// const k = 5;
+// printNumberTrangle(k);
