@@ -203,6 +203,58 @@
 // console.log('user :>> ', user);
 // console.log('objClone :>> ', objClone);
 
+// Q. 18
+// var y = 1
+// if(function f(){}){
+//     y += typeof f
+// }
+//  console.log(y)
+
+// Q. 19
+// var k = 1;
+// if(1){
+//     function f(){}
+//     k += typeof f;
+// }
+// console.log(k)
+
+// Q. 20
+// var k = 1;
+// if(1){
+//    eval(function f(){})
+//     k += typeof f;
+// }
+// console.log(k)
+
+// Q. 21
+// var Employee = {
+//     company: 'xyz'
+//   }
+//   var emp1 = Object.create(Employee);
+//   delete emp1.company
+//   console.log(emp1.company);
+// The code above will output `xyz` as output. Here `emp1` object got company as **prototype** property. delete operator doesn't delete prototype property
+
+// Q. 22
+// var trees = ["xyz", "xxxx", "test", "ryan", "apple"];
+// delete trees[3];
+// console.log(trees.length);
+// The code above will output `5` as output. When we used `delete` operator for deleting an array element then, the array length is not affected by this
+
+// Q. 23
+// var bar = true;
+// console.log(bar + 0);   
+// console.log(bar + "xyz");  
+// console.log(bar + true);  
+// console.log(bar + false);
+
+// Number + Number -> Addition
+// Boolean + Number -> Addition
+// Boolean + Boolean -> Addition
+// Number + String -> Concatenation
+// String + Boolean -> Concatenation
+// String + String -> Concatenation
+
 /************************************** OBJECT BASED QUESTION END******************************/ 
 
 /************************************** INTERVIEW BASED QUESTION START******************************/ 
@@ -235,8 +287,8 @@ let b = new Number(3);
 console.log( typeof b)
 console.log(a)
 
-console.log(a == b)
-console.log(a === b)
+// console.log(a == b)
+// console.log(a === b)
 
 // Q. 6
 // function fruit() {
@@ -261,17 +313,64 @@ console.log(a === b)
 // const sum = eval('10*10+5')
 // console.log(sum)
 
+// Q. 11
+// var z = 1, y = z = typeof y;
+// console.log(y);
 
-// var Employee = {
-// company: 'Acme'
+// Q. 12
+// NFE (Named Function Expression)
+// var foo = function bar() { return 12; };
+// typeof bar();
+
+// Q. 13
+// var salary = "1000$";
+
+// (function () {
+//   console.log("Original salary was " + salary);
+
+//   var salary = "5000$";
+
+//   console.log("My New Salary " + salary);
+// })();
+
+// Q. 14
+// function User(name) {
+//     this.name = name || "JsGeeks";
+//   }
+  
+// var person = new User("xyz")["location"] = "USA";
+// console.log(person);
+  
+// Q. 15
+// var arrA = [0,1,2,3,4,5];
+// var arrB = arrA;
+// arrB[0]=42;
+// console.log(arrA)
+
+// Q. 16
+// var arrA = [0,1,2,3,4,5];
+// var arrB = arrA.slice();
+// arrB[0]=42;
+// console.log(arrA)
+
+// Q. 17
+// var arrA = [{prop1: "value of array A!!"},  {someProp: "also value of array A!"}, 3,4,5];
+// var arrB = arrA;
+// arrB[0].prop1=42;
+// console.log(arrA);
+
+// Q. 18
+// var employeeId = 'abc123';
+
+// function foo() {
+// 	employeeId();
+// 	return;
+
+// 	function employeeId() {
+// 		console.log(typeof employeeId);
+// 	}
 // }
-// var employee1 = Object.create(Employee);
-// delete employee1.company
-// console.log(employee1.company);
-// console.log('Employee :>> ', Employee);
-// console.log('employee1 :>> ', employee1);
-
-
+// foo();
 
 
 

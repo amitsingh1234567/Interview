@@ -1,3 +1,25 @@
+// const arr = [5,6,1,3,8,2];
+// for(let i = 0; i<arr.length; i++){
+//     if(arr[i] > arr[i+1]){
+//         let temp = arr[i+1];
+//         arr[i+1] = arr[i];
+//         arr[i] = temp;
+//         i = -1;
+//     }
+// }
+
+// n = 5;
+// for i in range(n):
+// for j in range(i+1):
+// x = 0;
+// for k in range(j):
+// x = x+n-k
+// if j%2 ==0:
+// print(x+i-j+1, end=" ")
+// else:
+// print(x+n-i, end="")
+// print()
+
 // Q. 1
 // const sortingArr = () => {
 //     let arr = [5,8,9,6,2,7,1];
@@ -18,12 +40,12 @@
 
 // Q. 2
 // const sortingArrObj = () => {
-//     let arr = [
-//         {name: 'Greet', gender: 'Male'},
-//         {name: 'Abhisek', gender: 'Male'},
-//         {name: 'Rohit', gender: 'Male'},
-//         {name: 'Ruhi', gender: 'Feamle'},
-//     ];
+    // let arr = [
+    //     {name: 'Greet', gender: 'Male'},
+    //     {name: 'Abhisek', gender: 'Male'},
+    //     {name: 'Rohit', gender: 'Male'},
+    //     {name: 'Ruhi', gender: 'Feamle'},
+    // ];
     
 //     for(let i = 0; i<arr.length; i++){
 //         for(let j = 0; j < arr.length-1; j++){
@@ -148,12 +170,12 @@
 
 // Q. 9 Remove undefined and null from object
 // const removeUndNul = () => {
-//     const obj = {
-//         a: 1,
-//         b: null,
-//         c: undefined,
-//         d: 2
-//     }
+    // const obj = {
+    //     a: 1,
+    //     b: null,
+    //     c: undefined,
+    //     d: 2
+    // }
 //     let newObj = {};
 
 //     for(let key in obj){
@@ -300,29 +322,36 @@
 // count()
 
 // Q. 19 
-// const sum = () => {
-//     const nums = [2, 7, 11, 15];
-//     const target = 18;
-//     result = [];
-
-//     for(let i = 0; i<nums.length; i++){
-//         for(let j = 0; j<nums.length; j++){
-//             let sum = nums[i] + nums[j];
-//             if(sum == target){
-//                 result.push(i)
-//                 result.push(j)
-//                 return result;
-//             }
-//         }
+// function twoSum(nums, target) {
+//     const numToIndexMap = {}; // Create a map to store numbers and their indices
+  
+//     for (let i = 0; i < nums.length; i++) {
+//       console.log('numToIndexMap :>> ', numToIndexMap);
+//       const complement = target - nums[i];
+//       console.log('complement :>> ', complement);
+  
+//       // Check if the complement exists in the map
+//       if (numToIndexMap.hasOwnProperty(complement)) {
+//         // Return the indices of the two numbers that add up to the target
+//         return [numToIndexMap[complement], i];
+//       }
+//       // Store the current number and its index in the map
+//       numToIndexMap[nums[i]] = i;
 //     }
-// }
-
-// console.log(sum())
+  
+//     // If no solution is found, return an empty array or handle the error as needed
+//     return [];
+//   }
+  
+//   // Example usage:
+//   const nums = [2, 7, 11, 15];
+//   const target = 22;
+//   const result = twoSum(nums, target);
+//   console.log(result); 
 
 
 // Q. 20 Rotate the array by two places
 // const input = [2,7,11,4,-2];
-// const output = [11,4,-2,2,7];
 
 // let slicedItem = input.splice(input.length - 2, 2)
 // input.unshift(...slicedItem)
@@ -673,3 +702,421 @@
 // }
 // const matrix = [[4,1,3], [2,-4,0], [5,9,2]];
 // console.log(zeroMatrix(matrix, 3));
+
+// Q. 40
+// const sortMatrix = (matrix, n) => {
+//     /*
+//         5   4   7           1  2  3
+//         1   3   8  ------>  4  5  6
+//         2   9   6           7  8  9
+//     */
+//     let k = 0;
+//     let temp = []
+//     for(let r=0; r<n; r++){
+//         for(let c=0; c<n; c++){
+//             temp.push(matrix[r][c])
+//         }
+//     }
+//     temp.reverse();
+
+//     for(let r=0; r<n; r++){
+//         for(let c=0; c<n; c++){
+//             matrix[r][c] = temp[k++]
+//         }
+//     }
+
+//     // Print Matrix formate
+//     for(let r=0; r<n; r++){
+//         let result = '';
+//         for(let c=0; c<n; c++){
+//             result +="  "+ matrix[r][c]
+//         }
+//         console.log(result)
+//     }
+// }
+
+// const matrix = [ [ 5, 4, 7 ], [ 1, 3, 8 ], [ 2, 9, 6 ] ];
+// const n = 3;
+// sortMatrix(matrix, n)
+
+// Q. 41 Rotate matrix by 90 degrees 
+// const rotateMatrix = (matrix, n) => {
+//     /*
+//         1  2  3           7  4  1
+//         4  5  6  ------>  8  5  2
+//         7  8  9           9  6  3
+//     */
+//    let arr = [];
+//     for(let r=0; r<n; r++){
+//         let k = r;
+//         let newArr = [];
+//         for(let c=0; c<n; c++){
+//             newArr.push(matrix[c][k])
+//         }   
+//         arr.push(newArr);
+//         newArr = [];
+//     }
+
+//     let reverseArr = [];
+
+//     for(let r=0; r<n; r++){
+//         reverseArr.push(arr[r].reverse())
+//     }
+
+//     // Print Matrix Formate
+//     for(let r=0; r<n; r++){
+//         let result = ''
+//         for(let c=0; c<n; c++){
+//             result += "  "+reverseArr[r][c];
+//         }
+//         console.log(result);
+//     }
+// }
+
+// const matrix = [ [1, 2, 3], [4, 5, 6], [7, 8, 9] ];
+// const n = 3;
+// rotateMatrix(matrix, n);
+
+// Q. 42 Check given string is Anagram or Not
+// const isAnagram = () => {
+//     let firstWord = 'Mary';
+//     let secondWore = 'rmAy';
+
+//     firstWord =  firstWord.toLocaleLowerCase().split("").sort().join("")
+//     secondWore = secondWore.toLocaleLowerCase().split("").sort().join("")
+
+//     if(firstWord == secondWore){
+//         console.log('Anagaram')
+//     }else{
+//         console.log('Not Anagoram')
+//     }
+// }
+
+// isAnagram()
+
+// Q. 43 Display only non repeaing value
+// const getNonRepeatingValue = () => {
+//     let arr = [1,2,3,5,6,2,6,8,9,8]
+
+//     let obj = {};
+
+//     for(let i = 0; i<arr.length; i++){
+//         if(!obj.hasOwnProperty(arr[i])){
+//             obj[arr[i]] = 1;
+//         }else{
+//             obj[arr[i]] = obj[arr[i]] + 1;
+//         }
+//     }
+//    let result = arr.filter((item, index) => obj[item] == 1)
+//    console.log('result :>> ', result);
+// }
+
+// getNonRepeatingValue()
+
+// Q. 44 Write a program for valid braickets
+// function isValid(s) {
+//     const stack = [];
+//     const bracketPairs = {
+//       ')': '(',
+//       '}': '{',
+//       ']': '[',
+//     };
+  
+//     for (let i = 0; i < s.length; i++) {
+//       const char = s[i];
+//       if (char in bracketPairs) {
+//         // If it's a closing bracket
+//         const topElement = stack.pop(); // Use '#' as a placeholder for an empty stack
+//         if (bracketPairs[char] !== topElement) {
+//           return false;
+//         }
+//       } else {
+//         // If it's an opening bracket, push it onto the stack
+//         stack.push(char);
+//       }
+//     }
+    
+//     // If the stack is empty, it means all brackets were matched
+//     return stack.length === 0;
+//   }
+  
+//   // Example usage:
+//   const input1 = "(("; // Valid
+//   const input2 = "()[]{}"; // Valid
+//   const input3 = "(]"; // Invalid
+//   const input4 = "([)]"; // Invalid
+//   const input5 = "{[]}"; // Valid
+  
+//   console.log(isValid(input1)); // true
+//   console.log(isValid(input2)); // true
+//   console.log(isValid(input3)); // false
+//   console.log(isValid(input4)); // false
+//   console.log(isValid(input5)); // true
+
+
+// Q. 45 How to reverse number
+// function reverseNumber(number) {
+//     // Convert the number to a string
+//     const numberString = number.toString();
+  
+//     // Reverse the string
+//     const reversedString = numberString.split('').reverse().join('');
+  
+//     // Convert the reversed string back to a number
+//     const reversedNumber = parseFloat(reversedString);
+  
+//     return reversedNumber;
+//   }
+  
+//   // Example usage:
+//   const originalNumber = 12345;
+//   const reversed = reverseNumber(originalNumber);
+//   console.log(reversed); // Outputs: 54321
+
+
+// Q. 46 Write a program of fizzBuzz to 100 number
+// function fizzBuzz(limit) {
+//     for (let i = 1; i <= limit; i++) {
+//       // Check for multiples of both 3 and 5 first
+//       if (i % 3 === 0 && i % 5 === 0) {
+//         console.log("FizzBuzz");
+//       } 
+//       // Check for multiples of 3
+//       else if (i % 3 === 0) {
+//         console.log("Fizz");
+//       }
+//       // Check for multiples of 5
+//       else if (i % 5 === 0) {
+//         console.log("Buzz");
+//       } 
+//       // If not a multiple of 3 or 5, print the number
+//       else {
+//         console.log(i);
+//       }
+//     }
+//   }
+  
+//   // Call the fizzBuzz function with a limit of 100
+//   fizzBuzz(100);
+
+
+// Q. 47 Call, Apply, Bind
+// const person_1 = {
+//     name: "Rahul",
+//     age: 25
+// }
+
+// const person_2 = {
+//     name: "Mohit",
+//     age: 26
+// }
+
+// function displayPersonDetails(state, country){
+//     console.log('Name ::>',this.name)
+//     console.log('Age ::>',this.age)
+//     console.log('State ::>',state)
+//     console.log('Country ::>',country)
+// }
+
+// const callMeLetter = displayPersonDetails.apply(person_2, ['Bihar', 'India']);
+// // callMeLetter()
+
+// Q. 48 How many way to create Object 
+// const obj1 = {};
+// const obj2 = new Object();
+// const obj3 = Object.create({});
+
+// Q. 49 How make imutable object
+// const frzObj = Object.freeze({name: 'Mohit', age: 25, email: 'mohit@yopmail.com'})
+// frzObj.name = 'Shubham';
+// frzObj.age = 15;
+// console.log('frzObj :>> ', frzObj);
+
+// Q.50 How to make imutable object on only one key
+// const person = {
+//     name: "John",
+//     age: 25,
+//     aadharNumber: "1234-5678-9012"
+//   };
+
+// Object.defineProperty(person, 'aadharNumber', {
+//     value: person.aadharNumber,
+//     writable: false,
+//     enumerable: true,
+//     configurable: false
+// });
+
+// person.name = 'Due'
+// person.age = 15
+// person.aadharNumber = '1234-5678-90121111'
+// console.log('person :>> ', person);
+
+// Q. 51 How to make imutable object using deep freez
+// function deepFreeze(obj) {
+//     Object.keys(obj).forEach(key => {
+//         if(typeof obj[key] == 'object'){
+//             deepFreeze(obj[key])
+//         }
+//     });
+//     Object.freeze(obj);
+// }
+//   let myObject = {
+//     key1: 'value1',
+//     key2: {
+//       nestedKey1: 'nestedValue1',
+//       nestedKey2: {
+//         deepKey: 'deepValue'
+//       }
+//     },
+//     key3: [1, 2, 3]
+//   };
+
+//   deepFreeze(myObject)
+//   myObject.key2.nestedKey1 = 'efefeuuehuihthtrhtrhrthrth'
+//   console.log('myObject :>> ', myObject);
+
+// Q. 52 How to make imutable object where you can't add property
+// let obj = {
+//     name: "Amit",
+//     email: 'amit@yopmail.com',
+//     address: {
+//         city: 'Noida',
+//         phoneNum: '957643588',
+//     }
+// };
+
+// Object.seal(obj)
+
+// Q. 53 What is curry function
+// function sum(a) {
+//     return function(b){
+//         return function(c){
+//             return a+b+c;
+//         }
+//     }
+// };
+
+// const result = sum(2)(3)(4);
+// console.log(result)
+
+// Q. 54 What is High Order function
+// function getNum(num1, num2, sum) {
+//     return sum(num1, num2);
+// }
+
+// function sum(num1, num2){
+//     return num1 + num2;
+// }
+
+// const result = getNum(5, 6, sum)
+// console.log(result)
+
+// Q. 55 What is prototype 
+// const obj1 = {
+//     name: 'Mohit',
+//     age: 25,
+//     email: 'mohit@yopmail.com'
+// };
+
+// const obj2 = {
+//     city: 'Noida',
+//     street: 'sector-15',
+//     __proto__: obj1
+// };
+
+// console.log(obj2.email)
+
+// Q. 56 Find Second Largest Number
+// function secondLargest(arr){
+//     if(arr.length <3)
+//     return "Invalid Input";
+
+//     arr.sort();
+    
+//     for(let i=arr.length - 2; i>=0; i--){
+//         if(arr[i] != arr[arr.length - 1]){
+//             console.log(i)
+//             console.log(arr.length - 1)
+//             return "Second largest number: "+arr[i];
+//         }
+//     }
+//     return "There is no any second larggest number";
+// }
+
+// const arr = [5,9,6,4,2,8];
+// const result = secondLargest(arr);
+// console.log(result)
+
+// Q. 57 Third Largest Number
+// function thirdLargest(arr) {
+//     if(arr.length < 3)
+//     return "Invalid Input";
+
+//     var first  = Number.MIN_SAFE_INTEGER;
+//     var second = Number.MIN_SAFE_INTEGER;
+//     var third  = Number.MIN_SAFE_INTEGER;
+
+//     for(let i = 0; i<arr.length; i++){
+//         if(first <= arr[i]){
+//             third  = second;
+//             second = first;
+//             first  = arr[i];
+//         }else if(second <= arr[i]){
+//             third = second;
+//             second = arr[i];
+//         }else if(third <= arr[i]){
+//             third = arr[i];
+//         }
+//     }
+//     return "Third largest element is:- "+ third;
+
+// };
+
+// const arr = [4,19,18,2,1,6];
+// // const arr = [5,8,9,15,1,16];
+// const result = thirdLargest(arr);
+// console.log(result);
+
+// Q. 58
+// function printTrangle(rows){
+//     for(let i= 1; i<=rows; i++){
+//         let row = '';
+        
+//         for(let j = 1; j<=rows - i; j++){
+//             row += ' ';
+//         }
+
+//         for(let k = 1; k <= i * 2 - 1; k++){
+//             row += '*';
+//         }
+//         console.log(row);
+//     }
+// }
+
+// const k = 5;
+// printTrangle(k)
+
+// Q. 59
+// function printNumberTrangle(rows) {
+//     for(let i = 1; i <= rows; i++){
+//         let row = '';
+
+//     for(let j = 1; j <= rows - i; j++){
+//         row += ' ';
+//     } 
+    
+//     // Add descending order
+//     for(let k = i; k >= 1; k--){
+//         row += k;
+//     }
+
+//     // Add ascending number
+//     for(let l = 2; l <= i; l++){
+//         row += l;
+//     }
+//     console.log(row);
+// }
+// }
+
+// const k = 5;
+// printNumberTrangle(k);
