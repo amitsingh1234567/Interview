@@ -1120,3 +1120,17 @@
 
 // const k = 5;
 // printNumberTrangle(k);
+
+// Q. Rotate Array by 2 place
+// function rotateArray(arr, k){
+//     const n = arr.length;
+//     k = k % n;
+//     const rotatatedArr = arr.slice(n - k).concat(arr.slice(0, n - k));
+
+//     return rotatatedArr;
+// }
+
+// const arr = [1,2,3,4,5];
+
+// const result = rotateArray(arr, 4);
+// console.log(result)
