@@ -1,3 +1,7 @@
+// "ng-nicsecurity": "ng build --prod --configuration=nicsecurity --base-href https://govintranetnew.nic.in/meity-security/ --output-hashing=all",
+
+
+
 var a = {color:"red"}
 var b= a
 b.color = "black"

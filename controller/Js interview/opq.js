@@ -282,10 +282,10 @@
 // console.log(x)
 
 // Q. 5
-let a = 3;
-let b = new Number(3);
-console.log( typeof b)
-console.log(a)
+// let a = 3;
+// let b = new Number(3);
+// console.log( typeof b)
+// console.log(a)
 
 // console.log(a == b)
 // console.log(a === b)
@@ -305,24 +305,24 @@ console.log(a)
 // console.log(++number)
 // console.log(number)
 
-// Q. 9
+// Q. 8
 // let arr = [2];
 // console.log(typeof arr)
 
-// Q. 10
+// Q. 9
 // const sum = eval('10*10+5')
 // console.log(sum)
 
-// Q. 11
+// Q. 10
 // var z = 1, y = z = typeof y;
 // console.log(y);
 
-// Q. 12
+// Q. 11
 // NFE (Named Function Expression)
 // var foo = function bar() { return 12; };
 // typeof bar();
 
-// Q. 13
+// Q. 12
 // var salary = "1000$";
 
 // (function () {
@@ -333,7 +333,7 @@ console.log(a)
 //   console.log("My New Salary " + salary);
 // })();
 
-// Q. 14
+// Q. 13
 // function User(name) {
 //     this.name = name || "JsGeeks";
 //   }
@@ -341,25 +341,25 @@ console.log(a)
 // var person = new User("xyz")["location"] = "USA";
 // console.log(person);
   
-// Q. 15
+// Q. 14
 // var arrA = [0,1,2,3,4,5];
 // var arrB = arrA;
 // arrB[0]=42;
 // console.log(arrA)
 
-// Q. 16
+// Q. 15
 // var arrA = [0,1,2,3,4,5];
 // var arrB = arrA.slice();
 // arrB[0]=42;
 // console.log(arrA)
 
-// Q. 17
+// Q. 16
 // var arrA = [{prop1: "value of array A!!"},  {someProp: "also value of array A!"}, 3,4,5];
 // var arrB = arrA;
 // arrB[0].prop1=42;
 // console.log(arrA);
 
-// Q. 18
+// Q. 17
 // var employeeId = 'abc123';
 
 // function foo() {
@@ -372,12 +372,134 @@ console.log(a)
 // }
 // foo();
 
+/*
 
+Q. 18
+function Person() {
+	this.age = 0;
+  
+	setInterval(() => {
+	console.log(this.age++); // `this` refers to the Person instance
+	}, 1000);
+  }
+  
+  let p = new Person();
 
+Q. 19
+function Counter() {
+  this.count = 0;
+  setInterval(function() {
+    this.count++;
+    console.log(this.count);
+  }, 1000);
+}
 
+let c = new Counter();
 
+Q. 20
+function Counter() {
+	this.count = 0;
+	setInterval(function() {
+	  this.count = 0
+	  this.count++;
+	  console.log(this.count);
+	}, 1000);
+  }
+  
+  let c = new Counter();
+
+Q.21
+const obj = {
+  value: 1,
+  increment: () => {
+    this.value++;
+    console.log(this.value);
+  }
+};
+
+obj.increment();
+
+Q.22
+function Greet(){
+	this.name = 'Jhon';
+	Object.prototype.getName = () => {
+		console.log(this.name);
+	};
+};
+
+var obj1 = new Greet();
+obj1.getName()
+
+Q.23
+function Greet(){
+	this.name = 'Jhon';
+};
+
+Object.prototype.getName = () => {
+	console.log(this.name);
+};
+var obj1 = new Greet();
+obj1.getName()
+
+Q.24
+function Counter() {
+  this.count = 0;
+  var self = this;
+  setInterval(function() {
+    self.count++;
+    console.log(self.count);
+  }, 1000);
+}
+
+let c = new Counter();
+
+* */
 
 /************************************** INTERVIEW BASED QUESTION END******************************/ 
 
 
-    
+// function deepCopy(obj) {
+//     if (obj === null || typeof obj !== 'object') {
+//         return obj;
+//     }
+
+//     if (obj instanceof Date) {
+//         return new Date(obj.getTime());
+//     }
+
+//     if (obj instanceof Array) {
+//         const arrCopy = [];
+//         obj.forEach((_, i) => {
+//             arrCopy[i] = deepCopy(obj[i]);
+//         });
+//         return arrCopy;
+//     }
+
+//     if (obj instanceof Object) {
+//         const objCopy = {};
+//         Object.keys(obj).forEach(key => {
+//             objCopy[key] = deepCopy(obj[key]);
+//         });
+//         return objCopy;
+//     }
+
+//     throw new Error('Unable to copy object! Its type isn\'t supported.');
+// }
+
+// const original = {
+//     name: 'Alice',
+//     age: 25,
+//     address: {
+//         city: 'Wonderland',
+//         zip: '12345'
+//     },
+//     birthdate: new Date('1995-12-17T03:24:00')
+// };
+
+// const deepCopy = deepCopy(original);
+
+// console.log(deepCopy); // Deep copy of the original object
+// console.log(deepCopy === original); // false
+// console.log(deepCopy.address === original.address); // false
+// console.log(deepCopy.birthdate === original.birthdate); // false
+
