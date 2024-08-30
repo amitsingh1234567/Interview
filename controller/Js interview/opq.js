@@ -458,6 +458,309 @@ let c = new Counter();
 /************************************** INTERVIEW BASED QUESTION END******************************/ 
 
 
+/************************************** OPQ New START******************************/
+/*
+Q.1
+var length = 20;
+
+function count(){
+    console.log(this.length);
+};
+
+const data = [count, "A", 0];
+
+data[0]()
+
+Q.2
+function sum(num1, num2){
+    "use strict"
+    num1 = 100;
+    num2 = 200;
+    return arguments[0] + arguments[1]
+};
+
+console.log(sum(2,5))
+
+Q.3
+const number = 21;
+console.log(number.toString())
+console.log(number.toString(22))
+
+Q.4
+function getChees(cb){
+    setTimeout(() => {
+        const chees = "🍕";
+        console.log("Here is the chees", chees);
+        cb(chees);
+        // return chees;
+    },2000);
+};
+
+var chees = getChees((chees) => {
+    console.log(chees)
+});
+
+Q.5
+let a = 10;
+
+(function(){
+    console.log(a);
+    let a = 20;
+    console.log(20)
+})()
+
+Q. 6
+const promise = new Promise((res, rej) => {
+    res(2)
+})
+
+promise.then((result)=> {
+    console.log(result)
+    return result*2;
+}).then((result)=> {
+    console.log(result)
+    return result*2;
+}).then((result)=> {
+    console.log(result)
+    return result*2;
+}).catch((err)=> {
+    return err
+})
+
+Q.7 
+function generateOTP(){
+    return  Math.floor(Math.random() * 9000 + 1000);
+};
+
+var otp =  generateOTP();
+console.log(otp);
+
+Q.8
+console.log(0.1 + 0.2 === 0.3)
+
+Q.9 
+var foo = 'foo';
+
+function showName(){
+    foo = 'foo-20';
+    return;
+    function foo(){};
+}
+
+showName();
+console.log(foo)
+
+Q. 10
+function f1(a,b, ...c){};
+function f2(a, b=2, c){};
+
+console.log(f1.length)
+console.log(f2.length)
+
+Q. 11
+function Person(fname, lname){
+    this.firstName= fname;
+    this.lastName = lname;
+};
+
+var p1 = new Person("Jhon", 'Doe');
+var p2 =  Person("Jhon", 'Doe');
+console.log(p1)
+console.log(p2)
+
+Q. 12
+console.log(Number(""))
+console.log(parseInt(""))
+
+Q. 13
+console.log(Number(""))
+console.log(parseInt(""))
+
+Q. 14
+console.log(Number("8*3"))
+console.log(parseInt("9*2"))
+
+Q. 15
+if(0){
+    function getData(){}
+}
+console.log(getData)
+
+Q. 16
+var obj = {};
+function transform(data){
+    data.name = 'JS';
+    data = null;
+    return data;
+};
+
+var newObj = transform(obj);
+console.log({obj, newObj})
+
+Q. 17
+console.log(JSON.stringify("JS") === "JS")
+
+Q.18
+var arr = ["name"];
+var obj = {};
+obj.name = "Frontend Developer";
+obj[arr] = "Backend Developer";
+
+console.log(obj)
+
+Q. 19
+function fetch(){
+    A = 7;
+    console.log(A);
+};
+
+let A;
+fetch()
+
+Q.20
+const Person = () => {
+    this.name = 'JS';
+    return this
+};
+
+var obj = new Person();
+console.log(obj.name)
+
+Q.21
+"use strict"
+{
+    function show(){
+        console.log("Inside Show")
+    }
+}
+show()
+
+Q.22
+let x = [typeof x, typeof y][0];
+console.log(typeof typeof x);
+
+Q.23
+var obj = Object.create(null);
+const keyToCheck = 'keyToCheck';
+
+if(obj.hasOwnProperty(keyToCheck)){
+// Object.hasOwn(obj, keyToFind)
+    console.log('Key found')
+}else{
+    console.log('Key not found')
+}
+
+Q.24
+var obj = {};
+key = 'constructor';
+l
+if(key in obj){
+    console.log('Key found');
+}else{
+    console.log('Key not found');
+}
+
+Q.25
+const promise = new Promise((_, reject) => {
+    reject()
+});
+
+var result = promise.then(() => {
+    console.log('Then Block')
+}).then(() => {
+    console.log('Then Block-2')
+})
+.catch(() => {
+    console.log("Catch Block")
+}).then(() => {
+    console.log('Then Block After Catch')
+});
+
+Q.26
+console.log([] == "")
+console.log([] == [])
+
+
+
+#228
+
+*/
+
+
+/************************************** OPQ New END ******************************/
+
+
+
+
+// function task1(callback){
+//   setTimeout(() => {
+//       console.log('Task-1 completed !!')
+//       callback();
+//   }, 3000);
+// }
+
+// function task2(callback){
+//   setTimeout(() => {
+//       console.log('Task-2 completed !!')
+//       callback();
+//   }, 100);
+// }
+
+// function task3(callback){
+//   setTimeout(() => {
+//       console.log('Task-3 completed !!')
+//       callback();
+//   }, 1000);
+// };
+
+// task1(() => {
+//   task2(() => {
+//       task3(() => {
+//       });
+//   });
+// });
+
+
+
+
+
+
+// function getChees(callback){
+//     setTimeout(() => {
+//         const chees = 'chees';
+//         console.log('Here is chees');
+//         callback(chees);
+//     }, 2000);
+// };
+
+// function makeDough(chees, callback){
+//     setTimeout(() => {
+//         const dough = 'dough';
+//         console.log('Here is the dough');
+//         callback(dough);
+//     }, 2000);
+// };
+
+// function bakePizza(dough, callback){
+//     setTimeout(() => {
+//         const pizza = 'pizza';
+//         console.log('Here is the pizza');
+//         callback(pizza);
+//     }, 2000);
+// };
+
+//  getChees((chees) => {
+//     makeDough(chees, (dough) => {
+//         bakePizza(dough, (pizza) => {
+//             console.log('Got my', pizza);
+//         })
+//     })
+//  });
+
+
+
+
+
 // function deepCopy(obj) {
 //     if (obj === null || typeof obj !== 'object') {
 //         return obj;

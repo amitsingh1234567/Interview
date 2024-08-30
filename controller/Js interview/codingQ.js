@@ -1134,3 +1134,27 @@
 
 // const result = rotateArray(arr, 4);
 // console.log(result)
+
+// Call, Apply, Bind
+// var obj1 = {
+//     name: "Ajay Suneja"
+// }
+
+// var obj2 = {
+//     name: "Amit singh"
+// }
+
+// function display(state, country){
+//     console.log(this.name + " " + state + " " + country)
+// };
+
+// display.call(obj1, "Delhi", "India");
+// display.call(obj2, "Bihar", "India");
+
+// display.apply(obj1, ["Delhi", "India"]);
+// display.apply(obj2, ["Bihar", "India"]);
+
+// var invokeLater1 = display.bind(obj1, "Delhi", "India");
+// var invokeLater2 = display.bind(obj2, "Bihar", "India");
+// invokeLater1()
+// invokeLater2()

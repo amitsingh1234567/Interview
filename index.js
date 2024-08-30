@@ -5,6 +5,8 @@ const {X509Certificate,} = require('crypto');
 const crypto = require('crypto');
 const fs = require('fs')
 const app = express();
+const os = require('os');
+// console.log(os.cpus().length)
 
 // const key = 'mongodb+srv://amit-singh_1:9576435668@cluster0.49vnb.mongodb.net/Graphql?retryWrites=true&w=majority'
 // /role-group-list
