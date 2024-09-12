@@ -60,7 +60,7 @@
 // }
 // sortingArrObj()
 
-// Q. 3
+// Q. 3 => DONE
 // const removeDuplicteArr = () => {
 //     let arr = [5,9,6,8,5,9,8];
 //     // let result = arr.filter((item, index) => arr.indexOf(item) == index);
@@ -100,7 +100,7 @@
 
 // removeDuplicteArrObj()
 
-// Q. 5 
+// Q. 5 => DONE
 // const findMissingNum = () => {
 //     let arr = [1,5,6,8,10];
 //     let min = Math.min(...arr);
@@ -116,7 +116,7 @@
 // }
 // findMissingNum()
 
-// Q. 6
+// Q. 6 => DONE
 // const sort = () => {
 //     let arr = [5,9,6,8,1];
 //     arr.sort((a, b) => a - b);
@@ -124,7 +124,7 @@
 // }
 // sort()
 
-// Q. 7 
+// Q. 7 => DONE
 // const findDuplicateElement = () => {
 //     let arr = [1,5,8,5,9,8,1,8];
 //     let result = arr.filter((item, indexe) => arr.indexOf(item) != indexe);
@@ -132,7 +132,7 @@
 // }
 // findDuplicateElement()
 
-// Q. 8 (Inbuild) Find smallest and largest element in array
+// Q. 8 (Inbuild) Find smallest and largest element in array => DONE
 // const smlLargElement = () => {
 //     let arr = [5,3,0,6,1,9,2]
 //     const smallest = Math.min(...arr)
@@ -143,7 +143,7 @@
 
 // smlLargElement()
 
-// Q. 8 (Custom) Find smallest and largest element in array
+// Q. 8 (Custom) Find smallest and largest element in array => DONE
 // const customSmlLargElement = () => {
 //     let arr = [5,3,6,9,2,15,0];
 //     let smallest = arr[0];
@@ -168,7 +168,7 @@
 
 // customSmlLargElement()
 
-// Q. 9 Remove undefined and null from object
+// Q. 9 Remove undefined and null from object => DONE
 // const removeUndNul = () => {
     // const obj = {
     //     a: 1,
@@ -188,7 +188,7 @@
 // }
 // removeUndNul()
 
-// Q. 10 find index of Captial letter
+// Q. 10 find index of Captial letter => DONE
 // const getCapLetIndex = () => {
 //     const arr = ['a', 'M', 'X', 'j', 'Y'];
 //     let index = [];
@@ -203,7 +203,7 @@
 
 // getCapLetIndex()
 
-// Q. 11 Find palindrome
+// Q. 11 Find palindrome => DONE
 // const palindrome = () => {
 //     let str = 'madam';
 //     let reverseStr = str.split("").reverse().join("");
@@ -215,7 +215,7 @@
 // }
 // palindrome()
 
-// Q. 12 Reverse the string
+// Q. 12 Reverse the string => DONE
 // const reverseStr = () => {
 //     let str = 'abcdef';
 //     let reverseStr = str.split("").reverse().join("");
@@ -229,7 +229,7 @@
 // }
 // reverseStr()
 
-// Q. 13 Captilized first letter of word
+// Q. 13 Captilized first letter of word => DONE
 // const CapFirstLett = () => {
 //     const capitalizedArray = [];
 //     const array = ["apple", "banana", "cherry"];
@@ -243,7 +243,7 @@
 // }
 // CapFirstLett()
 
-// Q. 14 Display TRUE if array containing duplicate if not duplicate display FALSE
+// Q. 14 Display TRUE if array containing duplicate if not duplicate display FALSE => DONE
 // function containsDuplicates() {
 //     let array = [1, 2, 3, 4, 5, 2];
 //     const elementCounts = {};
@@ -259,7 +259,7 @@
 // }
 // containsDuplicates()
 
-// Q. 15
+// Q. 15  => DONE
 // const promise = new Promise((res, rej) => {
 //     res(2)
 // })
@@ -278,7 +278,7 @@
 //     return err
 // })
 
-// Q. 17 if i have five words how do i convert first second and four word as captial letter in javascript
+// Q. 17 if i have five words how do i convert first second and four word as captial letter => DONE
 // const srt = () => {
 //     let str = "apple mango are good";
 //     str = str.split(" ")
@@ -298,7 +298,7 @@
 
 // srt()
 
-// Q. 18 Output should be { abc: 3, ccr: 2, jtv: 1 }
+// Q. 18 Output should be { abc: 3, ccr: 2, jtv: 1 }  => DONE
 // const count = () => {
 //     let arr = ['abc','bac','bac','ccr','rcc','vtj']
 //     let newArr = [];
@@ -350,14 +350,14 @@
 //   console.log(result); 
 
 
-// Q. 20 Rotate the array by two places
+// Q. 20 Rotate the array by two places => DONE
 // const input = [2,7,11,4,-2];
 
 // let slicedItem = input.splice(input.length - 2, 2)
 // input.unshift(...slicedItem)
 // console.log('input :>> ', input);
 
-// Q. 21
+// Q. 21 => DONE
 // const fincCommonKeyValue = () => {
 //     const input1 = {a:15, b:5, c:8, d:10, e:15}
 //     const input2 = {a:5, e:15, f:10, d:10};
@@ -454,7 +454,7 @@
 //   // Call the async main function
 //   main();
 
-// Q. 25 Reverse string word wise 
+// Q. 25 Reverse string word wise => DONE
 // const reverseStr = () => {
 //     let str = 'This is Javascript Code';
 //     str = str.split(" ");
@@ -471,7 +471,7 @@
 // reverseStr()
 
 
-// Q. 26 Find max occuring character
+// Q. 26 Find max occuring character => DONE
 // const maxOccuringChar = () => {
 //     let str = 'This is Javascript Code and you to find max char';
 //     str = str.split("");
@@ -502,7 +502,7 @@
 
 // maxOccuringChar()
 
-// Q. 27 Display letter in alphabetical order
+// Q. 27 Display letter in alphabetical order => DONE
 // Input = "apple"
 // Output = "aelpp"
 // const letterAlphaOrder = () => {
@@ -543,7 +543,7 @@
 
 // console.log(isPrime(10))
 
-// Q. 30
+// Q. 30 => DONE
 // function isEvenOrOdd(number) {
 //     if (number % 2 === 0) {
 //       return "Even";
@@ -570,7 +570,7 @@
 //   const fibonacciSeries = printFibonacciSeries(n);
 //   console.log(fibonacciSeries.join(', '));
 
-// Q. 32 Find the factor of given number    
+// Q. 32 Find the factor of given number => DONE 
 // const findFactor = () => {
 //     const num = 10;
 //     for(let i = 0; i <=num; i++){
@@ -581,7 +581,7 @@
 // }
 // findFactor()
 
-// Q. 33 How to compare two array
+// Q. 33 How to compare two array => NOT MANDATORY
 // const compareTwoArr = () => {
 //     let arr1 = [1,2,3,4,5]
 //     let arr2 = [1,3,2,5,4]
@@ -594,7 +594,7 @@
 
 // compareTwoArr()
 
-// Q 34 Find common value between two array
+// Q 34 Find common value between two array => DONE
 // const findIntersection = () => {
 //     let arr1 = [1,2,3,4,4,5,5]
 //     let arr2 = [10,12,3,4,4,5]
@@ -619,7 +619,7 @@
 
 // getUnion();
 
-// Q. 36 How to check the given input is Array or Not
+// Q. 36 How to check the given input is Array or Not => NOT MENDATORY
 // const checkArr = (input) => {
 //     let result = Array.isArray(input);
 //     console.log('result :>> ', result);
@@ -627,7 +627,7 @@
 //  checkArr([])
 //  checkArr({})
 
-// Q. 37 How to check given number is Integer
+// Q. 37 How to check given number is Integer => NOT MENDATORY
 // const checkInteger = () => {
 //     const input = 15.5;
 //     // Inbuild
@@ -794,7 +794,7 @@
 
 // isAnagram()
 
-// Q. 43 Display only non repeaing value
+// Q. 43 Display only non repeaing value => DONE
 // const getNonRepeatingValue = () => {
 //     let arr = [1,2,3,5,6,2,6,8,9,8]
 
@@ -854,7 +854,7 @@
 //   console.log(isValid(input5)); // true
 
 
-// Q. 45 How to reverse number
+// Q. 45 How to reverse number => DONE
 // function reverseNumber(number) {
 //     // Convert the number to a string
 //     const numberString = number.toString();
@@ -921,12 +921,12 @@
 // const callMeLetter = displayPersonDetails.apply(person_2, ['Bihar', 'India']);
 // // callMeLetter()
 
-// Q. 48 How many way to create Object 
+// Q. 48 How many way to create Object => NOT MANDATROEY
 // const obj1 = {};
 // const obj2 = new Object();
 // const obj3 = Object.create({});
 
-// Q. 49 How make imutable object
+// Q. 49 How make imutable object => NOT MANDATROEY
 // const frzObj = Object.freeze({name: 'Mohit', age: 25, email: 'mohit@yopmail.com'})
 // frzObj.name = 'Shubham';
 // frzObj.age = 15;
@@ -951,7 +951,7 @@
 // person.aadharNumber = '1234-5678-90121111'
 // console.log('person :>> ', person);
 
-// Q. 51 How to make imutable object using deep freez
+// Q. 51 How to make imutable object using deep freez => NOT MANDATROEY
 // function deepFreeze(obj) {
 //     Object.keys(obj).forEach(key => {
 //         if(typeof obj[key] == 'object'){
@@ -975,7 +975,7 @@
 //   myObject.key2.nestedKey1 = 'efefeuuehuihthtrhtrhrthrth'
 //   console.log('myObject :>> ', myObject);
 
-// Q. 52 How to make imutable object where you can't add property
+// Q. 52 How to make imutable object where you can't add property => NOT MANDATROEY
 // let obj = {
 //     name: "Amit",
 //     email: 'amit@yopmail.com',
@@ -987,7 +987,7 @@
 
 // Object.seal(obj)
 
-// Q. 53 What is curry function
+// Q. 53 What is curry function => NOT MANDATROEY
 // function sum(a) {
 //     return function(b){
 //         return function(c){
@@ -999,7 +999,7 @@
 // const result = sum(2)(3)(4);
 // console.log(result)
 
-// Q. 54 What is High Order function
+// Q. 54 What is High Order function => NOT MANDATROEY
 // function getNum(num1, num2, sum) {
 //     return sum(num1, num2);
 // }
@@ -1011,7 +1011,7 @@
 // const result = getNum(5, 6, sum)
 // console.log(result)
 
-// Q. 55 What is prototype 
+// Q. 55 What is prototype => NOT MANDATROEY
 // const obj1 = {
 //     name: 'Mohit',
 //     age: 25,
@@ -1121,7 +1121,7 @@
 // const k = 5;
 // printNumberTrangle(k);
 
-// Q. Rotate Array by 2 place
+// Q. Rotate Array by 2 place => DONE
 // function rotateArray(arr, k){
 //     const n = arr.length;
 //     k = k % n;
@@ -1158,3 +1158,105 @@
 // var invokeLater2 = display.bind(obj2, "Bihar", "India");
 // invokeLater1()
 // invokeLater2()
+
+
+
+// function setZeroes(matrix) {
+//     const rows = matrix.length;
+//     const cols = matrix[0].length;
+//     const zeroRows = new Set(); // To store the rows that need to be zeroed
+//     const zeroCols = new Set(); // To store the columns that need to be zeroed
+  
+//     // Step 1: Identify all rows and columns that contain a zero
+//     for (let i = 0; i < rows; i++) {
+//       for (let j = 0; j < cols; j++) {
+//         if (matrix[i][j] === 0) {
+//           zeroRows.add(i); // Add the row index to the set
+//           zeroCols.add(j); // Add the column index to the set
+//         }
+//       }
+//     }
+  
+//     // Step 2: Set the identified rows to zero
+//     for (const row of zeroRows) {
+//       for (let j = 0; j < cols; j++) {
+//         matrix[row][j] = 0;
+//       }
+//     }
+  
+//     // Step 3: Set the identified columns to zero
+//     for (const col of zeroCols) {
+//       for (let i = 0; i < rows; i++) {
+//         matrix[i][col] = 0;
+//       }
+//     }
+//   }
+  
+//   // Function to print the 2D array in a readable format
+//   function printMatrix(matrix) {
+//     matrix.forEach(row => console.log(row.join(" ")));
+//   }
+  
+//   // Example usage:
+//   const matrix = [
+//     [7, 2, 3],
+//     [4, 0, 1],
+//     [7, 5, 9],
+//   ];
+  
+//   console.log("Original Matrix:");
+//   printMatrix(matrix);
+  
+//   setZeroes(matrix);
+  
+//   console.log("\nMatrix After Setting Zeroes:");
+//   printMatrix(matrix);
+
+
+
+// var str = 'sdihdudieoeha';
+// str = str.split('')
+// for(let i = 0; i < str.length; i++){
+//   if(str[i] == 'i'){
+//     str[i] = '#'
+//   }
+//   if(str[i] == 'h'){
+//     str[i] = '*'
+//   }
+// }
+// console.log(str.join(''));
+
+
+
+
+
+
+
+
+function findSecondLargest(arr) {
+    if (arr.length < 2) {
+        return "Array must have at least two numbers";
+    }
+
+    let largest = -Infinity;
+    let secondLargest = -Infinity;
+    
+
+    // Loop through the array to find the largest and second largest numbers
+    for (let num of arr) {
+        if (num > largest) {
+            secondLargest = largest;
+            largest = num;
+        } else if (num > secondLargest && num < largest) {
+            secondLargest = num;
+        }
+    }
+
+    return secondLargest === -Infinity ? "No second largest number" : secondLargest;
+}
+
+// Test case
+let arr = [3, 5, 1, 9, 7, 9, 8];
+let result = findSecondLargest(arr);
+
+console.log("Second largest number is:", result);
