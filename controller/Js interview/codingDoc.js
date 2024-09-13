@@ -31,10 +31,14 @@ Q.24 How to reverse number (Custom) => DONE
 Q.25 Replace a specific letter from the different symbol of the given string => DONE
 Q.26 Find the factor of the given number => DONE
 Q.27 Write a program to check Even and Odd number => DONE
+Q.28 Write a program to check Prime number => DONE
+Q.29 Write a program to print fibonacci series => DONE
+Q.30 Write a program to print Captial A-Z using loop => DONE
+Q.31 Write a program to print Small a-z using loop => DONE
 
 ===================> ADVANCE LABEL QUESTION <==================
-
-
+Q.1 Write a program to find Second Largest number => DONE
+Q.2 Write a program to find Third Largest number => DONE
 
 * */
 
@@ -44,6 +48,7 @@ Q.27 Write a program to check Even and Odd number => DONE
 
 
 
+// ===================> BASIC LABEL QUESTION <==================
 
 // Q.1 Remove duplicate from array (Inbuild)
 /*
@@ -385,7 +390,7 @@ function findFactor(){
 findFactor()
 */
 
-
+// Q.27 Write a program to check Even and Odd number
 /*
 function isEvenOrOdd(number) {
     if (number % 2 === 0) {
@@ -397,3 +402,111 @@ function isEvenOrOdd(number) {
 var result = isEvenOrOdd(6);
 console.log(result)
 */
+
+// Q.28 Write a program to check Prime number
+/*
+function isPrime(value){
+    if(value <= 1)
+        return false;
+
+    for(let i = 2; i < value; i++){
+        if(value % i == 0)
+            return false;
+    }
+    return true;
+};
+
+var result = isPrime();
+console.log(result)
+*/
+
+// Q.29 Write a program to print fibonacci series
+/*
+function printFibonacciSeries(n){
+    var fibArray = [0, 1];
+
+    for(let i = 2; i < n; i++){
+        fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
+    }
+    return fibArray;
+};
+const n = 10;
+const fibSeries = printFibonacciSeries(n);
+console.log(fibSeries.join(", "));
+*/
+
+// Q.30 Write a program to print Captial A-Z using loop
+/*
+for (let i = 65; i <= 90; i++) {
+    console.log(String.fromCodePoint(i));
+}
+*/
+
+// Q.31 Write a program to print Small a-z using loop
+/*
+for (let i = 97; i <= 122; i++) {
+    console.log(String.fromCodePoint(i));
+}
+*/
+
+
+// ===================> ADVANCE LABEL QUESTION <==================
+
+// Q.1 Write a program to find Second Largest number
+/*
+function findSeconfLargest(arr){
+    if(arr.length < 2)
+        return "Array must have two numbers";
+
+    var first = -Infinity;
+    var second = -Infinity;
+
+    for(let num of arr){
+        if(num > first){
+            second = first;
+            first = num;
+        }else if(num > second && num < first){
+            second = num;
+        }
+    }
+    return second === -Infinity ? "No second largest number" : second;
+}
+
+const arr = [5,3,63,0,1,4];
+var result = findSeconfLargest(arr);
+console.log("Second largest number is:", result);
+*/
+
+// Q.2 Write a program to find Third Largest number
+/*
+function thirdLargest(arr) {
+    if(arr.length < 3)
+    return "Array must have three numbers";
+
+    arr = [...new Set(arr)];
+    
+    var first  = -Infinity;
+    var second = -Infinity;
+    var third  = -Infinity;
+
+    for(let num of arr){
+        if(first <= num){
+            third  = second;
+            second = first;
+            first  = num;
+        }else if(second <= num){
+            third = second;
+            second = num;
+        }else if(third <= num){
+            third = num;
+        }
+    }
+    
+    return third;
+};
+
+const arr = [15,12,10,1,2,2];
+const result = thirdLargest(arr);
+console.log("Third largest number is:", result);
+*/
+

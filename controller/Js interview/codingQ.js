@@ -1,326 +1,3 @@
-// const arr = [5,6,1,3,8,2];
-// for(let i = 0; i<arr.length; i++){
-//     if(arr[i] > arr[i+1]){
-//         let temp = arr[i+1];
-//         arr[i+1] = arr[i];
-//         arr[i] = temp;
-//         i = -1;
-//     }
-// }
-
-// n = 5;
-// for i in range(n):
-// for j in range(i+1):
-// x = 0;
-// for k in range(j):
-// x = x+n-k
-// if j%2 ==0:
-// print(x+i-j+1, end=" ")
-// else:
-// print(x+n-i, end="")
-// print()
-
-// Q. 1
-// const sortingArr = () => {
-//     let arr = [5,8,9,6,2,7,1];
-    
-//     for(let i = 0; i<arr.length; i++){
-//         for(let j = 0; j < arr.length; j++){
-//             if(arr[j] > arr[j+1]){
-//                 let temp = arr[j+1];
-//                 arr[j+1] = arr[j];
-//                 arr[j] = temp;
-//             }
-//         }
-//     }
-//     console.log(arr)
-// }
-
-// sortingArr()
-
-// Q. 2
-// const sortingArrObj = () => {
-    // let arr = [
-    //     {name: 'Greet', gender: 'Male'},
-    //     {name: 'Abhisek', gender: 'Male'},
-    //     {name: 'Rohit', gender: 'Male'},
-    //     {name: 'Ruhi', gender: 'Feamle'},
-    // ];
-    
-//     for(let i = 0; i<arr.length; i++){
-//         for(let j = 0; j < arr.length-1; j++){
-//             if(arr[j].gender > arr[j+1].gender){
-//                 let temp = arr[j+1];
-//                 arr[j+1] = arr[j];
-//                 arr[j] = temp;
-//             }
-//         }
-//     }
-//     console.log(arr)
-// }
-// sortingArrObj()
-
-// Q. 3 => DONE
-// const removeDuplicteArr = () => {
-//     let arr = [5,9,6,8,5,9,8];
-//     // let result = arr.filter((item, index) => arr.indexOf(item) == index);
-//     // console.log(result)
-//     const uniqueArray = [];
-//     for (let i = 0; i < arr.length; i++) {
-//         if (!uniqueArray.includes(arr[i])) {
-//           uniqueArray.push(arr[i]);
-//         }
-//       }
-
-//     console.log('uniqueArray :>> ', uniqueArray);
-// }
-// removeDuplicteArr()
-
-// Q.4
-// const removeDuplicteArrObj = () => {
-    // let arr = [
-    //     {name: 'Amit', email: 'amit@yopmail.com'},
-    //     {name: 'Rohit', email: 'rohit@yopmail.com'},
-    //     {name: 'Rahul', email: 'rahul@yopmail.com'},
-    //     {name: 'Amit', email: 'amit@yopmail.com'},
-    //     {name: 'Amit', email: 'amit@yopmail.com'},
-    // ];
-
-//     let uniqueObj = {};
-//     let result = [];
-
-//     for(let i = 0; i < arr.length; i++){         
-//         if(!uniqueObj[arr[i].name]){
-//             uniqueObj[arr[i].name] = true;
-//             result.push(arr[i])
-//         }
-//     }
-//     console.log(result)
-// }
-
-// removeDuplicteArrObj()
-
-// Q. 5 => DONE
-// const findMissingNum = () => {
-//     let arr = [1,5,6,8,10];
-//     let min = Math.min(...arr);
-//     let max = Math.max(...arr);
-//     let misingNum = []
-    
-//     for(let i = min; i <= max; i++){
-//         if(!arr.includes(i)){
-//             misingNum.push(i)
-//         }
-//     }
-//     console.log(misingNum)
-// }
-// findMissingNum()
-
-// Q. 6 => DONE
-// const sort = () => {
-//     let arr = [5,9,6,8,1];
-//     arr.sort((a, b) => a - b);
-//     console.log(arr)
-// }
-// sort()
-
-// Q. 7 => DONE
-// const findDuplicateElement = () => {
-//     let arr = [1,5,8,5,9,8,1,8];
-//     let result = arr.filter((item, indexe) => arr.indexOf(item) != indexe);
-//     console.log(result);
-// }
-// findDuplicateElement()
-
-// Q. 8 (Inbuild) Find smallest and largest element in array => DONE
-// const smlLargElement = () => {
-//     let arr = [5,3,0,6,1,9,2]
-//     const smallest = Math.min(...arr)
-//     const largest = Math.max(...arr)
-//     console.log('smallest :>> ', smallest);
-//     console.log('largest :>> ', largest);
-// }
-
-// smlLargElement()
-
-// Q. 8 (Custom) Find smallest and largest element in array => DONE
-// const customSmlLargElement = () => {
-//     let arr = [5,3,6,9,2,15,0];
-//     let smallest = arr[0];
-//     let largest = arr[0];
-
-//     // Smallest
-//     for(let i = 1; i<arr.length; i++){
-//         if(arr[i] < smallest){
-//             smallest = arr[i]
-//         }
-//     }
-
-//     // Largest
-//     for(let i = 1; i<arr.length; i++){
-//         if(arr[i] > largest){
-//             largest = arr[i]
-//         }
-//     }
-//     console.log('smallest :>> ', smallest);
-//     console.log('largest :>> ', largest);
-// }
-
-// customSmlLargElement()
-
-// Q. 9 Remove undefined and null from object => DONE
-// const removeUndNul = () => {
-    // const obj = {
-    //     a: 1,
-    //     b: null,
-    //     c: undefined,
-    //     d: 2
-    // }
-//     let newObj = {};
-
-//     for(let key in obj){
-//         if(obj[key] != undefined || obj[key] != null){
-//             newObj[key] = obj[key];
-//         }
-//     }
-    
-//     console.log('newObj :>> ', newObj);
-// }
-// removeUndNul()
-
-// Q. 10 find index of Captial letter => DONE
-// const getCapLetIndex = () => {
-//     const arr = ['a', 'M', 'X', 'j', 'Y'];
-//     let index = [];
-
-//     for(let i = 0; i<arr.length; i++){
-//         if(arr[i] == arr[i].toUpperCase()){
-//             index.push(i)
-//         }
-//     }
-//     console.log('index :>> ', index);
-// }
-
-// getCapLetIndex()
-
-// Q. 11 Find palindrome => DONE
-// const palindrome = () => {
-//     let str = 'madam';
-//     let reverseStr = str.split("").reverse().join("");
-//     let result = false;
-//     if(reverseStr == str) result = true;
-
-//     console.log('result :>> ', result);
-        
-// }
-// palindrome()
-
-// Q. 12 Reverse the string => DONE
-// const reverseStr = () => {
-//     let str = 'abcdef';
-//     let reverseStr = str.split("").reverse().join("");
-//     console.log('reverseStr :>> ', reverseStr);
-
-//     // let result
-//     // for(let i = str.length -1; i > 0; i--){
-//     //     result += str[i]
-//     // }
-//     // console.log('result :>> ', result);
-// }
-// reverseStr()
-
-// Q. 13 Captilized first letter of word => DONE
-// const CapFirstLett = () => {
-//     const capitalizedArray = [];
-//     const array = ["apple", "banana", "cherry"];
-
-//     for (let word of array) {
-//       const capitalizedWord = word.charAt(0).toUpperCase() + word.slice(1);
-//       capitalizedArray.push(capitalizedWord);
-//     }
-  
-//     console.log('capitalizedArray :>> ', capitalizedArray);
-// }
-// CapFirstLett()
-
-// Q. 14 Display TRUE if array containing duplicate if not duplicate display FALSE => DONE
-// function containsDuplicates() {
-//     let array = [1, 2, 3, 4, 5, 2];
-//     const elementCounts = {};
-
-//     for (const element of array) {
-//         if (elementCounts[element]) {
-//             return true;
-//         }
-//         elementCounts[element] = true;
-//     }
-
-//     return false;
-// }
-// containsDuplicates()
-
-// Q. 15  => DONE
-// const promise = new Promise((res, rej) => {
-//     res(2)
-// })
-
-// Q. 16
-// promise.then((result)=> {
-//     console.log(result)
-//     return result*2;
-// }).then((result)=> {
-//     console.log(result)
-//     return result*2;
-// }).then((result)=> {
-//     console.log(result)
-//     return result*2;
-// }).catch((err)=> {
-//     return err
-// })
-
-// Q. 17 if i have five words how do i convert first second and four word as captial letter => DONE
-// const srt = () => {
-//     let str = "apple mango are good";
-//     str = str.split(" ")
-    
-//     let result = []
-    
-//     for(let i=0; i<str.length; i++){
-//         if( i== 1 || i== 3){
-//             let capLet = str[i].charAt(0).toLocaleUpperCase() + str[i].slice(1)
-//             result.push(capLet)
-//         }else{
-//             result.push(str[i])
-//         }
-//     }
-//     console.log('newObj :>> ', result.join(" "));
-// }
-
-// srt()
-
-// Q. 18 Output should be { abc: 3, ccr: 2, jtv: 1 }  => DONE
-// const count = () => {
-//     let arr = ['abc','bac','bac','ccr','rcc','vtj']
-//     let newArr = [];
-//     let obj = {};
-
-//     for(let i = 0; i < arr.length; i++){
-//         let strArr = arr[i].split("");
-//         newArr.push(strArr.sort().join(""))
-//     }
-
-//     for(let i = 0; i < arr.length; i++){
-//         if(!obj[newArr[i]]){
-//             obj[newArr[i]] = 1
-//         }else{
-//             obj[newArr[i]] = obj[newArr[i]] + 1
-//         }
-//     }
-//     console.log('obj :>> ', obj);
-// }
-
-// count()
-
 // Q. 19 
 // function twoSum(nums, target) {
 //     const numToIndexMap = {}; // Create a map to store numbers and their indices
@@ -349,31 +26,6 @@
 //   const result = twoSum(nums, target);
 //   console.log(result); 
 
-
-// Q. 20 Rotate the array by two places => DONE
-// const input = [2,7,11,4,-2];
-
-// let slicedItem = input.splice(input.length - 2, 2)
-// input.unshift(...slicedItem)
-// console.log('input :>> ', input);
-
-// Q. 21 => DONE
-// const fincCommonKeyValue = () => {
-//     const input1 = {a:15, b:5, c:8, d:10, e:15}
-//     const input2 = {a:5, e:15, f:10, d:10};
-    
-//     let newObj = {};
-    
-//     for(let key in input1){
-//         if(input1[key] == input2[key]){
-//             newObj[key] = input1[key]
-//         }
-//     }
-    
-//     console.log('newObj :>> ', newObj);
-// }
-
-// fincCommonKeyValue()
 
 // Q. 22 Find the first missing odd number
 // const missingOddNum = () => {
@@ -410,109 +62,6 @@
 // swaipNum()
 
 
-//  Q. 24 Async Await question
-// function asyncFunction1() {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve('Result from asyncFunction1');
-//       }, 1000);
-//     });
-//   }
-  
-//   function asyncFunction2(data) {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve(`Result from asyncFunction2 with data: ${data}`);
-//       }, 500);
-//     });
-//   }
-  
-//   function asyncFunction3(data) {
-//     return new Promise((resolve, reject) => {
-//       setTimeout(() => {
-//         resolve(`Result from asyncFunction3 with data: ${data}`);
-//       }, 800);
-//     });
-//   }
-  
-//   // Converting to async/await
-//   async function main() {
-//     try {
-//       const result1 = await asyncFunction1();
-//       console.log(result1);
-  
-//       const result2 = await asyncFunction2(result1);
-//       console.log(result2);
-  
-//       const result3 = await asyncFunction3(result2);
-//       console.log(result3);
-//     } catch (error) {
-//       console.error('An error occurred:', error);
-//     }
-//   }
-  
-//   // Call the async main function
-//   main();
-
-// Q. 25 Reverse string word wise => DONE
-// const reverseStr = () => {
-//     let str = 'This is Javascript Code';
-//     str = str.split(" ");
-//     const reverseStrArr = [];
-
-//     for(let i = 0; i < str.length; i++){
-//         let newStr = str[i];
-//         reverseStrArr.push(newStr.split("").reverse().join(""))
-//     }
-//    let result =  reverseStrArr.join(" ")
-//    console.log('result :>> ', result);
-// }
-
-// reverseStr()
-
-
-// Q. 26 Find max occuring character => DONE
-// const maxOccuringChar = () => {
-//     let str = 'This is Javascript Code and you to find max char';
-//     str = str.split("");
-//     let obj = {};
-
-//     for(let i = 0; i < str.length; i++){
-//         if(str[i] != ' '){
-//             if(!obj[str[i]]){
-//                 obj[str[i]] = 1
-//             }else{
-//                 obj[str[i]] =  obj[str[i]] +  1
-//             }
-//         }
-//     }
-
-//     let max = -Infinity; // Initialize max with the smallest possible number
-//     let keyName = '';
-//     for(let key in obj){
-//         if(obj[key] > max ){
-//             max = obj[key];
-//             keyName = key;
-//         }
-//     }
-
-//     let result = { [keyName]: max };
-//     console.log('result :>> ', result);
-// }
-
-// maxOccuringChar()
-
-// Q. 27 Display letter in alphabetical order => DONE
-// Input = "apple"
-// Output = "aelpp"
-// const letterAlphaOrder = () => {
-//     let str = "apple";
-//     let result = str.split("").sort().join("");
-//     console.log('result :>> ', result);
-// }
-
-// letterAlphaOrder()
-
 // Q. 28 Print factorial number
 // const getFactorialNum = () => {
 //     const input = 5;
@@ -526,122 +75,6 @@
 //     console.log('fact :>> ', fact);
 // }
 // getFactorialNum()
-
-// Q. 29
-// function isPrime(n) {
-//     if (n <= 1)
-//         return false;
-
-//     // Check from 2 to n-1
-//     for (let i = 2; i < n; i++){
-//         if (n % i == 0)
-//             return false;
-//     }
-
-//     return true;
-// }
-
-// console.log(isPrime(10))
-
-// Q. 30 => DONE
-// function isEvenOrOdd(number) {
-//     if (number % 2 === 0) {
-//       return "Even";
-//     } else {
-//       return "Odd";
-//     }
-//   }
-
-// Q. 31 
-// function printFibonacciSeries(n) {
-//     let fibArray = [];
-//     fibArray[0] = 0;
-//     fibArray[1] = 1;
-  
-//     for (let i = 2; i < n; i++) {
-//       fibArray[i] = fibArray[i - 1] + fibArray[i - 2];
-//     }
-  
-//     return fibArray;
-//   }
-  
-//   // Example usage:
-//   const n = 10; // Change this to the desired number of Fibonacci numbers
-//   const fibonacciSeries = printFibonacciSeries(n);
-//   console.log(fibonacciSeries.join(', '));
-
-// Q. 32 Find the factor of given number => DONE 
-// const findFactor = () => {
-//     const num = 10;
-//     for(let i = 0; i <=num; i++){
-//         if(num % i == 0){
-//             console.log(i);
-//         }
-//     }
-// }
-// findFactor()
-
-// Q. 33 How to compare two array => NOT MANDATORY
-// const compareTwoArr = () => {
-//     let arr1 = [1,2,3,4,5]
-//     let arr2 = [1,3,2,5,4]
-    
-//    let status = arr1.every((item) => {
-//        return arr2.includes(item)
-//     });
-//     console.log('status :>> ', status);
-// }
-
-// compareTwoArr()
-
-// Q 34 Find common value between two array => DONE
-// const findIntersection = () => {
-//     let arr1 = [1,2,3,4,4,5,5]
-//     let arr2 = [10,12,3,4,4,5]
-
-//    let result = arr1.filter((item) => {
-//        return arr2.includes(item)
-//     })
-//     result = [...new Set(result)];
-//     console.log('result :>> ', result);
-// }
-
-// findIntersection()
-
-// Q. 35 Find UNION of two arrays
-// function getUnion() {
-//     let arr1 = [1,2,6,8,17];
-//     let arr2 = [4,8,6,9,19,12,17];
-//     let mergedArr = [...arr1, ...arr2];
-//     let result = [...new Set(mergedArr)]
-//     console.log('result :>> ', result);
-// }
-
-// getUnion();
-
-// Q. 36 How to check the given input is Array or Not => NOT MENDATORY
-// const checkArr = (input) => {
-//     let result = Array.isArray(input);
-//     console.log('result :>> ', result);
-//  }
-//  checkArr([])
-//  checkArr({})
-
-// Q. 37 How to check given number is Integer => NOT MENDATORY
-// const checkInteger = () => {
-//     const input = 15.5;
-//     // Inbuild
-//       let result = Number.isInteger(input);
-//       console.log('result :>> ', result);
-    
-//     // Custom 
-//         if(input % 1 == 0)
-//         console.log('true :>> ', true);
-//         else
-//         console.log('false :>> ', false);
-// }
-
-// checkInteger()
 
 // Q. 38 Randomise array element Or suffle the array
 // const shuffleArray = () => {
@@ -794,24 +227,7 @@
 
 // isAnagram()
 
-// Q. 43 Display only non repeaing value => DONE
-// const getNonRepeatingValue = () => {
-//     let arr = [1,2,3,5,6,2,6,8,9,8]
 
-//     let obj = {};
-
-//     for(let i = 0; i<arr.length; i++){
-//         if(!obj.hasOwnProperty(arr[i])){
-//             obj[arr[i]] = 1;
-//         }else{
-//             obj[arr[i]] = obj[arr[i]] + 1;
-//         }
-//     }
-//    let result = arr.filter((item, index) => obj[item] == 1)
-//    console.log('result :>> ', result);
-// }
-
-// getNonRepeatingValue()
 
 // Q. 44 Write a program for valid braickets
 // function isValid(s) {
@@ -854,26 +270,6 @@
 //   console.log(isValid(input5)); // true
 
 
-// Q. 45 How to reverse number => DONE
-// function reverseNumber(number) {
-//     // Convert the number to a string
-//     const numberString = number.toString();
-  
-//     // Reverse the string
-//     const reversedString = numberString.split('').reverse().join('');
-  
-//     // Convert the reversed string back to a number
-//     const reversedNumber = parseFloat(reversedString);
-  
-//     return reversedNumber;
-//   }
-  
-//   // Example usage:
-//   const originalNumber = 12345;
-//   const reversed = reverseNumber(originalNumber);
-//   console.log(reversed); // Outputs: 54321
-
-
 // Q. 46 Write a program of fizzBuzz to 100 number
 // function fizzBuzz(limit) {
 //     for (let i = 1; i <= limit; i++) {
@@ -900,182 +296,7 @@
 //   fizzBuzz(100);
 
 
-// Q. 47 Call, Apply, Bind
-// const person_1 = {
-//     name: "Rahul",
-//     age: 25
-// }
 
-// const person_2 = {
-//     name: "Mohit",
-//     age: 26
-// }
-
-// function displayPersonDetails(state, country){
-//     console.log('Name ::>',this.name)
-//     console.log('Age ::>',this.age)
-//     console.log('State ::>',state)
-//     console.log('Country ::>',country)
-// }
-
-// const callMeLetter = displayPersonDetails.apply(person_2, ['Bihar', 'India']);
-// // callMeLetter()
-
-// Q. 48 How many way to create Object => NOT MANDATROEY
-// const obj1 = {};
-// const obj2 = new Object();
-// const obj3 = Object.create({});
-
-// Q. 49 How make imutable object => NOT MANDATROEY
-// const frzObj = Object.freeze({name: 'Mohit', age: 25, email: 'mohit@yopmail.com'})
-// frzObj.name = 'Shubham';
-// frzObj.age = 15;
-// console.log('frzObj :>> ', frzObj);
-
-// Q.50 How to make imutable object on only one key
-// const person = {
-//     name: "John",
-//     age: 25,
-//     aadharNumber: "1234-5678-9012"
-//   };
-
-// Object.defineProperty(person, 'aadharNumber', {
-//     value: person.aadharNumber,
-//     writable: false,
-//     enumerable: true,
-//     configurable: false
-// });
-
-// person.name = 'Due'
-// person.age = 15
-// person.aadharNumber = '1234-5678-90121111'
-// console.log('person :>> ', person);
-
-// Q. 51 How to make imutable object using deep freez => NOT MANDATROEY
-// function deepFreeze(obj) {
-//     Object.keys(obj).forEach(key => {
-//         if(typeof obj[key] == 'object'){
-//             deepFreeze(obj[key])
-//         }
-//     });
-//     Object.freeze(obj);
-// }
-//   let myObject = {
-//     key1: 'value1',
-//     key2: {
-//       nestedKey1: 'nestedValue1',
-//       nestedKey2: {
-//         deepKey: 'deepValue'
-//       }
-//     },
-//     key3: [1, 2, 3]
-//   };
-
-//   deepFreeze(myObject)
-//   myObject.key2.nestedKey1 = 'efefeuuehuihthtrhtrhrthrth'
-//   console.log('myObject :>> ', myObject);
-
-// Q. 52 How to make imutable object where you can't add property => NOT MANDATROEY
-// let obj = {
-//     name: "Amit",
-//     email: 'amit@yopmail.com',
-//     address: {
-//         city: 'Noida',
-//         phoneNum: '957643588',
-//     }
-// };
-
-// Object.seal(obj)
-
-// Q. 53 What is curry function => NOT MANDATROEY
-// function sum(a) {
-//     return function(b){
-//         return function(c){
-//             return a+b+c;
-//         }
-//     }
-// };
-
-// const result = sum(2)(3)(4);
-// console.log(result)
-
-// Q. 54 What is High Order function => NOT MANDATROEY
-// function getNum(num1, num2, sum) {
-//     return sum(num1, num2);
-// }
-
-// function sum(num1, num2){
-//     return num1 + num2;
-// }
-
-// const result = getNum(5, 6, sum)
-// console.log(result)
-
-// Q. 55 What is prototype => NOT MANDATROEY
-// const obj1 = {
-//     name: 'Mohit',
-//     age: 25,
-//     email: 'mohit@yopmail.com'
-// };
-
-// const obj2 = {
-//     city: 'Noida',
-//     street: 'sector-15',
-//     __proto__: obj1
-// };
-
-// console.log(obj2.email)
-
-// Q. 56 Find Second Largest Number
-// function secondLargest(arr){
-//     if(arr.length <3)
-//     return "Invalid Input";
-
-//     arr.sort();
-    
-//     for(let i=arr.length - 2; i>=0; i--){
-//         if(arr[i] != arr[arr.length - 1]){
-//             console.log(i)
-//             console.log(arr.length - 1)
-//             return "Second largest number: "+arr[i];
-//         }
-//     }
-//     return "There is no any second larggest number";
-// }
-
-// const arr = [5,9,6,4,2,8];
-// const result = secondLargest(arr);
-// console.log(result)
-
-// Q. 57 Third Largest Number
-// function thirdLargest(arr) {
-//     if(arr.length < 3)
-//     return "Invalid Input";
-
-//     var first  = Number.MIN_SAFE_INTEGER;
-//     var second = Number.MIN_SAFE_INTEGER;
-//     var third  = Number.MIN_SAFE_INTEGER;
-
-//     for(let i = 0; i<arr.length; i++){
-//         if(first <= arr[i]){
-//             third  = second;
-//             second = first;
-//             first  = arr[i];
-//         }else if(second <= arr[i]){
-//             third = second;
-//             second = arr[i];
-//         }else if(third <= arr[i]){
-//             third = arr[i];
-//         }
-//     }
-//     return "Third largest element is:- "+ third;
-
-// };
-
-// const arr = [4,19,18,2,1,6];
-// // const arr = [5,8,9,15,1,16];
-// const result = thirdLargest(arr);
-// console.log(result);
 
 // Q. 58
 // function printTrangle(rows){
@@ -1120,45 +341,6 @@
 
 // const k = 5;
 // printNumberTrangle(k);
-
-// Q. Rotate Array by 2 place => DONE
-// function rotateArray(arr, k){
-//     const n = arr.length;
-//     k = k % n;
-//     const rotatatedArr = arr.slice(n - k).concat(arr.slice(0, n - k));
-
-//     return rotatatedArr;
-// }
-
-// const arr = [1,2,3,4,5];
-
-// const result = rotateArray(arr, 4);
-// console.log(result)
-
-// Call, Apply, Bind
-// var obj1 = {
-//     name: "Ajay Suneja"
-// }
-
-// var obj2 = {
-//     name: "Amit singh"
-// }
-
-// function display(state, country){
-//     console.log(this.name + " " + state + " " + country)
-// };
-
-// display.call(obj1, "Delhi", "India");
-// display.call(obj2, "Bihar", "India");
-
-// display.apply(obj1, ["Delhi", "India"]);
-// display.apply(obj2, ["Bihar", "India"]);
-
-// var invokeLater1 = display.bind(obj1, "Delhi", "India");
-// var invokeLater2 = display.bind(obj2, "Bihar", "India");
-// invokeLater1()
-// invokeLater2()
-
 
 
 // function setZeroes(matrix) {
@@ -1214,49 +396,111 @@
 
 
 
-// var str = 'sdihdudieoeha';
-// str = str.split('')
-// for(let i = 0; i < str.length; i++){
-//   if(str[i] == 'i'){
-//     str[i] = '#'
-//   }
-//   if(str[i] == 'h'){
-//     str[i] = '*'
-//   }
-// }
-// console.log(str.join(''));
 
 
-
-
-
-
-
-
-function findSecondLargest(arr) {
-    if (arr.length < 2) {
-        return "Array must have at least two numbers";
+function transposeMatrix(matrix) {
+    // Get the number of rows and columns in the original matrix
+    const rows = matrix.length;
+    const cols = matrix[0].length;
+  
+    // Create a new matrix to store the transposed version
+    const transposed = [];
+  
+    // Initialize the transposed matrix with empty arrays for each column
+    for (let i = 0; i < cols; i++) {
+      transposed[i] = [];
     }
+  
+    // Loop through each element in the original matrix
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        // Swap the element at (i, j) with the element at (j, i)
+        transposed[j][i] = matrix[i][j];
+      }
+    }
+  
+    return transposed;
+  }
+  
+  // Function to print the matrix in a readable format
+  function printMatrix(matrix) {
+    for (let row of matrix) {
+      console.log(row.join(' '));
+    }
+  }
+  
+  // Example usage:
+  const matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+  ];
+  
+  const transposedMatrix = transposeMatrix(matrix);
+  console.log("Transposed Matrix:");
+  printMatrix(transposedMatrix);
+  
 
-    let largest = -Infinity;
-    let secondLargest = -Infinity;
-    
 
-    // Loop through the array to find the largest and second largest numbers
-    for (let num of arr) {
-        if (num > largest) {
-            secondLargest = largest;
-            largest = num;
-        } else if (num > secondLargest && num < largest) {
-            secondLargest = num;
+
+
+
+  function multiplyMatrices(matrixA, matrixB) {
+    const rowsA = matrixA.length; // Number of rows in matrix A
+    const colsA = matrixA[0].length; // Number of columns in matrix A
+    const rowsB = matrixB.length; // Number of rows in matrix B
+    const colsB = matrixB[0].length; // Number of columns in matrix B
+  
+    // Check if the number of columns in A is equal to the number of rows in B
+    if (colsA !== rowsB) {
+      console.log("Matrix multiplication is not possible due to dimension mismatch.");
+      return null;
+    }
+  
+    // Initialize the result matrix with zeros
+    const result = [];
+    for (let i = 0; i < rowsA; i++) {
+      result[i] = [];
+      for (let j = 0; j < colsB; j++) {
+        result[i][j] = 0;
+      }
+    }
+  
+    // Multiply the matrices
+    for (let i = 0; i < rowsA; i++) {
+      for (let j = 0; j < colsB; j++) {
+        for (let k = 0; k < colsA; k++) {
+          result[i][j] += matrixA[i][k] * matrixB[k][j];
         }
+      }
     }
-
-    return secondLargest === -Infinity ? "No second largest number" : secondLargest;
-}
-
-// Test case
-let arr = [3, 5, 1, 9, 7, 9, 8];
-let result = findSecondLargest(arr);
-
-console.log("Second largest number is:", result);
+  
+    return result;
+  }
+  
+  // Function to print the matrix in a readable format
+  function printMatrix(matrix) {
+    for (let row of matrix) {
+      console.log(row.join(' '));
+    }
+  }
+  
+  // Example usage:
+  const matrixA = [
+    [1, 2, 3],
+    [4, 5, 6],
+    
+  ];
+  
+  const matrixB = [
+    [7, 8],
+    [9, 10],
+    [11, 12]
+  ];
+  
+  const resultMatrix = multiplyMatrices(matrixA, matrixB);
+  if (resultMatrix !== null) {
+    console.log("Result of matrix multiplication:");
+    printMatrix(resultMatrix);
+  }
+  
