@@ -35,10 +35,19 @@ Q.28 Write a program to check Prime number => DONE
 Q.29 Write a program to print fibonacci series => DONE
 Q.30 Write a program to print Captial A-Z using loop => DONE
 Q.31 Write a program to print Small a-z using loop => DONE
+Q.32 Find first missing Odd number of the given Array => DONE
+Q.33 Swaip number without third variable => DONE
+
 
 ===================> ADVANCE LABEL QUESTION <==================
 Q.1 Write a program to find Second Largest number => DONE
 Q.2 Write a program to find Third Largest number => DONE
+Q.3 Write a program for Deep Copy of object => DONE
+Q.4 Write a program of Two Sum => DONE
+
+
+
+
 
 * */
 
@@ -449,6 +458,42 @@ for (let i = 97; i <= 122; i++) {
 }
 */
 
+// Q.32 Find first missing Odd number of the given Array
+/*
+function firstMissingOdd(){
+    let arr = [5, 7, 9, 11, 15, 17, 20];
+    var min = Math.min(...arr);
+    var max = Math.max(...arr);
+
+    for(let i = min; i < max; i++){
+        if(i % 2 != 0)
+            if(!arr.includes(i))
+                return i;
+    }
+
+}
+
+var missingOdd = firstMissingOdd();
+console.log(missingOdd)
+*/
+
+// Q.33 Swaip number without third variable
+/*
+function swaipNum(){
+    let a = 5;
+    let b = 10;
+
+    console.log(`Before swapping: a = ${a} b = ${b}`);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    console.log(`After swapping: a = ${a} b = ${b}`);
+}
+
+swaipNum()
+*/
 
 // ===================> ADVANCE LABEL QUESTION <==================
 
@@ -510,3 +555,70 @@ const result = thirdLargest(arr);
 console.log("Third largest number is:", result);
 */
 
+// Q.3 Write a program for Deep Copy of object
+/*
+function makeDeepCopy(obj){
+    if(typeof obj != 'object' || obj == null)
+        return obj;
+
+    var copyValue = Array.isArray(obj) ? [] : {};
+
+    for(let key in obj){
+        copyValue[key] = makeDeepCopy(obj[key]);
+    }
+
+    return copyValue;
+}
+
+const obj = {
+    name: "Jhon",
+    age: 25,
+    add: {
+        contact: "9999999990",
+        details: { pin: "89564"}
+    }
+}
+
+const copy = makeDeepCopy(obj);
+obj.add.details.pin = '8888';
+console.log(obj)
+console.log(copy);
+*/
+
+// Q. 28 Print factorial number => DONE
+// const getFactorialNum = () => {
+//     const input = 5;
+//     let fact = 1;
+//     if(input < 0)
+//     return console.log(`Factorial of ${input} is not possible`)
+    
+//     for(let i=1; i<=input; i++){
+//         fact = i * fact;
+//     }
+//     console.log('fact :>> ', fact);
+// }
+// getFactorialNum()
+
+// Q.4 Write a program of Two Sum
+/*
+function twoSum(arr, target){
+    const numToIndexMap = {};
+
+    for(let i = 0; i < arr.length; i++){
+        const complement = target - arr[i];
+        
+        if(numToIndexMap.hasOwnProperty(complement)){
+            return [numToIndexMap[complement], i];
+        };
+
+        numToIndexMap[arr[i]] = i;
+    }
+    return [];
+};
+
+const arr = [1,2,5,9,20];
+const target = 25;
+
+const result = twoSum(arr, target);
+console.log(result);
+*/

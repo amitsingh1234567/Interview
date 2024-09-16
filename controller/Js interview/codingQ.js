@@ -27,55 +27,6 @@
 //   console.log(result); 
 
 
-// Q. 22 Find the first missing odd number
-// const missingOddNum = () => {
-//     let arr = [5, 7, 9, 11, 15, 17, 20];
-//     const min = Math.min(...arr);
-//     const max = Math.max(...arr);
-
-//     for(let i = min; i<max; i++){
-//         if(i % 2 == 1){
-//             if(!arr.includes(i)){
-//                 console.log(i)
-//                 return
-//             }
-//         }
-//     }
-// }
-// missingOddNum()
-
-
-// Q. 23 Swaip number without third variable
-// const swaipNum = () => {
-//     let a = 5;
-//     let b = 10;
-    
-//     console.log("Before swapping: a =", a, "b =", b);
-    
-//     a = a + b; 
-//     b = a - b; 
-//     a = a - b; 
-    
-//     console.log("After swapping: a =", a, "b =", b);
-
-// }
-// swaipNum()
-
-
-// Q. 28 Print factorial number
-// const getFactorialNum = () => {
-//     const input = 5;
-//     let fact = 1;
-//     if(input < 0)
-//     return console.log(`Factorial of ${input} is not possible`)
-    
-//     for(let i=1; i<=input; i++){
-//         fact = i * fact;
-//     }
-//     console.log('fact :>> ', fact);
-// }
-// getFactorialNum()
-
 // Q. 38 Randomise array element Or suffle the array
 // const shuffleArray = () => {
 //     const myArray = [1, 2, 3, 4, 5];
@@ -210,24 +161,6 @@
 // const n = 3;
 // rotateMatrix(matrix, n);
 
-// Q. 42 Check given string is Anagram or Not
-// const isAnagram = () => {
-//     let firstWord = 'Mary';
-//     let secondWore = 'rmAy';
-
-//     firstWord =  firstWord.toLocaleLowerCase().split("").sort().join("")
-//     secondWore = secondWore.toLocaleLowerCase().split("").sort().join("")
-
-//     if(firstWord == secondWore){
-//         console.log('Anagaram')
-//     }else{
-//         console.log('Not Anagoram')
-//     }
-// }
-
-// isAnagram()
-
-
 
 // Q. 44 Write a program for valid braickets
 // function isValid(s) {
@@ -294,7 +227,6 @@
   
 //   // Call the fizzBuzz function with a limit of 100
 //   fizzBuzz(100);
-
 
 
 

@@ -7,7 +7,7 @@
     "configurations": [
         {
             "command": "npm start",
-            "name": "NILP Admin Debugger",
+            "name": "Debugger",
             "request": "launch",
             "type": "node-terminal"
         }

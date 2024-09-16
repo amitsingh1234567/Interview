@@ -798,3 +798,81 @@
 // var invokeLater2 = display.bind(obj2, "Bihar", "India");
 // invokeLater1()
 // invokeLater2()
+
+// Q. 22 Find the first missing odd number => DONE
+// const missingOddNum = () => {
+//     let arr = [5, 7, 9, 11, 15, 17, 20];
+//     const min = Math.min(...arr);
+//     const max = Math.max(...arr);
+
+//     for(let i = min; i<max; i++){
+//         if(i % 2 == 1){
+//             if(!arr.includes(i)){
+//                 console.log(i)
+//                 return
+//             }
+//         }
+//     }
+// }
+// missingOddNum()
+
+// Q. 23 Swaip number without third variable => DONE
+// const swaipNum = () => {
+//     let a = 5;
+//     let b = 10;
+    
+//     console.log("Before swapping: a =", a, "b =", b);
+    
+//     a = a + b; 
+//     b = a - b; 
+//     a = a - b; 
+    
+//     console.log("After swapping: a =", a, "b =", b);
+
+// }
+// swaipNum()
+
+// Q. 42 Check given string is Anagram or Not => NOT MANDATORY
+// const isAnagram = () => {
+//     let firstWord = 'Mary';
+//     let secondWore = 'rmAy';
+
+//     firstWord =  firstWord.toLocaleLowerCase().split("").sort().join("")
+//     secondWore = secondWore.toLocaleLowerCase().split("").sort().join("")
+
+//     if(firstWord == secondWore){
+//         console.log('Anagaram')
+//     }else{
+//         console.log('Not Anagoram')
+//     }
+// }
+
+// isAnagram()
+
+// Q. 19 
+// function twoSum(nums, target) {
+//     const numToIndexMap = {}; // Create a map to store numbers and their indices
+  
+//     for (let i = 0; i < nums.length; i++) {
+//       console.log('numToIndexMap :>> ', numToIndexMap);
+//       const complement = target - nums[i];
+//       console.log('complement :>> ', complement);
+  
+//       // Check if the complement exists in the map
+//       if (numToIndexMap.hasOwnProperty(complement)) {
+//         // Return the indices of the two numbers that add up to the target
+//         return [numToIndexMap[complement], i];
+//       }
+//       // Store the current number and its index in the map
+//       numToIndexMap[nums[i]] = i;
+//     }
+  
+//     // If no solution is found, return an empty array or handle the error as needed
+//     return [];
+//   }
+  
+//   // Example usage:
+//   const nums = [2, 7, 11, 15];
+//   const target = 22;
+//   const result = twoSum(nums, target);
+//   console.log(result); 
