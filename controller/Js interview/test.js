@@ -1,20 +1,9 @@
-function twoSum(arr, target){
-    const numToIndexMap = {};
-
-    for(let i = 0; i < arr.length; i++){
-        const complement = target - arr[i];
-        
-        if(numToIndexMap.hasOwnProperty(complement)){
-            return [numToIndexMap[complement], i];
-        };
-
-        numToIndexMap[arr[i]] = i;
-    }
-    return [];
+'use strict'
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
 };
 
-const arr = [1,2,5,9,20];
-const target = 25;
-
-const result = twoSum(arr, target);
-console.log(result);
+Object.preventExtensions(person);
+console.log(person)

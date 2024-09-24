@@ -37,6 +37,18 @@ Q.30 Write a program to print Captial A-Z using loop => DONE
 Q.31 Write a program to print Small a-z using loop => DONE
 Q.32 Find first missing Odd number of the given Array => DONE
 Q.33 Swaip number without third variable => DONE
+Q.34 Randomise the array element Or suffle the array => DONE
+Q.35 Write a program of FizzBuzz => DONE
+Q.36 How do you check if a string contains only digits => DONE
+Q.37 How do you find the longest word in a string => DONE
+Q.38 How do you check if two strings are anagrams => DONE
+Q.39 How do you count the number of vowels in a string => DONE
+Q.40 How do you count Vowels and Consonants in a given string => DONE
+Q.41 Find First Non Repeating Character => DONE
+Q.42 Find Second Non Repeating Character => DONE
+Q.43 How to make object immutable => DONE
+
+
 
 
 ===================> ADVANCE LABEL QUESTION <==================
@@ -44,7 +56,23 @@ Q.1 Write a program to find Second Largest number => DONE
 Q.2 Write a program to find Third Largest number => DONE
 Q.3 Write a program for Deep Copy of object => DONE
 Q.4 Write a program of Two Sum => DONE
+Q.5 Write a program to print * in Trangle Shape => DONE
+EX:-
+    *
+   ***
+  *****
+ *******
+*********
 
+Q.6 Write a program to print Number in Trangle Shape => DONE
+EX:-
+    1
+   212
+  32123
+ 4321234
+543212345   
+
+Q.7 Write a program
 
 
 
@@ -495,6 +523,232 @@ function swaipNum(){
 swaipNum()
 */
 
+// Q.34 Randomise the array element Or suffle the array
+/*
+function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[randomIndex]] = [arr[randomIndex], arr[i]];
+    };
+    return arr;
+};
+
+const arr = [5, 9, 2, 7, 3, 1];
+const result = shuffleArray(arr);
+console.log(result);
+*/
+
+// Q.35 Write a program of FizzBuzz
+/*
+function fizzBuzz(num){
+    for(let i = 0; i < num; i++){
+        if(i % 5 == 0 && i % 3 === 0){
+            console.log("FizzBuzz");
+        }else if(i % 3 == 0){
+            console.log('Fizz');
+        }else if(i % 5 == 0){
+            console.log('Buzz');
+        }else{
+            console.log(i);
+        }
+    }
+}
+
+const num = 15
+fizzBuzz(num)
+*/
+
+
+/*
+function isNumeric(str){
+    return /^\d+$/.test(str);
+};
+
+const str = '156184';
+const result = isNumeric(str);
+console.log(result)
+*/
+
+
+/*
+function findLongestWord(str){
+    const words = str.split(' ');
+    var longestWord = '';
+
+    for(let word of words){
+        if(word.length > longestWord.length){
+            longestWord = word;
+        }
+    }
+    return longestWord;
+};
+
+console.log(findLongestWord("The quick brown fox jumps over the lazy dog"))
+*/
+
+// Q.38 How do you check if two strings are anagrams
+/*
+function isAnagaram(str1, str2){
+    const sortedStr1 =  str1.split('').sort().join('');
+    const sortedStr2 =  str2.split('').sort().join('');
+   
+    return sortedStr1 === sortedStr2;
+   };
+   
+   console.log(isAnagaram("listen", "silent"));
+*/
+
+// Q.39 How do you count the number of vowels in a string
+/*
+function countVowels(str){
+    const vowels = str.match(/[aeiou]/gi);
+    return vowels ? vowels.length : 0;
+}
+
+console.log(countVowels("haello world"))
+*/
+
+// Q.40 How do you count Vowels and Consonants in a given string
+/*
+function countVowelsAndConsonants(str){
+    const vowels = ['a', 'e', 'i', 'o', 'u'];
+    str = str.toLowerCase();
+    str = str.split('');
+    var vowelCount = 0;
+    var consonantCount = 0;
+
+    for(let char of str){
+        if(char > 'a' && char <'z'){
+            if(vowels.includes(char)){
+                vowelCount++;
+            }else{
+                consonantCount++;
+            }
+        }
+    };
+    return {vowelCount, consonantCount};
+};
+
+const input = "Hello World!";
+const result = countVowelsAndConsonants(input);
+console.log(`Vowels: ${result.vowelCount}, Consonants: ${result.consonantCount}`);
+*/
+
+// Q.41 Find First Non Repeating Character
+/*
+function firstNonRepeatingChar(str){
+    const charCount = {};
+
+    for(let i = 0; i < str.length; i++){
+        const char = str[i];
+        charCount[char] = (charCount[char] || 0) + 1;
+    };
+
+    for(let key in charCount){
+        if(charCount[key] == 1)
+            return key;
+    }
+
+    return null;
+}
+
+const str = 'swss';
+const result = firstNonRepeatingChar(str);
+console.log(result)
+*/
+
+// Q.42 Find Second Non Repeating Character
+/*
+function findSecondNonRepeatChar(str){
+
+    const charCount = {};
+
+    for(let i = 0; i < str.length; i++){
+        const char = str[i];
+        charCount[char] = (charCount[char] || 0) + 1;
+    };
+
+    const nonRepeatingChars = [];
+    for(let key in charCount){
+        if(charCount[key] == 1){
+            nonRepeatingChars.push(key);
+        }
+    };
+
+    return nonRepeatingChars.length >= 2 ? nonRepeatingChars[1] : null;
+};
+
+const str = 'swriss';
+
+const result = findSecondNonRepeatChar(str);
+console.log(result);
+*/
+
+// Q.43 How to make object immutable 
+/*
+1. How to make imutable object on only one key 
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+  };
+
+  Object.defineProperty(person, 'aadharNumber', {writable: false});
+
+console.log(person)
+person.aadharNumber = '7888-5846-9852';
+console.log(person)
+
+2. I want hide a key in the given object 
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+  };
+
+  Object.defineProperty(person, 'aadharNumber', {enumerable: false});
+
+console.log(person)
+
+3. Using Object.freeze() to Prevent Adding Updating and Deleting Properties
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+
+Object.freeze(person);
+person.aadharNumber = '9964-6254-8965'
+console.log(person)
+
+4. Using Object.seal() to Prevent Adding or Deleting Properties (But Allow Updates)
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+
+Object.seal(person)
+console.log(person)
+
+5.Using Object.preventExtensions() to Prevent Adding Properties (But Allow Updates and Delete)
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+
+Object.preventExtensions(person);
+console.log(person)
+
+*/
+
+
+
+
+
+
+
 // ===================> ADVANCE LABEL QUESTION <==================
 
 // Q.1 Write a program to find Second Largest number
@@ -621,4 +875,78 @@ const target = 25;
 
 const result = twoSum(arr, target);
 console.log(result);
+*/
+
+
+/*
+function printTrangle(rows){
+    for (let i = 1; i <= rows; i++) {
+        let row = '';
+        
+        // Add spaces in each row
+        for(let j = 1; j <= rows - i; j++){
+            row += ' '; 
+        }
+
+        // Adding * in each row 
+        for(let k = 1; k <= i * 2 - 1; k++){
+            row += '*';
+        }
+        console.log(row)
+    }
+}
+
+const k = 10;
+printTrangle(k)
+*/
+
+// Q.5 Write a program to print * in Trangle Shape
+/*
+function printTrangle(rows){
+    for (let i = 1; i <= rows; i++) {
+        let row = '';
+        
+        // Add spaces in each row
+        for(let j = 1; j <= rows - i; j++){
+            row += ' '; 
+        }
+
+        // Adding * in each row 
+        for(let k = 1; k <= i * 2 - 1; k++){
+            row += '*';
+        }
+        console.log(row)
+    }
+}
+
+const k = 10;
+printTrangle(k)
+*/
+
+// Q.6 Write a program to print Number in Trangle Shape
+/*
+function printNumberTrangle(rows){
+    for(let i = 1; i <= rows; i++){
+        let row = '';
+
+        // Add space in each row
+        for(let j = 1; j <= rows - i; j++){
+            row += ' ';
+        };
+
+        // Add descending order
+        for(let k = i; k >= 1; k--){
+            row += k;
+        };
+
+        // Add ascending order
+        for(let l = 2; l <= i; l++){
+            row += l;
+        }
+        console.log(row)
+    };
+};
+
+const k = 8;
+printNumberTrangle(k);
 */

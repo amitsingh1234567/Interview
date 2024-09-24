@@ -1,46 +1,4 @@
-// Q. 19 
-// function twoSum(nums, target) {
-//     const numToIndexMap = {}; // Create a map to store numbers and their indices
-  
-//     for (let i = 0; i < nums.length; i++) {
-//       console.log('numToIndexMap :>> ', numToIndexMap);
-//       const complement = target - nums[i];
-//       console.log('complement :>> ', complement);
-  
-//       // Check if the complement exists in the map
-//       if (numToIndexMap.hasOwnProperty(complement)) {
-//         // Return the indices of the two numbers that add up to the target
-//         return [numToIndexMap[complement], i];
-//       }
-//       // Store the current number and its index in the map
-//       numToIndexMap[nums[i]] = i;
-//     }
-  
-//     // If no solution is found, return an empty array or handle the error as needed
-//     return [];
-//   }
-  
-//   // Example usage:
-//   const nums = [2, 7, 11, 15];
-//   const target = 22;
-//   const result = twoSum(nums, target);
-//   console.log(result); 
 
-
-// Q. 38 Randomise array element Or suffle the array
-// const shuffleArray = () => {
-//     const myArray = [1, 2, 3, 4, 5];
-//     for(let i = myArray.length - 1 ; i > 0; i--){
-//       let random = Math.floor(Math.random()*myArray[i]);
-
-//       let temp = myArray[i];
-//       myArray[i] = myArray[random];
-//       myArray[random] = temp;
-//     }   
-//     console.log('myArray :>> ', myArray);
-// }
-
-// shuffleArray()
 
 // Q. 39
 // const zeroMatrix = (matrix,n) => {
@@ -201,78 +159,6 @@
 //   console.log(isValid(input3)); // false
 //   console.log(isValid(input4)); // false
 //   console.log(isValid(input5)); // true
-
-
-// Q. 46 Write a program of fizzBuzz to 100 number
-// function fizzBuzz(limit) {
-//     for (let i = 1; i <= limit; i++) {
-//       // Check for multiples of both 3 and 5 first
-//       if (i % 3 === 0 && i % 5 === 0) {
-//         console.log("FizzBuzz");
-//       } 
-//       // Check for multiples of 3
-//       else if (i % 3 === 0) {
-//         console.log("Fizz");
-//       }
-//       // Check for multiples of 5
-//       else if (i % 5 === 0) {
-//         console.log("Buzz");
-//       } 
-//       // If not a multiple of 3 or 5, print the number
-//       else {
-//         console.log(i);
-//       }
-//     }
-//   }
-  
-//   // Call the fizzBuzz function with a limit of 100
-//   fizzBuzz(100);
-
-
-
-// Q. 58
-// function printTrangle(rows){
-//     for(let i= 1; i<=rows; i++){
-//         let row = '';
-        
-//         for(let j = 1; j<=rows - i; j++){
-//             row += ' ';
-//         }
-
-//         for(let k = 1; k <= i * 2 - 1; k++){
-//             row += '*';
-//         }
-//         console.log(row);
-//     }
-// }
-
-// const k = 5;
-// printTrangle(k)
-
-// Q. 59
-// function printNumberTrangle(rows) {
-//     for(let i = 1; i <= rows; i++){
-//         let row = '';
-
-//     for(let j = 1; j <= rows - i; j++){
-//         row += ' ';
-//     } 
-    
-//     // Add descending order
-//     for(let k = i; k >= 1; k--){
-//         row += k;
-//     }
-
-//     // Add ascending number
-//     for(let l = 2; l <= i; l++){
-//         row += l;
-//     }
-//     console.log(row);
-// }
-// }
-
-// const k = 5;
-// printNumberTrangle(k);
 
 
 // function setZeroes(matrix) {
@@ -436,3 +322,105 @@ function transposeMatrix(matrix) {
     printMatrix(resultMatrix);
   }
   
+
+
+
+
+
+
+
+//   function thirdNonRepeatingChar(str) {
+//     const charCount = {};
+
+//     // Step 1: Count the frequency of each character in the string
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i];
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+
+//     // Step 2: Collect all non-repeating characters
+//     const nonRepeatingChars = [];
+//     for (let i = 0; i < str.length; i++) {
+//         if (charCount[str[i]] === 1) {
+//             nonRepeatingChars.push(str[i]);
+//         }
+//     }
+
+//     console.log(nonRepeatingChars)
+//     // Step 3: Return the third non-repeating character, or null if not found
+//     return nonRepeatingChars.length >= 3 ? nonRepeatingChars[2] : null;
+// }
+
+// // Example usage:
+// const input = "swisshello";
+// const result = thirdNonRepeatingChar(input);
+// console.log(result); // Output: "h"
+
+
+
+
+// function secondNonRepeatingChar(str) {
+//     const charCount = {};
+
+//     // Step 1: Count the frequency of each character in the string
+//     for (let i = 0; i < str.length; i++) {
+//         const char = str[i];
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
+
+//     // Step 2: Collect all non-repeating characters
+//     const nonRepeatingChars = [];
+//     for (let i = 0; i < str.length; i++) {
+//         if (charCount[str[i]] === 1) {
+//             nonRepeatingChars.push(str[i]);
+//         }
+//     }
+
+//     console.log(charCount)
+
+//     // Step 3: Return the second non-repeating character, or null if not found
+//     return nonRepeatingChars.length >= 2 ? nonRepeatingChars[1] : null;
+// }
+
+// // Example usage:
+// const input = "szwiss";
+// const result = secondNonRepeatingChar(input);
+// console.log(result); // Output: "s"
+
+
+
+
+
+
+
+function mergeIntervals(intervals) {
+  if (intervals.length === 0) return [];
+
+  // Step 1: Sort intervals based on the starting time
+  intervals.sort((a, b) => a[0] - b[0]);
+
+  // Step 2: Create an array to hold merged intervals
+  const merged = [intervals[0]];
+
+  // Step 3: Iterate through the intervals
+  for (let i = 1; i < intervals.length; i++) {
+      let lastMergedInterval = merged[merged.length - 1];
+      let currentInterval = intervals[i];
+
+      // If the current interval overlaps with the last merged one, merge them
+      if (currentInterval[0] <= lastMergedInterval[1]) {
+          lastMergedInterval[1] = Math.max(lastMergedInterval[1], currentInterval[1]);
+      } else {
+          // Otherwise, add the current interval to the merged array
+          merged.push(currentInterval);
+      }
+  }
+
+  return merged;
+}
+
+// Example usage:
+const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+console.log(mergeIntervals(intervals));
+// Output: [[1, 6], [8, 10], [15, 18]]
+
