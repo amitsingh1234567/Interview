@@ -47,6 +47,18 @@ Q.40 How do you count Vowels and Consonants in a given string => DONE
 Q.41 Find First Non Repeating Character => DONE
 Q.42 Find Second Non Repeating Character => DONE
 Q.43 How to make object immutable => DONE
+Q.44 Find the Longest Key in an Object => DONE
+Q.45 Given an array of objects, group them by a specific property => DONE
+Q.46 Write a function that merges two objects. If both objects have the same key, 
+the value from the second object should overwrite the value from the first => DONE
+Q.47 Given an array of objects, write a function that counts how many times each unique property value occurs => DONE
+Q.48 Write a function that merges two objects. If both objects have the same key, 
+the value from the second object should overwrite the value from the first (Plain Object) => DONE
+Q.49 Write a function that merges two objects. If both objects have the same key, 
+the value from the second object should overwrite the value from the first (Nested Object)
+Q.50 find the position of first and final occurrence of an element in an array element is 5 => DONE
+Q.51 Remove all the zero at the end => DONE
+
 
 
 
@@ -72,8 +84,50 @@ EX:-
  4321234
 543212345   
 
-Q.7 Write a program
+Q.7 Write a function that flattens a deeply nested object, so all keys are brought to the top level, separated by dots => DONE
+Q.8 Write a function that returns the deepest key-value pair in a nested object => DONE
+Q.9 Write a function that converts a JavaScript object into a query string that can be used in a URL 
+(Without Nested Object) => DONE
+Q.10 Write a function to compare two objects for equality. Make sure to account for nested objects
+Q.11 Write a program for setZero Matrix => DONE
+  4   1   3           4   1   0
+  2  -4   0 ------>   0   0   0
+  5   9   2           5   9   0
 
+Q.12 Given an array of intervals where intervals[i] = [starti, endi), merge all overlapping intervals and return an 
+array of the non-overlapping intervals that cover all the intervals in the input => DONE
+Q.13 Given a string s, find the length of the longest substring without repeating characters.
+Q.14 Print a Right-Angled Triangle Pattern => DONE
+  1
+  12
+  123
+  1234
+  12345
+
+Q.15 Print an Inverted Right-Angled Triangle Pattern => DONE
+  54321
+  5432
+  543
+  54
+  5
+
+Q.16 Print a Pyramid Number Pattern => DONE
+    1
+   121
+  12321
+ 1234321
+123454321
+
+Q.17 Print a Number Diamond Pattern
+    1
+   121
+  12321
+ 1234321
+123454321
+ 1234321
+  12321
+   121
+    1
 
 
 
@@ -558,7 +612,7 @@ const num = 15
 fizzBuzz(num)
 */
 
-
+// Q.36 How do you check if a string contains only digits
 /*
 function isNumeric(str){
     return /^\d+$/.test(str);
@@ -569,7 +623,7 @@ const result = isNumeric(str);
 console.log(result)
 */
 
-
+// Q.37 How do you find the longest word in a string
 /*
 function findLongestWord(str){
     const words = str.split(' ');
@@ -690,10 +744,14 @@ console.log(result);
 const person = {
     name: "John",
     age: 25,
-    aadharNumber: "1234-5678-9012"
+    aadharNumber: "1234-5678-9012",
+    details: {email: "test@gmail.com"}
   };
 
   Object.defineProperty(person, 'aadharNumber', {writable: false});
+  // For Nested Object   
+  Object.defineProperty(person.details, 'email', {writable: false}); 
+
 
 console.log(person)
 person.aadharNumber = '7888-5846-9852';
@@ -742,6 +800,201 @@ Object.preventExtensions(person);
 console.log(person)
 
 */
+
+// Q.44 Find the Longest Key in an Object
+/*
+function longestKey(obj){
+    var largestKey = '';
+    for(let key in obj){
+      if(key.length > largestKey.length){
+        largestKey = key;
+      }
+    };
+    
+    return largestKey;
+  }
+  
+  const obj = { short: 1, longerKey: 2, longestKeyEver: 3 };
+  const largestKeyName = longestKey(obj);
+  console.log(largestKeyName)
+*/
+
+// Q.45 Given an array of objects, group them by a specific property
+/*
+function groupByProperty(arr, property) {
+    const grouped = {};
+  
+    arr.forEach((item) => {
+      const key = item[property];
+  
+      // If the key doesn't exist in the grouped object, create an empty array for it
+      if (!grouped[key]) {
+        grouped[key] = [];
+      }
+  
+      // Add the current item to the appropriate group
+      grouped[key].push(item);
+    });
+  
+    return grouped;
+  }
+  
+  const data = [
+    { name: 'John', group: 'A' },
+    { name: 'Jane', group: 'B' },
+    { name: 'Jake', group: 'A' }
+  ];
+  
+  const result = groupByProperty(data, 'group');
+  console.log(result)
+  */
+
+// Q.46 Write a function that merges two objects. If both objects have the same key, 
+// the value from the second object should overwrite the value from the first
+/*
+function mergeObjects(obj1, obj2){
+const merged = { ...obj1 };
+
+for(let key in obj2){
+    if(obj2.hasOwnProperty(key)){
+    merged[key] = obj2[key]
+    }
+}
+
+return merged;
+}
+
+
+const obj1 = { name: "John", age: 25, city: "New York" };
+const obj2 = { age: 30, city: "London", profession: "Engineer" };
+
+const merged = mergeObjects(obj1, obj2);
+console.log(merged);
+*/
+
+// Q.47 Given an array of objects, write a function that counts how many times each unique property value occurs
+/*
+  function countPropertyValues(arr, property) {
+    const counts = {};
+  
+    arr.forEach(item => {
+      const value = item[property];
+      counts[value] = (counts[value] || 0) + 1;
+    });
+  
+    return counts;
+  }
+  
+  const people = [
+    { name: "John", age: 25, city: "New York" },
+    { name: "Jane", age: 30, city: "London" },
+    { name: "Mike", age: 25, city: "New York" },
+    { name: "Sara", age: 30, city: "Paris" },
+    { name: "Tom", age: 25, city: "London" }
+  ];
+  
+  // Count how many times each 'age' occurs
+  const ageCounts = countPropertyValues(people, 'age');
+  console.log(ageCounts);
+*/
+
+// Q.48 Write a function that merges two objects. If both objects have the same key, 
+// the value from the second object should overwrite the value from the first (Plain Object)
+/*
+function mergeObjects(obj1, obj2) {
+    const merged = { ...obj1, ...obj2 };
+    return merged;
+  }
+  
+  const obj1 = {
+    name: "John",
+    age: 25,
+    city: "New York"
+  };
+  
+  const obj2 = {
+    age: 30,  // This will overwrite the age from obj1
+    country: "USA"
+  };
+  
+  const mergedObject = mergeObjects(obj1, obj2);
+  console.log(mergedObject);
+*/
+
+
+// Q.49 Write a function that merges two objects. If both objects have the same key, 
+// the value from the second object should overwrite the value from the first (Nested Object)
+/*
+function deepMergeObjects(obj1, obj2) {
+    const merged = { ...obj1 };
+  
+    for (let key in obj2) {
+  
+      if (obj2.hasOwnProperty(key)) {
+        if (typeof obj2[key] === 'object' && obj2[key] !== null && !Array.isArray(obj2[key])) {
+          merged[key] = deepMergeObjects(merged[key] || {}, obj2[key]);
+        } else {
+          merged[key] = obj2[key];
+        }
+      }
+    }
+  
+    return merged;
+  }
+  
+  const obj1 = {
+    name: "John",
+    age: 25,
+    address2: {
+      city: "New York",
+      postalCode: "10001"
+    }
+  };
+  
+  const obj2 = {
+    address: {
+      postalCode: "10002",
+      country: "USA"
+    },
+    age: 30,
+  };
+  
+  const mergedObject = deepMergeObjects(obj1, obj2);
+  console.log(mergedObject);
+*/
+
+// Q.50 find the position of first and final occurrence of an element in an array element is 5
+/*
+let arr = [1, 5, 3, 4, 6, 5, 7, 5, 8, 5];
+let element = 5;
+
+let firstOccurrence = -1;
+let lastOccurrence = -1;
+
+for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === element) {
+        if (firstOccurrence === -1) {
+            firstOccurrence = i;  // Set first occurrence
+        }
+        lastOccurrence = i;  // Continuously update for last occurrence
+    }
+}
+
+console.log("First occurrence of 5 is at index:", firstOccurrence);
+console.log("Last occurrence of 5 is at index:", lastOccurrence);
+*/
+
+// Q.51 Remove all the zero at the end
+/*
+let arr = [0, 5, 0, 0, 3, 1, 15, 0, 12, 0, 0, 0];
+
+while (arr[arr.length - 1] === 0) {
+    arr.pop();  // Remove the last element if it's zero
+}
+
+console.log(arr);
+*/
+
 
 
 
@@ -949,4 +1202,333 @@ function printNumberTrangle(rows){
 
 const k = 8;
 printNumberTrangle(k);
+*/
+
+// Q.7 Write a function that flattens a deeply nested object, so all keys are brought to the top level, separated by dots
+/*
+function flattenObject(obj, parentKey = '', result = {}){
+  
+    for(let key in obj){
+      const newKey  = parentKey ? `${parentKey}.${key}` : key;
+      if(typeof obj[key] === 'object' && obj[key] != null && !Array.isArray(obj[key])){
+        flattenObject(obj[key], newKey, result);
+      }else{
+        result[newKey] = obj[key];
+      }
+    }
+    
+    return result;
+  }
+  
+  const nestedObject = {
+    name: "John",
+    address: {
+      street: "Main St",
+      city: "New York",
+      coordinates: {
+        lat: 40.7128,
+        long: -74.0060
+      }
+    },
+    contact: {
+      phone: "123-456-7890",
+      email: "john@example.com"
+    }
+  };
+  
+  const flattened = flattenObject(nestedObject);
+  console.log(flattened);
+*/
+
+// Q.8 Write a function that returns the deepest key-value pair in a nested object
+/*
+function findDeepestPair(obj, depth = 0, parentKey = '') {
+  let deepest = { key: parentKey, value: obj, depth }; // Track the deepest key-value pair
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+      // If the value is an object, recurse and find the deeper key-value pair
+      if (typeof value === 'object' && value !== null) {
+        const deeper = findDeepestPair(value, depth + 1, newKey);
+        
+        // Update the deepest key-value pair if a deeper one is found
+        if (deeper.depth > deepest.depth) {
+          deepest = deeper;
+        }
+      } else {
+        // If it's not an object, update the deepest pair if this is deeper
+        if (depth > deepest.depth) {
+          deepest = { key: newKey, value, depth };
+        }
+      }
+    }
+  }
+  return deepest;
+}
+
+const nestedObject = {
+  name: "John",
+  address: {
+    street: "Main St",
+    city: "New York",
+    coordinates: {
+      lat: 40.7128,
+      long: -74.0060,
+      detail: {
+        zone: 3,
+        info: {
+          code: "A1B2"
+        }
+      }
+    }
+  },
+  contact: {
+    phone: "123-456-7890",
+    email: "john@example.com"
+  }
+};
+
+const deepestPair = findDeepestPair(nestedObject);
+console.log(deepestPair);
+*/
+
+// Q.9 Write a function that converts a JavaScript object into a query string that can be used in a URL 
+// (Without Nested Object)
+/*
+function convertQueryStr(obj){
+    return Object.keys(obj).map(keys => `${keys}=${obj[keys]}`).join("&");
+  }
+  
+  const params = { name: 'John', age: 30, details:{x: '555'}};
+  const result = convertQueryStr(params);
+  console.log(result)
+*/
+
+// Q.10 Write a function to compare two objects for equality. Make sure to account for nested objects
+/*
+function deepEqual(obj1, obj2) {
+    // Check if both values are strictly equal (covers primitive types and reference equality)
+    if (obj1 === obj2) return true;
+  
+    // If either of the values is not an object or is null, they are not equal
+    if (typeof obj1 !== 'object' || obj1 === null || typeof obj2 !== 'object' || obj2 === null) {
+      return false;
+    }
+  
+    // Get the keys of both objects
+    const keys1 = Object.keys(obj1);
+    const keys2 = Object.keys(obj2);
+  
+    // If the objects have different numbers of keys, they are not equal
+    if (keys1.length !== keys2.length) return false;
+  
+    // Compare the values for each key in both objects
+    for (let key of keys1) {
+      // If the second object doesn't have the key or the values for the key aren't equal, return false
+      if (!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])) {
+        return false;
+      }
+    }
+  
+    // If all keys and values match, the objects are equal
+    return true;
+  }
+  
+  
+  const obj1 = {
+    name: 'John',
+    age: 30,
+    address: {
+      city: 'New York',
+      postalCode: 10001
+    }
+  };
+  
+  const obj2 = {
+    name: 'John',
+    age: 30,
+    address: {
+      city: 'New York',
+      postalCode: 10001
+    }
+  };
+  
+  console.log(deepEqual(obj1, obj2));  // true
+  
+  const obj3 = {
+    name: 'John',
+    age: 30,
+    address: {
+      city: 'New York',
+      postalCode: 10002
+    }
+  };
+  
+  console.log(deepEqual(obj1, obj3));  // false
+*/  
+
+// Q.11 Write a program for setZero Matrix
+/*
+const zeroMatrix = (matrix, n) => {
+  let rowMarker = [false];
+  let colMarker = [false];
+
+  // First pass: find the zeroes and mark corresponding rows and columns
+  for (let r = 0; r < n; r++) {
+      for (let c = 0; c < n; c++) {
+          if (matrix[r][c] === 0) { 
+              rowMarker[r] = true;
+              colMarker[c] = true;
+          }
+      }
+  }
+
+  // Second pass: zero out rows and columns
+  for (let r = 0; r < n; r++) {
+      for (let c = 0; c < n; c++) {
+          if (rowMarker[r] || colMarker[c]) {
+              matrix[r][c] = 0;
+          }
+      }
+  }
+
+  // Print the matrix
+  matrix.forEach(row => console.log(row.join("  ")));
+};
+
+const matrix = [
+    [4, 6, 3],
+    [3, 0, 1],
+    [5, 6, 2]
+];
+
+zeroMatrix(matrix, 3);
+*/
+
+// Q.12 Given an array of intervals where intervals[i] = [starti, endi), merge all overlapping intervals and return an 
+// array of the non-overlapping intervals that cover all the intervals in the input 
+/*
+function mergeIntervals(intervals) {
+  if(intervals.length === 0) return [];
+
+  intervals.sort((a, b) => a[0] - b[0]);
+  const merged = [intervals[0]];
+  
+  for(let i = 1; i < intervals.length; i++){
+      let lastMergedInterval = merged[merged.length - 1];
+      let currentInterval = intervals[i];
+      if(currentInterval[0] <= lastMergedInterval[1]){
+          lastMergedInterval[1] = Math.max(lastMergedInterval[1], currentInterval[1]);
+      }else{
+          merged.push(currentInterval);
+      };
+  };
+
+  return merged;
+};
+
+const intervals = [[1, 3], [2, 6], [8, 10], [15, 18]];
+const result = mergeIntervals(intervals);
+console.log(result);
+*/
+
+// Q.13 Given a string s, find the length of the longest substring without repeating characters.
+/*
+function lengthOfLongestSubstring(s) {
+  let n = s.length;
+  let maxLength = 0;
+  let start = 0;
+  let charIndexMap = new Map();
+
+  for (let end = 0; end < n; end++) {
+      let char = s[end];
+
+      // If the character is already in the map, move the start pointer
+      if (charIndexMap.has(char)) {
+          start = Math.max(start, charIndexMap.get(char) + 1);
+      }
+
+      // Update the character's index
+      charIndexMap.set(char, end);
+
+      // Calculate the length of the current substring
+      maxLength = Math.max(maxLength, end - start + 1);
+  }
+
+  return maxLength;
+}
+
+// Example usage:
+console.log(lengthOfLongestSubstring("abcabcbb"));
+*/
+
+// Q.14 Print a Right-Angled Triangle Pattern
+/*
+function printTrangle(n){
+  for(let i = 1; i<= n; i++){
+      let row = '';
+      for(let j = 1; j <= i; j++){
+          row += j;
+      }
+      console.log(row);
+  }
+};
+
+const n = 5;
+printTrangle(n);
+*/
+
+// Q.15 Print an Inverted Right-Angled Triangle Pattern
+/*
+function printInvertedTrangle(n){
+  for(let i = n; i >= 1; i--){
+      let rows = '';
+      for(let j = n; j >= n - i + 1; j--){
+          rows += j;
+      }
+      console.log(rows);
+  }
+};
+
+const n = 5;
+printInvertedTrangle(n);
+*/
+
+// Q.16 Print a Pyramid Number Pattern
+/*
+function printParymid(n){
+  for(let i = 1; i <= n; i++){
+      let row = ' '.repeat(n - i);
+      for(let j = 1; j <= i; j++) row += j;
+      for(let j = i - 1; j >= 1; j--) row += j;
+      console.log(row);
+  }   
+}
+const n = 5;
+printParymid(n);
+*/
+
+// Q.17 Print a Number Diamond Pattern
+/*
+function printDiamond(n) {
+  for(let i = 1; i <= n; i++){
+      let row = ' '.repeat(n - i);
+      for(let j = 1; j <= i; j++) row += j;
+      for(let j = i - 1; j >= 1; j--) row += j;
+
+      console.log(row);
+  };
+
+  for(let i = n - 1; i >= 1; i--){
+      let row = ' '.repeat(n - i);
+      for(let j = 1; j <= i; j++) row += j;
+      for(let j = i - 1; j >= 1; j--) row += j;
+
+      console.log(row);
+  }
+}
+printDiamond(5);
 */
