@@ -653,7 +653,7 @@ if(obj.hasOwnProperty(keyToCheck)){
 Q.24
 var obj = {};
 key = 'constructor';
-l
+
 if(key in obj){
     console.log('Key found');
 }else{
@@ -683,6 +683,7 @@ console.log([] == [])
 
 
 #228
+15 => done
 
 */
 

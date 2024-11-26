@@ -118,7 +118,7 @@ Q.16 Print a Pyramid Number Pattern => DONE
  1234321
 123454321
 
-Q.17 Print a Number Diamond Pattern
+Q.17 Print a Number Diamond Pattern => DONE
     1
    121
   12321
@@ -128,6 +128,33 @@ Q.17 Print a Number Diamond Pattern
   12321
    121
     1
+
+Q.18 Print a Floyd's Triangle => DONE
+  1
+  2 3
+  4 5 6
+  7 8 9 10
+  11 12 13 14 15
+
+
+Q.19 Print a Number Square Pattern => DONE
+11111
+22222
+33333
+44444
+55555
+
+Q.20 Print Trangle Shape => DONE
+        1          
+      1 2 3        
+    1 2 3 4 5      
+  1 2 3 4 5 6 7    
+1 2 3 4 5 6 7 8 9  
+
+
+
+
+
 
 
 
@@ -1531,4 +1558,50 @@ function printDiamond(n) {
   }
 }
 printDiamond(5);
+*/
+
+// Q.18 Print a Floyd's Triangle
+/*
+function printFloydTriangle(n){
+  let num = 1;
+  for(let i = 1; i <= n; i++){
+      let row = '';
+      for(let j = 1; j <= i; j++){
+          row += num + " ";
+          num++;
+      }
+      console.log(row)
+  }
+}
+
+printFloydTriangle(5)
+*/
+
+// Q.19 Print a Number Square Pattern
+/*
+function printNumberSquare(n){
+  for(let i = 1; i <= n; i++){
+  console.log(String(i).repeat(n))        
+  }
+}
+
+printNumberSquare(5)
+*/
+
+// Q.20 Print Trangle Shape
+/*
+const n = 5;
+for (let i = 1; i <= n; i++) {
+    let arr = [];
+    let count = 1;
+    for (let j = 1; j <= 2 * n; ++j) {
+        if (i + j >= n + 1 && (i >= j - n + 1)) {
+            arr.push(count);
+            count++;
+        } else {
+            arr.push(' ');
+        }
+    }
+    console.log(arr.join(' '));
+}
 */
