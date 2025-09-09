@@ -84,7 +84,7 @@ EX:-
  4321234
 543212345   
 
-Q.7 Write a function that flattens a deeply nested object, so all keys are brought to the top level, separated by dots => DONE
+Q.7 Write a function that flattens a deeply nested object, so all keys are brought to the top level, separated by dots => DONE *
 Q.8 Write a function that returns the deepest key-value pair in a nested object => DONE
 Q.9 Write a function that converts a JavaScript object into a query string that can be used in a URL 
 (Without Nested Object) => DONE
@@ -151,8 +151,15 @@ Q.20 Print Trangle Shape => DONE
   1 2 3 4 5 6 7    
 1 2 3 4 5 6 7 8 9  
 
+Q.21 Write a program to sum row and column of a Matrix
+Q.22 Write a program to sum of Square Matrix
+Q.23 Write a program to check valid brackets
 
-
+Q.24 Write a program to print below pattern
+1 2 4 7
+3 5 8 11
+6 9 12 14
+10 13 15 16
 
 
 
@@ -622,20 +629,19 @@ console.log(result);
 // Q.35 Write a program of FizzBuzz
 /*
 function fizzBuzz(num){
-    for(let i = 0; i < num; i++){
-        if(i % 5 == 0 && i % 3 === 0){
-            console.log("FizzBuzz");
-        }else if(i % 3 == 0){
+    for(let i = 1; i <= num; i++){
+        if(i % 5 === 0 && i % 3 === 0){
+            console.log('FizzBuzz');
+        }else if(i % 3 === 0){
             console.log('Fizz');
-        }else if(i % 5 == 0){
+        }else if(i % 5 === 0){
             console.log('Buzz');
-        }else{
-            console.log(i);
+        }else {
+            console.log(i)
         }
     }
 }
-
-const num = 15
+const num = 15;
 fizzBuzz(num)
 */
 
@@ -733,7 +739,7 @@ function firstNonRepeatingChar(str){
     return null;
 }
 
-const str = 'swss';
+const str = 'swvss';
 const result = firstNonRepeatingChar(str);
 console.log(result)
 */
@@ -790,7 +796,6 @@ const person = {
     age: 25,
     aadharNumber: "1234-5678-9012"
   };
-
   Object.defineProperty(person, 'aadharNumber', {enumerable: false});
 
 console.log(person)
@@ -1270,24 +1275,21 @@ function flattenObject(obj, parentKey = '', result = {}){
 // Q.8 Write a function that returns the deepest key-value pair in a nested object
 /*
 function findDeepestPair(obj, depth = 0, parentKey = '') {
-  let deepest = { key: parentKey, value: obj, depth }; // Track the deepest key-value pair
+  let deepest = { key: parentKey, value: obj, depth };
 
   for (let key in obj) {
     if (obj.hasOwnProperty(key)) {
       const value = obj[key];
       const newKey = parentKey ? `${parentKey}.${key}` : key;
 
-      // If the value is an object, recurse and find the deeper key-value pair
       if (typeof value === 'object' && value !== null) {
         const deeper = findDeepestPair(value, depth + 1, newKey);
         
-        // Update the deepest key-value pair if a deeper one is found
         if (deeper.depth > deepest.depth) {
           deepest = deeper;
         }
       } else {
-        // If it's not an object, update the deepest pair if this is deeper
-        if (depth > deepest.depth) {
+        if (depth + 1 > deepest.depth) {
           deepest = { key: newKey, value, depth };
         }
       }
@@ -1604,4 +1606,117 @@ for (let i = 1; i <= n; i++) {
     }
     console.log(arr.join(' '));
 }
+*/
+
+// Q.21 Write a program to sum row and column of a Matrix
+/*
+function sumMatrixRowsAndColumns(matrix) {
+  const rowSum = [];
+  const colSum = new Array(matrix[0].length).fill(0); // Initialize column sums to 0
+
+  for (let i = 0; i < matrix.length; i++) {
+      let sum = 0; // Sum for the current row
+      for (let j = 0; j < matrix[i].length; j++) {
+          sum += matrix[i][j]; // Add current element to row sum
+          colSum[j] += matrix[i][j]; // Add current element to column sum
+      }
+      rowSum.push(sum); // Store row sum
+  }
+
+  console.log("Row Sums:", rowSum);
+  console.log("Column Sums:", colSum);
+}
+
+// Example usage:
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+sumMatrixRowsAndColumns(matrix);
+*/
+
+// Q.22 Write a program to sum of Square Matrix
+/*
+function sumOfSquaresMatrixRowsAndColumns(matrix) {
+  const rowSumSquares = [];
+  const colSumSquares = new Array(matrix[0].length).fill(0); // Initialize column sums to 0
+
+  for (let i = 0; i < matrix.length; i++) {
+      let rowSquareSum = 0; // Sum of squares for the current row
+      for (let j = 0; j < matrix[i].length; j++) {
+          const square = matrix[i][j] ** 2; // Square of the current element
+          rowSquareSum += square;          // Add square to the current row's square sum
+          colSumSquares[j] += square;      // Add square to the current column's square sum
+      }
+      rowSumSquares.push(rowSquareSum); // Store row square sum
+  }
+
+  console.log("Row Sum of Squares:", rowSumSquares);
+  console.log("Column Sum of Squares:", colSumSquares);
+}
+
+// Example usage:
+const matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+sumOfSquaresMatrixRowsAndColumns(matrix);
+*/
+
+
+// Q.23 Write a program to check valid brackets 
+/*
+function isValidBrackets(s) {
+    const stack = [];
+    const bracketMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
+
+    for (let char of s) {
+        if (['{', '(', '['].includes(char)) {
+            stack.push(char);
+        } else if (['}', ']', ')'].includes(char)) {
+            if (stack.pop() !== bracketMap[char]) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+}
+
+
+console.log(isValidBrackets("({[]})"));      
+console.log(isValidBrackets("({[})"));      
+console.log(isValidBrackets("(([]))"));          
+console.log(isValidBrackets("({[})"));
+*/
+
+// Q.24 Write a program to print below pattern
+/*
+function printDiagonalMatrix(size) {
+  const matrix = Array.from({ length: size }, () => Array(size).fill(0));
+  let num = 1;
+
+  // Fill diagonals
+  for (let d = 0; d < 2 * size - 1; d++) {
+    for (let row = 0; row <= d; row++) {
+      let col = d - row;
+      if (row < size && col < size) {
+          matrix[row][col] = num++;
+      }
+    }
+  }
+
+  // Print the matrix
+  matrix.forEach((row) => console.log(row.join(" ")));
+}
+
+// Example usage
+printDiagonalMatrix(4);
 */

@@ -1,307 +1,60 @@
-/*
-01-10-2024 => 
-    
-    1
-   121
-  12321
- 1234321
-123454321
- 1234321
-  12321
-   121
-    1
+function mergeObjDeeply(obj1, obj2){
+  const result = { ...obj1 };
 
-
-* */
-
-
-
-var a = {color:"red"}
-var b= a
-b.color = "black"
-console.log(a,b)
-
-// Sorting
-let a = [1,3,5,2,4,3];
-
-function scnd(){
-console.log('1')
-setTimeout(function(){
-console.log('2');
-
-},100)
-console.log('3')
-}
-
-scnd();
-
-
-
-
-
-// const getPromise = () => {
-//     // console.log('1')
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             // console.log('2');
-//             resolve()
-//         }, 100)
-//     });
-// }
-
-
-getPromise().then(() => {
-    // console.log('3');
-}).catch((err) => {
-    
-});
-
-function short(arr){
-    for (let i = 0; i < arr.length - 1; i++){
-        let swapped = false
-        for (let j = 0; j < arr.length - i - 1; j++){
-            // swapping the elements
-            if (arr[j] > arr[j+1]){
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-                swapped = true
-            }
-        }
-        // if no elements are swapped
-        // that means our array is sorted
-        if(!swapped) break;
-    }
-
-    return arr
-}
-
-
-
-function bubbleSort(array) {
-    var done = false;
-    while (!done) {
-      done = true;
-      for (var i = 1; i < array.length; i += 1) {
-        if (array[i - 1] > array[i]) {
-          done = false;
-          var tmp = array[i - 1];
-          array[i - 1] = array[i];
-          array[i] = tmp;
-        }
+  for(let key in obj2){ 
+    if(typeof obj2[key] === 'object' && obj2[key] != null && !Array.isArray(obj2[key])){
+      result[key] = mergeObjDeeply(result[key], obj2[key]);
+      if(true){
+        console.log(result)
       }
+    }else{
+      result[key] = obj2[key];
     }
-  
-    return array;
-  }
-  
-  var numbers = [1,3,5,2,4,3];
-//   bubbleSort(numbers);
-// console.log(numbers);
-const result = short(numbers)
-console.log('result :>> ', result);
-
-
-function short1(arr){
-    for(i= 0; i< arr.length - 1; i++){
-        for(j = 0; j < arr.length - i - 1; j++){
-            //Swapping
-            
-            if (arr[j] > arr[j+1]){
-                console.log('loop :>> ', arr[j]);
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-                swapped = true
-            }
-        }
-    }
-
-    console.log('arr :>> ', arr);
+  };
+  return result;
 }
 
-
-
-
-short1([5,9,9,3])
-
-
-
-
-
-// function getResult() {
-//     console.log('1')
-//     return new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             console.log('2');
-//             resolve();
-//         },100)
-//     })
-// } 
-
-
-// getResult().then(()=> {
-// console.log('3')
-// })
-// .catch()
-
-// async function useAsyncAwait(){
-//     await getResult()
-//     console.log('3')
-// }
-
-// useAsyncAwait()
-
-
-// getResult().then()
-// console.log('1')
-
-/*"hello world*/
-
-
-// function  scnd () {
-//     console.log('1')
-//     const promise = new Promise(resolve, reject);
-//     return  setTimeout(() => {
-//         console.log('2');
-//     },100)
-//     // console.log('3')
-// } 
-
-
-// scnd()
-// .then()
-// .catch()
-
-
-
-// var a = {color:"red"}
-// var b = {...a}
-// b.color = "black"
-// console.log(a,b)
-
-
-// var a = {color:"red"}
-// var b= ...a
-// b.color = "black"
-// console.log(a,b)
-
-
-// let a = [1,3,5,2,4,3];
-
-
-
-// function scnd(){
-
-// console.log('1)
-// setTimeout(function(){
-// console.log('2');
-
-// },100)
-// console.log('3')
-// }
-
-
-// scnd();
-
-
-
-
-
-
-
-
-
-
-const getPromise = () => {
-    console.log('1')
-    const myPromise = new Promise((resolve, reject) => {
-        setTimeout(() => {
-            console.log('2')
-            resolve('Promise resolved');
-            // reject('Err')
-        }, 100)
-    })
-    return myPromise;
+const obj1 = {
+  name: "John",
+  address: {
+    city: "Delhi",
+    pin: { code: 110001 }
+  }
 };
 
-// getPromise().then((result) => {
-//     // console.log(result)
-//     console.log('3')
-// }).catch((err) => {
-//     console.log(err)
-// });
+const obj2 = {
+  age: 25,
+  address: {
+    pin: { zone: "North" }
+  }
+};
 
-const parent3 = async (result) => {
-    try{    
-        console.log('result :>> ', result);
-        await getPromise();
-        console.log('3')
-    }catch(err){
-        // console.log(err)
-    }
-} 
+/*
+First Call: -
+result:- {
+  name: "John",
+  address: {
+    city: "Delhi",
+    pin: { code: 110001 }
+  },
+  age: 25
+};
 
-// parent3()
+Second Call :- 
+result: - {city: "Delhi", pin: { code: 110001 }}
+Passed Parameter {city: "Delhi", pin: { code: 110001 }}, {pin: { zone: "North" }}
 
+Third Call: - 
+result: - { code: 110001 }
+Passed Parameter { code: 110001 }, { zone: "North" }
 
-
-
-
-
-
-
-
-const getSetTimeOutResult = async () => {
-    setTimeout(() => {
-        console.log('2')
-        // await someOtherFunction();
-      }, 1000);
-}
-
-const parent2 = async () => {
-    await getSetTimeOutResult()
-    console.log('3')
-}
-
-// parent2();
+After that loop will start again and you will get the key => "zone"
+and result become like { code: 110001, zone: "North" }
 
 
+ */
 
-
-
-
-const callMe = async () => {
-    console.log('1')
-    if(true){
-        setTimeout(() => {
-            console.log('2');
-            // resolve()
-        }, 100)
-        // return 'hello world'
-    }
-    // console.log('3')
-}
-
-const parent = async () => {
-    return  await callMe();
-}
-
-
-// (async () => {
-//     const a = await parent();
-//     console.log('3')
-//     // console.log(a)
-// })()
-
-const obj = {
-    a: 'dnvniv',
-    getData: function (){
-        console.log(this.a)
-    }
-}
-
-// obj.getData()
+console.log(mergeObjDeeply(obj1, obj2));
 
 
 
@@ -317,21 +70,68 @@ const obj = {
 
 
 
-short1 = (arr) => {
-    for(i= 0; i< arr.length - 1; i++){
-        for(j = 0; j < arr.length - i - 1; j++){
-            //Swapping
-            console.log('loop :>> ', arr);
-            if (arr[j] > arr[j+1]){
-                let temp = arr[j]
-                arr[j] = arr[j+1]
-                arr[j+1] = temp
-                swapped = true
-            }
-        }
-    }
 
-    console.log('arr :>> ', arr);
-}
 
-// short1([9,4,9,3])
+
+
+
+
+
+/*
+CREATE PROCEDURE insert_employee(emp_name TEXT, department TEXT, emp_salary NUMERIC)
+LANGUAGE plpgsql
+AS $BODY$
+BEGIN
+    INSERT INTO employees (name, department, salary) VALUES (emp_name, department, emp_salary);
+END;
+$BODY$;
+
+
+CALL insert_employee('Greet', 'Mac', 50010);
+
+
+****************************************************************************************************
+
+CREATE FUNCTION get_employee_salary(emp_id INT) 
+RETURNS NUMERIC 
+LANGUAGE plpgsql 
+AS $$ 
+DECLARE 
+    emp_salary NUMERIC;
+BEGIN 
+    SELECT salary INTO emp_salary FROM employees WHERE id = emp_id;
+    RETURN emp_salary;
+END; 
+$$;
+
+
+SELECT get_employee_salary(1);
+
+
+
+CREATE FUNCTION get_employees_by_department(dept VARCHAR) 
+RETURNS TABLE(id INT, name VARCHAR(100), salary NUMERIC) 
+LANGUAGE plpgsql 
+AS $$ 
+BEGIN 
+    RETURN QUERY  
+    SELECT employees.id, employees.name, employees.salary 
+    FROM employees 
+    WHERE employees.department = dept;
+END; 
+$$;
+
+SELECT * FROM get_employees_by_department('HR');
+
+
+
+*/
+
+// console.log("Start");
+
+// setImmediate(() => console.log("setImmediate"));
+// setTimeout(() => console.log("setTimeout"), 0);
+// process.nextTick(() => console.log("process.nextTick"));
+
+// console.log("End");
+// for(let i = 0; i<10000000; i++){}

@@ -1,12 +1,22 @@
-var bar = true;
-console.log(bar + 0);   
-console.log(bar + "xyz");  
-console.log(bar + true);  
-console.log(bar + false);
+function main(){
+  var str = "swiss";
+  const mapChar = {};
+  var arr = [];
 
-// 1
-// 1xyz
-// 2
-// 1
+  for(let key of str){
+    mapChar[key] = (mapChar[key] || 0) + 1;
+  };
+
+  for(let key in mapChar){
+    if(mapChar[key] == 1)
+      arr.push(key)
+  }
+  
+  return arr[1];
+  
+}
+
+console.log(main())
+// [1, 2, 3, 4, 5, 6]
 
 
