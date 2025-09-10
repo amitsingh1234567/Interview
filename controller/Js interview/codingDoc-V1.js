@@ -4,6 +4,7 @@ Q.1 Group objects by a property (like _.groupBy).
 Q.2 Find keys with maximum value in an object. 
 Q.3 Implement array chunking (split array into smaller arrays)
 Q.4 Merge two objects deeply
+Q.5 Find the longest common prefix in an array of strings.
 
 
 */
@@ -99,4 +100,25 @@ const obj2 = {
   }
 };
 console.log(mergeObjDeeply(obj1, obj2));
+*/
+
+// Q.5 Find the longest common prefix in an array of strings.
+/*
+function longestCommonPrefix(strs) {
+  if (!strs.length) return "";
+
+  let prefix = strs[0];
+
+  for (let i = 1; i < strs.length; i++) {
+    while (strs[i].indexOf(prefix) !== 0) {
+      prefix = prefix.slice(0, prefix.length - 1);
+      if (!prefix) return "";
+    }
+  }
+
+  return prefix;
+}
+
+console.log(longestCommonPrefix(["interview", "internet", "internal"])); // "inte"
+
 */

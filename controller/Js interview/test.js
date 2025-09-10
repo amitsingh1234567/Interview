@@ -1,22 +1,15 @@
-function main(){
-  var str = "swiss";
-  const mapChar = {};
-  var arr = [];
+function main() {
+  const arr = [
+  { id: 1, name: "John", x: { name: "John"}},
+  { id: 2, name: "Jane", x: { name: "Jane"} },
+  { id: 1, name: "John", x: { name: "John"} },
+  { id: 3, name: "Mike", x: { name: "Mike"} },
+  { id: 3, name: "Amit", x: { name: "Amit"} }
+];
 
-  for(let key of str){
-    mapChar[key] = (mapChar[key] || 0) + 1;
-  };
+ const result = arr.sort((a, b) => a.x.name.localeCompare(b.x.name));
+ console.log(result)
 
-  for(let key in mapChar){
-    if(mapChar[key] == 1)
-      arr.push(key)
-  }
-  
-  return arr[1];
-  
 }
 
-console.log(main())
-// [1, 2, 3, 4, 5, 6]
-
-
+main()
