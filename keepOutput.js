@@ -87,7 +87,942 @@ Q.60 How to remove only special characters from a string
 
 /*
 LEVEL => 1
+Q.1 Print this pattern
+######
+ *****
+  ####
+   ***
+    ##
+     *
 
+function printPattern(n) {
+    for (let i = n; i > 0; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 0; j < n - i; j++) {
+            row += " ";
+        }
+
+        // alternate symbols: even row → #, odd row → *
+        let symbol = (i % 2 === 0) ? "#" : "*";
+
+        // print symbols
+        for (let j = 0; j < i; j++) {
+            row += symbol;
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.2 Prints a square
+******
+*    *
+*    *
+*    *
+*    *
+******
+function printPattern(n) {
+    for (let i = 0; i < n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 0; j < n; j++) {
+            // star will print only when it is in first row,
+            // last row, first column, or last column
+            if (i === 0 || j === 0 || i === n - 1 || j === n - 1) {
+                row += "*";
+            } else {
+                row += " ";
+            }
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.3 Prints a right-angled triangle with numbers in increasing row order, aligned to the right
+     1 
+    2 2 
+   3 3 3
+  4 4 4 4
+ 5 5 5 5 5
+6 6 6 6 6 6
+
+function printPattern(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // print numbers with space
+        for (let j = 1; j <= i; j++) {
+            row += i + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.4 Prints a pyramid where each row contains numbers from 1 to the row number.
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5 
+1 2 3 4 5 6 
+
+function printPattern(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.5 Print reverse pyramid
+1 2 3 4 5 6 
+1 2 3 4 5 
+1 2 3 4 
+1 2 3 
+1 2 
+1 
+
+function printPattern(n) {
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.6 Prints a pyramid where numbers increase continuously from top to bottom.
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15 
+16 17 18 19 20 21 
+
+function printPattern(n) {
+    let num = 1;
+
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            row += num + " ";
+            num++; // increase number
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.7 Print Zero-One Triangle Pattern
+1 
+0 1 
+1 0 1 
+0 1 0 1 
+1 0 1 0 1 
+0 1 0 1 0 1 
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            // if (i + j) is even → 1, else → 0
+            row += ((i + j) % 2 === 0 ? "1 " : "0 ");
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.8 Palindrome Triangle Pattern
+          1 
+        2 1 2 
+      3 2 1 2 3 
+    4 3 2 1 2 3 4 
+  5 4 3 2 1 2 3 4 5 
+6 5 4 3 2 1 2 3 4 5 6 
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j <= 2 * (n - i); j++) {
+            row += " ";
+        }
+
+        // print descending numbers
+        for (let j = i; j >= 1; j--) {
+            row += j + " ";
+        }
+
+        // print ascending numbers (start from 2 to avoid duplicate "1")
+        for (let j = 2; j <= i; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.9 Rhombus Pattern
+     ******
+    ******
+   ******
+  ******
+ ******
+******
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // print stars
+        for (let j = 1; j <= n; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.10 Diamond Star Pattern
+     *
+    ***
+   *****
+  *******
+ *********
+***********
+ *********
+  *******
+   *****
+    ***
+     *  
+
+function printPattern(n) {
+    // upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // stars
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = n - 1; i >= 1; i--) {
+        let row = "";
+
+        // spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // stars
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.11 Butterfly Star Pattern
+*          *
+**        **
+***      ***
+****    ****
+*****  *****
+************
+************
+*****  *****
+****    ****
+***      ***
+**        **
+*          *
+
+function printPattern(n) {
+    // upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= 2 * n; j++) {
+            // spaces in the middle
+            if (j > i && j <= 2 * n - i) {
+                row += " ";
+            } else {
+                row += "*";
+            }
+        }
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+        for (let j = 1; j <= 2 * n; j++) {
+            // spaces in the middle
+            if (j > i && j <= 2 * n - i) {
+                row += " ";
+            } else {
+                row += "*";
+            }
+        }
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.12 Square Fill Pattern
+******
+******
+******
+******
+******
+******
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 0; i < n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 0; j < n; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.13 Right Half Pyramid Pattern
+*
+**
+***
+****
+*****
+******
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.14 Reverse Right Half Pyramid Pattern
+******
+*****
+****
+***
+**
+*
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+
+        // inner loop to handle columns
+        for (let j = 1; j <= i; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.15 Left Half Pyramid Pattern
+     *
+    **
+   ***
+  ****
+ *****
+******
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // print stars
+        for (let j = 0; j <= n - i; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.16 Reverse Left Half Pyramid Pattern
+******
+ *****
+  ****
+   ***
+    **
+     *
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = n; i > 0; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 0; j < n - i; j++) {
+            row += " ";
+        }
+
+        // print stars
+        for (let j = 0; j < i; j++) {
+            row += "*";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.17 Triangle Star Pattern
+     * 
+    * * 
+   * * * 
+  * * * * 
+ * * * * * 
+* * * * * * 
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 0; i < n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = n - i; j > 1; j--) {
+            row += " ";
+        }
+
+        // print stars
+        for (let j = 0; j <= i; j++) {
+            row += "* ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.18 Reverse Number Triangle Pattern
+1 2 3 4 5 6 
+ 2 3 4 5 6 
+  3 4 5 6 
+   4 5 6 
+    5 6 
+     6 
+
+function printPattern(n) {
+    // outer loop to handle rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // inner loop to print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // inner loop to print numbers
+        for (let j = i; j <= n; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.19 Mirror Image Triangle Pattern
+1 2 3 4 5 6 
+ 2 3 4 5 6 
+  3 4 5 6 
+   4 5 6 
+    5 6 
+     6 
+    5 6 
+   4 5 6 
+  3 4 5 6 
+ 2 3 4 5 6 
+1 2 3 4 5 6 
+
+function printPattern(n) {
+    // Printing the upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // print numbers
+        for (let j = i; j <= n; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+
+    // Printing the lower part
+    for (let i = n - 1; i >= 1; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // print numbers
+        for (let j = i; j <= n; j++) {
+            row += j + " ";
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.20 Hollow Triangle Pattern
+     *
+    * *
+   *   *
+  *     *
+ *       *
+***********
+
+function printPattern(n) {
+    // outer loop for rows
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print leading spaces
+        for (let j = i; j < n; j++) {
+            row += " ";
+        }
+
+        // print stars and inner spaces
+        for (let k = 1; k <= (2 * i - 1); k++) {
+            if (k === 1 || i === n || k === (2 * i - 1)) {
+                row += "*";
+            } else {
+                row += " ";
+            }
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.21 Hollow Reverse Triangle Pattern
+***********
+ *       *
+  *     *
+   *   *
+    * *
+     *
+
+function printPattern(n) {
+    // outer loop for rows
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+
+        // print leading spaces
+        for (let j = i; j < n; j++) {
+            row += " ";
+        }
+
+        // print stars and spaces
+        for (let k = 1; k <= (2 * i - 1); k++) {
+            if (k === 1 || i === n || k === (2 * i - 1)) {
+                row += "*";
+            } else {
+                row += " ";
+            }
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+------------------------------------------------------------------------>
+Q.22 Hollow Diamond Pyramid
+     *
+    * *
+   *   *
+  *     *
+ *       *
+*         *
+ *       *
+  *     *
+   *   *
+    * *
+     *
+     
+function printPattern(n) {
+    // upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // print stars with spaces inside
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            if (j === 1 || j === 2 * i - 1) {
+                row += "*";
+            } else {
+                row += " ";
+            }
+        }
+
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = n - 1; i >= 1; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // print stars with spaces inside
+        for (let j = 1; j <= 2 * i - 1; j++) {
+            if (j === 1 || j === 2 * i - 1) {
+                row += "*";
+            } else {
+                row += " ";
+            }
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.23 Hollow Hourglass Pattern
+* * * * * * 
+ *       * 
+  *     * 
+   *   * 
+    * * 
+     * 
+    * * 
+   *   * 
+  *     * 
+ *       * 
+* * * * * * 
+
+function printPattern(n) {
+    // upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // print stars and spaces
+        for (let j = i; j <= n; j++) {
+            if (j === i || j === n || i === 1) {
+                row += "* ";
+            } else {
+                row += "  ";
+            }
+        }
+
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = n - 1; i >= 1; i--) {
+        let row = "";
+
+        // print spaces
+        for (let j = 1; j < i; j++) {
+            row += " ";
+        }
+
+        // print stars and spaces
+        for (let j = i; j <= n; j++) {
+            if (j === i || j === n || i === 1) {
+                row += "* ";
+            } else {
+                row += "  ";
+            }
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
+------------------------------------------------------------------------>
+Q.24 Pascal's Triangle
+    1 
+   1 1 
+  1 2 1 
+ 1 3 3 1 
+
+function printPascal(n) {
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+
+        // print spaces for left alignment
+        for (let j = 0; j <= n - i; j++) {
+            row += " ";
+        }
+
+        // first value in each line is always 1
+        let x = 1;
+        for (let k = 1; k <= i; k++) {
+            row += x + " ";
+            x = (x * (i - k)) / k;
+        }
+
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 4;
+printPascal(n);
+
+------------------------------------------------------------------------>
+Q.25 Right Pascal’s Triangle
+* 
+* * 
+* * * 
+* * * * 
+* * * 
+* * 
+* 
+
+function printPattern(n) {
+    // upper part
+    for (let i = 1; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= i; j++) {
+            row += "* ";
+        }
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = n - 1; i >= 1; i--) {
+        let row = "";
+        for (let j = 1; j <= i; j++) {
+            row += "* ";
+        }
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 4;
+printPattern(n);
+
+------------------------------------------------------------------------>
+Q.26 K Pattern
+******
+*****
+****
+***
+**
+*
+**
+***
+****
+*****
+******
+
+function printPattern(n) {
+    // upper part
+    for (let i = n; i >= 1; i--) {
+        let row = "";
+        for (let j = 1; j <= i; j++) {
+            row += "*";
+        }
+        console.log(row);
+    }
+
+    // lower part
+    for (let i = 2; i <= n; i++) {
+        let row = "";
+        for (let j = 1; j <= i; j++) {
+            row += "*";
+        }
+        console.log(row);
+    }
+}
+
+// Driver code
+let n = 6;
+printPattern(n);
 
 
 */
