@@ -1,15 +1,45 @@
-function main() {
-  const arr = [
-  { id: 1, name: "John", x: { name: "John"}},
-  { id: 2, name: "Jane", x: { name: "Jane"} },
-  { id: 1, name: "John", x: { name: "John"} },
-  { id: 3, name: "Mike", x: { name: "Mike"} },
-  { id: 3, name: "Amit", x: { name: "Amit"} }
-];
+function findDeepestPair(obj, depth = 0, parentKey = '') {
+  let deepest = { key: parentKey, value: obj, depth };
 
- const result = arr.sort((a, b) => a.x.name.localeCompare(b.x.name));
- console.log(result)
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      const newKey = parentKey ? `${parentKey}.${key}` : key;
 
+      if (typeof value === 'object' && value !== null) {
+        const deeper = findDeepestPair(value, depth + 1, newKey);
+        
+        if (deeper.depth > deepest.depth) {
+          deepest = deeper;
+        }
+      } else {
+        if (depth + 1 > deepest.depth) {
+          deepest = { key: newKey, value, depth };
+        }
+      }
+    }
+  }
+  return deepest;
 }
 
-main()
+const nestedObject = {
+  name: "John",
+  details: {
+    age: 25,
+    address: {
+      city: "Delhi",
+      location: {
+        pin: 110001,
+        landmark: "Red Fort"
+      }
+    }
+  }
+};
+
+var deepestPair = findDeepestPair(nestedObject);
+delete deepestPair.depth;
+deepestPair.key = (deepestPair.key.split('.').slice(-1))[0]
+console.log(deepestPair);
+
+
+

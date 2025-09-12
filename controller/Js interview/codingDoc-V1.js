@@ -6,7 +6,12 @@ Q.3 Implement array chunking (split array into smaller arrays)
 Q.4 Merge two objects deeply
 Q.5 Find the longest common prefix in an array of strings.
 
-
+[
+[1, 2, 3, 4],
+[12,13,14,5],
+[11,16,15,6],
+[10, 9, 8, 7]
+]
 */
 
 
@@ -121,4 +126,40 @@ function longestCommonPrefix(strs) {
 
 console.log(longestCommonPrefix(["interview", "internet", "internal"])); // "inte"
 
+[
+[1, 2, 3, 4],
+[12,13,14,5],
+[11,16,15,6],
+[10, 9, 8, 7]
+]
+
+
+function generateSpiral(n) {
+  const result = Array.from({ length: n }, () => Array(n).fill(0));
+  let top = 0, bottom = n - 1;
+  let left = 0, right = n - 1;
+  let num = 1;
+  while (top <= bottom && left <= right) {
+    // left → right
+    for (let i = left; i <= right; i++) result[top][i] = num++;
+    top++;
+
+    // top → bottom
+    for (let i = top; i <= bottom; i++) result[i][right] = num++;
+    right--;
+
+    // right → left
+    for (let i = right; i >= left; i--) result[bottom][i] = num++;
+    bottom--;
+
+    // bottom → top
+    for (let i = bottom; i >= top; i--) result[i][left] = num++;
+    left++;
+  }
+  return result;
+}
+console.log(generateSpiral(4));
+
+
 */
+
