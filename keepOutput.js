@@ -85,9 +85,12 @@ Q.60 How to remove only special characters from a string
 
 */
 
+
+
+
 /*
 LEVEL => 1
-Q.1 Print this pattern
+Q.1 Print this pattern 1D, 2D
 ######
  *****
   ####
@@ -121,7 +124,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.2 Prints a square
+Q.2 Prints a square (pending)
 ******
 *    *
 *    *
@@ -152,7 +155,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.3 Prints a right-angled triangle with numbers in increasing row order, aligned to the right
+Q.3 Prints a right-angled triangle with numbers in increasing row order, aligned to the right 1D, 2D
      1 
     2 2 
    3 3 3
@@ -183,7 +186,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.4 Prints a pyramid where each row contains numbers from 1 to the row number.
+Q.4 Prints a pyramid where each row contains numbers from 1 to the row number. 1D, 2D
 1 
 1 2 
 1 2 3 
@@ -209,7 +212,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.5 Print reverse pyramid
+Q.5 Print reverse pyramid 1D, 2D
 1 2 3 4 5 6 
 1 2 3 4 5 
 1 2 3 4 
@@ -235,7 +238,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.6 Prints a pyramid where numbers increase continuously from top to bottom.
+Q.6 Prints a pyramid where numbers increase continuously from top to bottom. 1D, 2D
 1 
 2 3 
 4 5 6 
@@ -265,7 +268,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.7 Print Zero-One Triangle Pattern
+Q.7 Print Zero-One Triangle Pattern 1D
 1 
 0 1 
 1 0 1 
@@ -293,7 +296,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.8 Palindrome Triangle Pattern
+Q.8 Palindrome Triangle Pattern 1D, 2D
           1 
         2 1 2 
       3 2 1 2 3 
@@ -330,7 +333,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.9 Rhombus Pattern
+Q.9 Rhombus Pattern 1D
      ******
     ******
    ******
@@ -362,7 +365,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.10 Diamond Star Pattern
+Q.10 Diamond Star Pattern 1D
      *
     ***
    *****
@@ -416,7 +419,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.11 Butterfly Star Pattern
+Q.11 Butterfly Star Pattern (pending)
 *          *
 **        **
 ***      ***
@@ -465,7 +468,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.12 Square Fill Pattern
+Q.12 Square Fill Pattern 1D, 2D
 ******
 ******
 ******
@@ -492,7 +495,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.13 Right Half Pyramid Pattern
+Q.13 Right Half Pyramid Pattern 1D, 2D
 *
 **
 ***
@@ -519,7 +522,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.14 Reverse Right Half Pyramid Pattern
+Q.14 Reverse Right Half Pyramid Pattern 1D, 2D
 ******
 *****
 ****
@@ -546,7 +549,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.15 Left Half Pyramid Pattern
+Q.15 Left Half Pyramid Pattern 1D, 2D
      *
     **
    ***
@@ -578,7 +581,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.16 Reverse Left Half Pyramid Pattern
+Q.16 Reverse Left Half Pyramid Pattern 1D, 2D
 ******
  *****
   ****
@@ -610,7 +613,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.17 Triangle Star Pattern
+Q.17 Triangle Star Pattern 1D,2D
      * 
     * * 
    * * * 
@@ -642,7 +645,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.18 Reverse Number Triangle Pattern
+Q.18 Reverse Number Triangle Pattern 1D
 1 2 3 4 5 6 
  2 3 4 5 6 
   3 4 5 6 
@@ -674,7 +677,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.19 Mirror Image Triangle Pattern
+Q.19 Mirror Image Triangle Pattern (pending)
 1 2 3 4 5 6 
  2 3 4 5 6 
   3 4 5 6 
@@ -728,7 +731,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.20 Hollow Triangle Pattern
+Q.20 Hollow Triangle Pattern 1D
      *
     * *
    *   *
@@ -764,7 +767,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.21 Hollow Reverse Triangle Pattern
+Q.21 Hollow Reverse Triangle Pattern 1D
 ***********
  *       *
   *     *
@@ -799,7 +802,7 @@ function printPattern(n) {
 let n = 6;
 printPattern(n);
 ------------------------------------------------------------------------>
-Q.22 Hollow Diamond Pyramid
+Q.22 Hollow Diamond Pyramid 1D
      *
     * *
    *   *
@@ -861,7 +864,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.23 Hollow Hourglass Pattern
+Q.23 Hollow Hourglass Pattern 1D
 * * * * * * 
  *       * 
   *     * 
@@ -922,7 +925,7 @@ function printPattern(n) {
 let n = 6;
 printPattern(n);
 ------------------------------------------------------------------------>
-Q.24 Pascal's Triangle
+Q.24 Pascal's Triangle 1D
     1 
    1 1 
   1 2 1 
@@ -953,7 +956,7 @@ let n = 4;
 printPascal(n);
 
 ------------------------------------------------------------------------>
-Q.25 Right Pascal’s Triangle
+Q.25 Right Pascal’s Triangle 1D
 * 
 * * 
 * * * 
@@ -987,7 +990,7 @@ let n = 4;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.26 K Pattern
+Q.26 K Pattern 1D
 ******
 *****
 ****
