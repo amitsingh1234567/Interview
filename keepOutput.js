@@ -3,7 +3,7 @@ Top 50 Q by chatGpt
 https://chatgpt.com/share/68b3fc34-9550-8013-ad8a-12ee1ed0eed0
 
 Top NodeJs IV Q by chatGpt
-https://chatgpt.com/share/68be3081-70e0-8013-90b5-f173d77c44f4
+https://chatgpt.com/share/68be3081-70e0-8013-90b5-f173D77c44f4
 
 Top 10 Javascript Algorithms to Prepare for Coding Interviews
 https://www.youtube.com/watch?v=ufBbWIyKY2E
@@ -16,16 +16,16 @@ What is the difference between a shallow copy and a deep copy
 
 /*
 LEVEL => 0
-Q.1  Deep clone an object (Top). 1D, 2D
-Q.2  Compare two objects for equality (Top). 1D, 2D
-Q.3  Group objects by a property (Top) 1D, 2D
+Q.1  Deep clone an object (Top). 1D, 2D, 3D
+Q.2  Compare two objects for equality (Top). 1D, 2D, 3D
+Q.3  Group objects by a property (Top) 1D, 2D, 3D
 Q.4  Merge two objects deeply.(Top) 1D, 2D
-Q.5  Convert nested object to flat object.(Top) 1D, 2D
+Q.5  Convert nested object to flat object.(Top) 1D, 2D, 3D
 Q.6  Find keys with maximum value in an object. 1D, 2D
 Q.7  Implement array chunking (split array into smaller arrays) 1D, 2D
 Q.8  Find the longest substring without repeating characters. (Not needed)
 Q.9  Find the missing number in a sequence 1D, 2D
-Q.10 Rotate an array k times. 1D, 2D
+Q.10 Rotate an array k times. 1D, 2D, 3D
 Q.11 Find the intersection of two arrays. 1D, 2D
 Q.12 Move all zeros to the end of an array . 1D, 2D
 Q.13 Find the second largest element in an array (Top). 1D, 2D
@@ -39,8 +39,8 @@ Q.21 Reverse words in a sentence. 1D, 2D
 Q.22 Check if two strings are anagrams. 1D, 2D
 Q.23 Find the longest common prefix in an array of strings. (pending)
 Q.24 Remove duplicate characters from a string. 1D, 2D
-Q.25 Find all pairs in an array that sum to a target. 1D, 2D
-Q.26 Reverse digits of a number. 1D, 2D
+Q.25 Find all pairs in an array that sum to a target. 1D, 2D, 3D
+Q.26 Reverse digits of a number. 1D, 2D, 3D
 Q.27 -----------------------------------
 Q.28 Count frequency of elements using object/Map. 1D, 2D
 Q.29 Implement memoization function. (pending)
@@ -61,9 +61,9 @@ Q.37 find the position of first and final occurrence of an element in an array e
 Q.38 Remove all the zero at the end 1D, 2D
 Q.39 --------------------------------
 Q.40 Write a program to find Third Largest number (Top) 1D, 2D
-Q.41 Write a program of Two Sum 1D, 2D
+Q.41 Write a program of Two Sum 1D, 2D, 3D
 Q.42 --------------------------------
-Q.43 Write a function that returns the deepest key-value pair in a nested object 1D, 2D
+Q.43 Write a function that returns the deepest key-value pair in a nested object 1D, 2D, 3D
 Q.44 Write a program for setZero Matrix (pending)
 Q.45 -----------------------------------------
 Q.46 Write a program to check valid brackets 1D, 2D
@@ -90,7 +90,7 @@ Q.60 How to remove only special characters from a string
 
 /*
 LEVEL => 1
-Q.1 Print this pattern 1D, 2D
+Q.1 Print this pattern 1D, 2D, 3D
 ######
  *****
   ####
@@ -155,7 +155,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.3 Prints a right-angled triangle with numbers in increasing row order, aligned to the right 1D, 2D
+Q.3 Prints a right-angled triangle with numbers in increasing row order, aligned to the right 1D, 2D, 3D
      1 
     2 2 
    3 3 3
@@ -186,7 +186,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.4 Prints a pyramid where each row contains numbers from 1 to the row number. 1D, 2D
+Q.4 Prints a pyramid where each row contains numbers from 1 to the row number. 1D, 2D, 3D
 1 
 1 2 
 1 2 3 
@@ -212,7 +212,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.5 Print reverse pyramid 1D, 2D
+Q.5 Print reverse pyramid 1D, 2D, 3D
 1 2 3 4 5 6 
 1 2 3 4 5 
 1 2 3 4 
@@ -238,7 +238,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.6 Prints a pyramid where numbers increase continuously from top to bottom. 1D, 2D
+Q.6 Prints a pyramid where numbers increase continuously from top to bottom. 1D, 2D, 3D
 1 
 2 3 
 4 5 6 
@@ -268,7 +268,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.7 Print Zero-One Triangle Pattern 1D
+Q.7 Print Zero-One Triangle Pattern 1D, 3D
 1 
 0 1 
 1 0 1 
@@ -296,7 +296,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.8 Palindrome Triangle Pattern 1D, 2D
+Q.8 Palindrome Triangle Pattern 1D, 2D, 3D
           1 
         2 1 2 
       3 2 1 2 3 
@@ -333,7 +333,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.9 Rhombus Pattern 1D
+Q.9 Rhombus Pattern 1D, 3D
      ******
     ******
    ******
@@ -365,7 +365,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.10 Diamond Star Pattern 1D
+Q.10 Diamond Star Pattern 1D, 3D
      *
     ***
    *****
@@ -468,7 +468,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.12 Square Fill Pattern 1D, 2D
+Q.12 Square Fill Pattern 1D, 2D, 2D, 3D
 ******
 ******
 ******
@@ -495,7 +495,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.13 Right Half Pyramid Pattern 1D, 2D
+Q.13 Right Half Pyramid Pattern 1D, 2D, 3D
 *
 **
 ***
@@ -522,7 +522,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.14 Reverse Right Half Pyramid Pattern 1D, 2D
+Q.14 Reverse Right Half Pyramid Pattern 1D, 2D, 3D
 ******
 *****
 ****
@@ -549,7 +549,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.15 Left Half Pyramid Pattern 1D, 2D
+Q.15 Left Half Pyramid Pattern 1D, 2D, 3D
      *
     **
    ***
@@ -581,7 +581,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.16 Reverse Left Half Pyramid Pattern 1D, 2D
+Q.16 Reverse Left Half Pyramid Pattern 1D, 2D, 3D
 ******
  *****
   ****
@@ -613,7 +613,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.17 Triangle Star Pattern 1D,2D
+Q.17 Triangle Star Pattern 1D,2D, 3D
      * 
     * * 
    * * * 
@@ -645,7 +645,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.18 Reverse Number Triangle Pattern 1D
+Q.18 Reverse Number Triangle Pattern 1D, 3D
 1 2 3 4 5 6 
  2 3 4 5 6 
   3 4 5 6 
@@ -677,7 +677,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.19 Mirror Image Triangle Pattern (pending)
+Q.19 Mirror Image Triangle Pattern (pending) 1D
 1 2 3 4 5 6 
  2 3 4 5 6 
   3 4 5 6 
@@ -731,7 +731,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.20 Hollow Triangle Pattern 1D
+Q.20 Hollow Triangle Pattern 1D, 3D
      *
     * *
    *   *
@@ -767,7 +767,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.21 Hollow Reverse Triangle Pattern 1D
+Q.21 Hollow Reverse Triangle Pattern 1D, 3D
 ***********
  *       *
   *     *
@@ -802,7 +802,7 @@ function printPattern(n) {
 let n = 6;
 printPattern(n);
 ------------------------------------------------------------------------>
-Q.22 Hollow Diamond Pyramid 1D
+Q.22 Hollow Diamond Pyramid 1D, 3D
      *
     * *
    *   *
@@ -864,7 +864,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.23 Hollow Hourglass Pattern 1D
+Q.23 Hollow Hourglass Pattern 1D, 3D
 * * * * * * 
  *       * 
   *     * 
@@ -925,7 +925,7 @@ function printPattern(n) {
 let n = 6;
 printPattern(n);
 ------------------------------------------------------------------------>
-Q.24 Pascal's Triangle 1D
+Q.24 Pascal's Triangle 1D, 3D
     1 
    1 1 
   1 2 1 
@@ -956,7 +956,7 @@ let n = 4;
 printPascal(n);
 
 ------------------------------------------------------------------------>
-Q.25 Right Pascal’s Triangle 1D
+Q.25 Right Pascal’s Triangle 1D, 3D
 * 
 * * 
 * * * 
@@ -990,7 +990,7 @@ let n = 4;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.26 K Pattern 1D
+Q.26 K Pattern 1D, 3D
 ******
 *****
 ****
