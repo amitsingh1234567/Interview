@@ -11,7 +11,65 @@ https://www.youtube.com/watch?v=ufBbWIyKY2E
 Resursion Explaination
 https://chatgpt.com/share/68bc40ea-e580-8011-a4d3-83184c655efa
 
+Error handling 
+https://chatgpt.com/share/68cb6d82-be58-8013-94a7-b0a1ae76d018
+https://chatgpt.com/share/68cb6fb3-2cac-8011-a18e-d87bd18ab92b
+uncaughtException
+unhandledRejection
+
+Winston
+https://chatgpt.com/share/683bc422-3264-8013-a7c5-6fd82301ba1c
+
 What is the difference between a shallow copy and a deep copy
+
+*******************************************************************************
+NodeJs :- 
+1. Synchronous Errors: - 
+Usually caused by:
+Invalid code (ReferenceError, TypeError, SyntaxError)
+Logic mistakes (dividing by zero, invalid function calls)
+Explicit throw statements
+Can be caught using try...catch
+
+2. Asynchronous Errors: - 
+Must be caught using:
+Callbacks → if (err) return ... Use Error-First Callbacks (classic Node.js style)
+Promises → .catch()
+Async/Await → try...catch
+
+3. Operational Errors
+File not found
+Database connection timeout
+Network failure
+
+4. Programmer Errors
+Bugs in code like undefined, Variable not decleread
+
+uncaughtException
+unhandledRejection
+*******************************************************************************
+
+Angular : -
+1. Try-Catch for synchronous operations.
+2. Global Error Handling:
+Set up a global error handler to catch unhandled errors in your application.
+This can be done by creating a service that implements the ErrorHandler interface.
+3. RxJS catchError Operator:
+For asynchronous operations involving observables, the catchError operator from the RxJS library is a valuable tool.
+4. Use Interceptors for API errors to avoid repeating catchError everywhere.
+
+
+
+
+
+
+Today Activity
+
+Pattern
+Q.24
+Q.10
+Q.22
+
 */
 
 /*
@@ -19,7 +77,7 @@ LEVEL => 0
 Q.1  Deep clone an object (Top). 1D, 2D, 3D
 Q.2  Compare two objects for equality (Top). 1D, 2D, 3D
 Q.3  Group objects by a property (Top) 1D, 2D, 3D
-Q.4  Merge two objects deeply.(Top) 1D, 2D
+Q.4  Merge two objects deeply.(Top) 1D, 2D, 3D
 Q.5  Convert nested object to flat object.(Top) 1D, 2D, 3D
 Q.6  Find keys with maximum value in an object. 1D, 2D
 Q.7  Implement array chunking (split array into smaller arrays) 1D, 2D
@@ -28,9 +86,9 @@ Q.9  Find the missing number in a sequence 1D, 2D
 Q.10 Rotate an array k times. 1D, 2D, 3D
 Q.11 Find the intersection of two arrays. 1D, 2D
 Q.12 Move all zeros to the end of an array . 1D, 2D
-Q.13 Find the second largest element in an array (Top). 1D, 2D
+Q.13 Find the second largest element in an array (Top). 1D, 2D, 3D
 Q.14 Find duplicate numbers in an array. 1D, 2D
-Q.15 Flatten a nested array without using flat(). 1D, 2D
+Q.15 Flatten a nested array without using flat(). 1D, 2D, 3D
 Q.16 Reverse a string without using built-in reverse(). 1D, 2D
 Q.17 Check if a string is a palindrome. 1D, 2D
 Q.18 Find the first non-repeating character in a string. 1D, 2D
@@ -40,7 +98,7 @@ Q.22 Check if two strings are anagrams. 1D, 2D
 Q.23 Find the longest common prefix in an array of strings. (pending)
 Q.24 Remove duplicate characters from a string. 1D, 2D
 Q.25 Find all pairs in an array that sum to a target. 1D, 2D, 3D
-Q.26 Reverse digits of a number. 1D, 2D, 3D
+Q.26 Reverse digits of a number. 1D, 2D, 3D, 4D
 Q.27 -----------------------------------
 Q.28 Count frequency of elements using object/Map. 1D, 2D
 Q.29 Implement memoization function. (pending)
@@ -60,14 +118,14 @@ Q.36 Array of object shorting 1D, 2D
 Q.37 find the position of first and final occurrence of an element in an array element is 5 1D, 2D
 Q.38 Remove all the zero at the end 1D, 2D
 Q.39 --------------------------------
-Q.40 Write a program to find Third Largest number (Top) 1D, 2D
-Q.41 Write a program of Two Sum 1D, 2D, 3D
+Q.40 Write a program to find Third Largest number (Top) 1D, 2D, 3D
+Q.41 Write a program of Two Sum 1D, 2D, 3D, 4D
 Q.42 --------------------------------
 Q.43 Write a function that returns the deepest key-value pair in a nested object 1D, 2D, 3D
 Q.44 Write a program for setZero Matrix (pending)
 Q.45 -----------------------------------------
-Q.46 Write a program to check valid brackets 1D, 2D
-Q.47 Find the Longest Key in an Object 1D, 2D
+Q.46 Write a program to check valid brackets 1D, 2D, 3D
+Q.47 Find the Longest Key in an Object 1D, 2D, 3D
 Q.48 Find index of Captial letter to given Array 1D, 2D
 Q.49 if i have five words how do i convert first second and four word as captial letter 1D, 2D
 Q.50 Reverse string word wise 1D, 2D
@@ -78,7 +136,7 @@ Q.53 Write a program to print Captial a-z using loop 1D, 2D
 Q.54 Write a program of FizzBuzz (pending)
 Q.55 --------------------------------
 Q.56 Find Second Non Repeating Character 1D, 2D
-Q.57 How to make object immutable 1D, 2D
+Q.57 How to make object immutable 1D, 2D, 3D
 Q.58 Group deeply objects by a property 
 Q.59 How to remove space and any explemenatry fro a string
 Q.60 How to remove only special characters from a string 
@@ -124,7 +182,7 @@ let n = 6;
 printPattern(n);
 
 ------------------------------------------------------------------------>
-Q.2 Prints a square (pending)
+Q.2 Prints a square 1D
 ******
 *    *
 *    *
@@ -1027,5 +1085,270 @@ function printPattern(n) {
 let n = 6;
 printPattern(n);
 
+
+*/
+
+
+
+
+
+/*
+LEVEL => 2
+Q.1 Write a function to find the maximum number of pairs that can be formed from an array. 1D, 2D
+
+function maxPairs(arr) {
+  const freq = {};
+  let pairs = 0;
+
+  // Count frequency
+  for (let num of arr) {
+    freq[num] = (freq[num] || 0) + 1;
+  }
+
+  // Each 2 occurrences make 1 pair
+  for (let key in freq) {
+    pairs += Math.floor(freq[key] / 2);
+  }
+
+  return pairs;
+}
+
+
+const arr = [1, 1, 2, 2, 3, 3, 3, 3];
+const result = maxPairs(arr);
+console.log(result)
+
+Q.2 Write a function to find the longest ascending sequence in an array. 1D
+
+function longestAscendingSequence(arr) {
+  if (arr.length === 0) return [];
+
+  let longest = [arr[0]];
+  let current = [arr[0]];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > arr[i - 1]) {
+      current.push(arr[i]);
+      if (current.length > longest.length) {
+        longest = [...current];
+      }
+    } else {
+      current = [arr[i]]; // reset
+    }
+  }
+
+  return longest;
+}
+
+const arr = [1, 3, 2, 4, 6];
+const result = longestAscendingSequence(arr);
+console.log(result)
+
+Q.3 Write a function to find the pair of elements in an array that have the minimum difference. 1D
+
+function minDiffPair(arr) {
+  if (arr.length < 2) return null;
+
+  arr.sort((a, b) => a - b); // sort ascending
+  let minDiff = Infinity;
+  let pair = [];
+
+  for (let i = 1; i < arr.length; i++) {
+    let diff = arr[i] - arr[i - 1];
+    if (diff < minDiff) {
+      minDiff = diff;
+      pair = [arr[i - 1], arr[i]];
+    }
+  }
+
+  return { pair, minDiff };
+}
+
+const arr = [4, 9, 1, 7];
+const result = minDiffPair(arr);
+console.log(result)
+
+Q.4 Write a function to check if an array has three consecutive common numbers. 1D
+function hasThreeConsecutive(arr) {
+  if (arr.length < 3) return false; // need at least 3 elements
+
+  for (let i = 0; i < arr.length -2; i++) {
+    if (arr[i] === arr[i + 1] && arr[i + 1] === arr[i + 2]) {
+      return true; // found three in a row
+    }
+  }
+
+  return false; // no triple found
+}
+
+console.log(hasThreeConsecutive([1, 2, 2, 2, 3]));
+
+Q.5 Write a function to find the median of two sorted arrays.
+function findMedianSortedArrays(nums1, nums2) {
+    let arr = (nums1.concat(nums2)).sort((a, b) => a - b);
+    let left = 0
+    var right = arr.length - 1;
+
+    let mid = Math.floor((left + right) / 2);
+
+    if (arr.length % 2 !== 0) {
+        return arr[mid];
+    } else {
+        return (arr[mid] + arr[mid + 1]) / 2;
+    }
+}
+
+console.log(findMedianSortedArrays([1, 3], [2]))
+
+Q.6 Write a function to hide a credit card number.
+function hideCreditCard(cardNumber) {
+  // Convert to string in case a number is passed
+  const str = String(cardNumber).replace(/\s+/g, ''); // remove spaces
+  if (str.length <= 4) return str; // nothing to hide
+
+  const visible = str.slice(-4);       // last 4 digits
+  const hidden = '*'.repeat(str.length - 4); // mask rest
+  return hidden + visible;
+}
+
+console.log(hideCreditCard("1234567812345678")); // ************5678
+
+
+Q.7 Write a function to convert the second letter of each word of a given sentence into uppercase. 
+function secondLetterUppercase(str, k) {
+  return str
+    .split(' ').map(word => {
+      if (word.length < 2) return word;
+      return word[0] + word[1].toUpperCase() + word.slice(2)
+    }).join(' ');
+}
+
+var str = 'this is a nice car'
+console.log(secondLetterUppercase(str))
+
+Q.8 Write a function to split a string at each occurrence of a capital letter. 1D
+function splitAtCapitals(str) {
+  const result = [];
+  let current = "";
+
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];
+
+    // Check if current character is uppercase (A–Z)
+    if (ch >= 'A' && ch <= 'Z' && current.length > 0) {
+      // Push the collected chunk before the capital
+      result.push(current);
+      current = ch; // start new chunk
+    } else {
+      current += ch;
+    }
+  }
+
+  if (current) result.push(current); // add the last chunk
+  return result;
+}
+
+console.log(splitAtCapitals('helloWorld'));
+
+Q.9 Write a function to solve a cryptogram. 1D
+function solveCryptogram(cipherText, mapping) {
+  let result = '';
+
+  for (let ch of cipherText) {
+    if (mapping.hasOwnProperty(ch)) {
+      result += mapping[ch];
+    } else {
+      result += ch; 
+    }
+  }
+
+  return result;
+}
+
+const obj = {'a': 'd', 'b': 'i', 'c': 'o'};
+const chiper = 'abc'
+console.log(solveCryptogram(chiper, obj));
+**********************************************
+function solveCryptogram(cipherText, mapping) {
+  // mapping example: { A: 'T', B: 'H', C: 'E' }
+  return cipherText
+    .split('')
+    .map(ch => {
+      const upper = ch.toUpperCase();
+      return mapping[upper] ? mapping[upper].toLowerCase() : ch;
+    })
+    .join('');
+}
+
+const cipher = "XLMW MW E QYR.";
+const key = {
+  X: 'T', L: 'H', M: 'I', W: 'S', E: 'A', Q: 'F', Y: 'U', N: 'N', R: 'Y'
+};
+
+console.log(solveCryptogram(cipher, key));
+
+Q.10 Write a function to censor a word in a sentence. 1D
+function censorWord(sentence, word) {
+    let lenthOfAWord = word.length;
+    const star = "*"
+    return sentence.replace(word, star.repeat(lenthOfAWord));
+}
+
+const sentence = 'The cat sat on the mat.';
+const word = 'cat';
+
+console.log(censorWord(sentence, word))
+
+Q.11 Write a function to swap two characters in a string.
+function doubleCharacterSwap(str, c1, c2) {
+     let result = "";
+
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === c1) {
+      result += c2;   // replace c1 with c2
+    } else if (str[i] === c2) {
+      result += c1;   // replace c2 with c1
+    } else {
+      result += str[i]; // keep other characters as is
+    }
+  }
+
+  return result;
+};
+const str = 'aabbcc';
+const c1 = 'a';
+const c2 = 'c';
+console.log(doubleCharacterSwap(str, c1, c2));
+
+Q.12 Write a function that swaps the case of the first and last characters.
+function swapCaseFirstLast(str) {
+    let newWords = str.split(" ")
+    let container = []
+    for(let i = 0;i < newWords.length;i++){
+            let a = newWords[i]
+            let firstLetter = a.charAt(0)
+            let lastLetter = a.substring(a.length -1)
+             let ren = a.substring(1, a.length -1)
+             let first = firstLetter == firstLetter.toUpperCase() ? firstLetter.toLowerCase():  firstLetter.toUpperCase()
+             let last = lastLetter == lastLetter.toUpperCase() ? lastLetter.toLowerCase() : lastLetter.toUpperCase()
+            
+            if(newWords[i].length == 1){
+                container.push(first)
+            }else{
+                container.push(first+ren+last)
+            }
+    }   
+
+    return container.toString().split(',').join(" ")
+}
+
+console.log(swapCaseFirstLast('Hello World'))
+
+Q.13 Write a function to find the next letter in the alphabet for a given letter.
+function findNextLetter(ch) {
+  return ch == "z" ? ch : String.fromCharCode(ch.charCodeAt() + 1);
+};
+
+console.log(findNextLetter('h'))
 
 */

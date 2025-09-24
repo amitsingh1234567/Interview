@@ -1,0 +1,116 @@
+Array
+Medium Level: - 
+First and Last Index (Done)
+Second Largest Number (Done)
+Find Fulcrum
+Largest Prime Number in an Array
+Invert Color
+Matrix Multiplication
+Mini Peaks
+Array Union
+Array Intersection
+Majority Element (Known Q)
+UTF-8 Validation
+Matrix Rotation
+SubArray Sum 
+Same Parity 
+Product Except Self
+Design Tic Tac Toe
+Can An Array Be Nested?
+Book Shelf
+Intersecting Intervals
+Jazzify Every Chord
+X of a Kind
+Prime Array
+Three Consecutive Common Numbers (Done) 
+Similar Array (Known Q)
+Maximum Pairs (Done)
+Largest Gap (Done) 
+Common Elements (Known Q) 
+Stock Buy Sell
+Average Salary Excluding Extremes
+List Common Elements
+Retrieve Last n Elements
+Is Array Balanced?
+Minimum Difference Pair (Done) 
+Diagonal Domination
+Longest Daily Streak
+Two is Difference
+Concatenate to Form Target Array
+Flatten Nested Array (Done) 
+Median of Two Sorted Arrays (Pending)
+Record Temperatures
+Uncommon Elements
+Circular Shift
+Get Diagonals
+Even Odd Partition
+Add to Nested Array
+Maximize Array Sum
+Find Median From Array
+Product of Array Except Self
+Maximum SubArray (Pending)
+Two Sum (Done)
+Remove Primes
+Generate Dragon Curve
+Is Johnny Making Progress?
+Is Straight Line
+
+
+----------------------------------------------------------------------------------------------------------------
+String
+Medium Level: - 
+
+Smiley Faces
+Hide Credit Card
+Broken Keyboard
+Longest Consecutive Zeros
+Repeat Vowels
+Shortest Word
+Convert to PascalCase
+Is SpOnGeCaSe?
+Find First Nonrepeated Character
+Longest Word in a Sentence
+Swap Case of First and Last Characters
+Is Pandigital?
+Is Sastry Number?
+Encode Consonants with Next Consonant
+Vowels and Consonants Separator
+ISBN Validator
+Morse Code Converter
+Casual String Builder
+Longest Common Ending
+Max Value Calculation
+Index Shuffle
+Cryptogram Solver
+Numerical Morphisms
+First Unique Character In String
+Transform Second Letter
+Occurrence of Character
+Sum of Letters
+Validating Postal Code
+Thousands Separator
+Equidigital Numbers
+Jazzify Every Chord
+Censor a Word
+Capital Split
+Character Swap
+Transpose Notes
+Buddy Strings
+Long Pressed Name
+Remove Repeated Letters
+Replace Character In String
+The Next Letter
+Extending String
+Common Digits
+Find Missing Letter
+Split Item Codes
+Binary Toggle
+String Rearrange
+Word Overlap Merger
+Calculate Anagramic Difference
+Is String Rotated
+Validate Pin
+Rearrange Spaces
+Letter Count
+
+
