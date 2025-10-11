@@ -5,6 +5,9 @@ Q.2 Find keys with maximum value in an object.
 Q.3 Implement array chunking (split array into smaller arrays)
 Q.4 Merge two objects deeply
 Q.5 Find the longest common prefix in an array of strings.
+let a = {}; let b = { key: 'b' }; let c = { key: 'c' }; a[b] = 123; a[c] = 456; console.log(a[b]);
+console.log(a)
+
 
 [
 [1, 2, 3, 4],
@@ -12,6 +15,12 @@ Q.5 Find the longest common prefix in an array of strings.
 [11,16,15,6],
 [10, 9, 8, 7]
 ]
+
+
+A
+Am
+Ami
+Amit
 */
 
 

@@ -1,9 +1,23 @@
-function findMissingLetter(str) {
-    for(let i = str.length - 1; i >= 0; i--) {
-        const diff = str.charCodeAt(i) - str.charCodeAt(i + 1)
-        console.log(String.fromCharCode(str.charCodeAt(i) + 1));
+function main(){
+    var str = "Amit";
+    
+    for(let i = 0; i < str.length; i++){
+        if(i == 0){
+            console.log(str[i])
+        }
+        if(i == 0 && i == i == 1){
+            console.log(str[i-1] + str[1])
+        }
     }
-}
 
-const str = 'abcdfi';
-console.log(findMissingLetter(str))
+};
+
+main()
+
+/*
+A
+Am
+Ami
+Amit
+
+* */

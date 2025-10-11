@@ -1,4 +1,7 @@
-/*
+/* 765
+FromGroup 
+Accenture password *EQ9BsJVVs%H8pd
+stand stand alone
 Top 50 Q by chatGpt
 https://chatgpt.com/share/68b3fc34-9550-8013-ad8a-12ee1ed0eed0
 
@@ -58,17 +61,36 @@ This can be done by creating a service that implements the ErrorHandler interfac
 For asynchronous operations involving observables, the catchError operator from the RxJS library is a valuable tool.
 4. Use Interceptors for API errors to avoid repeating catchError everywhere.
 
+The event loop is the heart of Node. js, enabling non-blocking, asynchronous execution.
+Unlike traditional multi-threaded models, Node. js is single-threaded but uses an event-driven, 
+non-blocking architecture to handle I/O-bound operations efficiently.
 
 
-
+View is a virtual table that is use to store the data in VT insted of intrecting to main table again and again
 
 
 Today Activity
+********** L-0
+Q.25
+Q.41
+Q.15
+Q.1
+Q.2
+
+********** L-2
+Q.13
+Q.14
+Q.8
+Q.7
+
 
 Pattern
-Q.24
 Q.10
 Q.22
+Q.1
+Q.8
+Q.21
+Q.24
 
 */
 
@@ -145,10 +167,9 @@ Q.60 How to remove only special characters from a string
 
 
 
-
 /*
 LEVEL => 1
-Q.1 Print this pattern 1D, 2D, 3D
+Q.1 Print3D this pattern 1D, 2D, 
 ######
  *****
   ####
@@ -1299,7 +1320,7 @@ const word = 'cat';
 
 console.log(censorWord(sentence, word))
 
-Q.11 Write a function to swap two characters in a string.
+Q.11 Write a function to swap two characters in a string. 1D
 function doubleCharacterSwap(str, c1, c2) {
      let result = "";
 
@@ -1320,7 +1341,7 @@ const c1 = 'a';
 const c2 = 'c';
 console.log(doubleCharacterSwap(str, c1, c2));
 
-Q.12 Write a function that swaps the case of the first and last characters.
+Q.12 Write a function that swaps the case of the first and last characters. 1D
 function swapCaseFirstLast(str) {
     let newWords = str.split(" ")
     let container = []
@@ -1350,5 +1371,160 @@ function findNextLetter(ch) {
 };
 
 console.log(findNextLetter('h'))
+
+Q.14 Write a function to find the missing letter 1D
+function findAllMissingLetters(str) {
+  let missing = [];
+  for (let i = 0; i < str.length - 1; i++) {
+    const current = str.charCodeAt(i);
+    const next = str.charCodeAt(i + 1);
+
+    for (let code = current + 1; code < next; code++) {
+      missing.push(String.fromCharCode(code));
+    }
+  }
+  return missing;
+}
+
+console.log(findAllMissingLetters("abcdfkl"));
+
+Q.15 Write a function to replace smiley faces ":)" with sad faces ":(". 1D
+function replaceSmiley(input) {
+    
+    arr = input.replaceAll(')','(');
+    return arr
+};
+
+const str = ":) :) :) All smiles here :)";
+console.log(replaceSmiley(str))
+
+Q.16 Write a function to reverse only the letters in a string.
+function reverseLettersKeepNumbers(str) {
+  const output = [];
+  
+  for (let i = str.length - 1; i >= 0; i--) {
+    let char = str[i];
+    if (/^[a-zA-Z]+$/.test(char)) output.push(char);
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    char = str[i];
+    if (char === '0' || parseInt(char)) 
+      output.splice(i, 0, char);
+  }
+
+  return output.join('');
+}
+var str = "a1b2c3d4";
+
+console.log(reverseLettersKeepNumbers(str))
+
+Q.17 Write a function to reverse only the letters in a string.
+function reverseLettersKeepNumbers(str) {
+  const output = [];
+  
+  for (let i = str.length - 1; i >= 0; i--) {
+    let char = str[i];
+    if (/^[a-zA-Z]+$/.test(char)) output.push(char);
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    char = str[i];
+    if (char === '0' || parseInt(char)) 
+      output.splice(i, 0, char);
+  }
+
+  return output.join('');
+}
+var str = "a1b2c3d4";
+
+console.log(reverseLettersKeepNumbers(str))
+
+Q.18 Write a function to check if any word in a sentence repeats.
+function findRepeats(sentence) {
+  const words = sentence.toLowerCase().split(' ');
+  const seen = new Set();
+  const repeats = new Set();
+  for (const word of words) {
+    if (seen.has(word)) repeats.add(word);
+    seen.add(word);
+  }
+  return [...repeats].length != 0 ? "Repeat" : 'Non Repeat';
+}
+
+console.log(findRepeats("Hello hello world world")); 
+
+Q.19 Write a function to make a given string palindrome based on another string.
+function makePalindrome(str1, str2) {
+  let result = []
+  for (let i = str2.length - 1; i >= 0; i--) {
+    result.push(str2[i])
+  }
+  for (let i of str1) {
+    if (result.includes(i)) continue;
+    else result.push(i);
+  }
+  result = result.join('') + str2;
+  reverse = result.split('').reverse().join('');
+  if (result === reverse) return result;
+  else return '';
+};
+
+console.log(makePalindrome("ivicc", "ic"))
+
+Q.20 Write a function to match strings by letters.
+function stringMatchByLetters(str1, str2) {
+   for(let i=0; i<str1.length;i++){
+    if(!str2.includes(str1[i])){
+      return "No Match"
+    } 
+   }
+   
+   return "Match"
+}
+
+console.log(stringMatchByLetters("hello","world"))
+
+Q.21 Write a function to move all capital letters in a string to the front.
+function moveCapitalsToFront(s) {
+    let cap = "";
+    let nocap = "";
+    for(let char of s) {
+        if(char >= 'A' && char <= 'Z') {
+            cap += char;
+        } else {
+            nocap += char;
+        }
+    }
+    return cap + nocap;
+}
+
+Q.22 Write a function to remove special characters from a string.
+function removeSpecialChars(str) {
+  return str.replace(/[^a-zA-Z0-9 ]/g, '');
+}
+
+Q.23 Write a function to find the longest consecutive zeros in a given string.
+function largestConsecutiveZeros(str) {
+  let maxZeros = 0;
+  let currentZeros = 0;
+
+  for (let char of str) {
+    if (char === "0") {
+      currentZeros++;
+      if (currentZeros > maxZeros) {
+        maxZeros = currentZeros;
+      }
+    } else {
+      currentZeros = 0; // reset when not zero
+    }
+  }
+
+  return maxZeros;
+}
+
+const str = "1031200140001";
+console.log(largestConsecutiveZeros(str)); 
+
 
 */
