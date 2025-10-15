@@ -170,5 +170,35 @@ function generateSpiral(n) {
 console.log(generateSpiral(4));
 
 
+
+
+const promise2 = 4;
+const promise1 = Promise.reject(3);
+const promise3 = new Promise((resolve, reject) => {
+    setTimeout(resolve, 100, 'Foo');
+});
+
+Promise.all([promise2, promise1, promise3]).then(res => {
+    console.log(res)
+}).catch(err => console.log("err", err))
+
+// Promise.allSettled([promise1, promise2, promise3]).then(res => {
+//     console.log(res)
+// })
+
+// const p1 = Promise.reject(0);
+// const p2 = new Promise((resolve) => setTimeout(resolve, 100, 'quick'));
+// const p3 = new Promise((resolve) => setTimeout(resolve, 500, 'slow'));
+
+// Promise.any([p1, p2, p3]).then((res) => console.log(res));
+
+
+// const p2 = new Promise((resolve, reject) => setTimeout(resolve, 100, 'quick'));
+// const p3 = new Promise((resolve) => setTimeout(resolve, 500, 'slow'));
+// const p1 = Promise.resolve('13')
+// const p2 = Promise.resolve('11')
+// Promise.race([p2, p1]).then((res) => console.log(res)).catch(console.log);
+
+
 */
 

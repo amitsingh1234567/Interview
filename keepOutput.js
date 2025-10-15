@@ -50,6 +50,79 @@ Bugs in code like undefined, Variable not decleread
 
 uncaughtException
 unhandledRejection
+
+Q. If your API is giving slow responses, how will you optimize it?
+
+1. “I’ll start by identifying where the slowdown is — whether it’s the database,sq
+network, code logic, or external service.”
+
+2. Database Optimization
+    a) Adding indexes on frequently filtered columns
+    b) Avoiding SELECT * (fetch only needed fields)
+    c) Using pagination (LIMIT / OFFSET) for large results
+
+3. Caching Layer    
+“I’ll cache frequently requested data using Redis or in-memory caching to reduce database hits.”
+
+4. Code-Level Optimization
+    a) “I’ll optimize the code itself — removing blocking operations, using async/await properly, and batching operations.”
+    b) Use Promise.all() for parallel requests
+    c) Avoid blocking code (like heavy loops or sync file I/O)
+    d) Move CPU-heavy work to worker threads or queues
+    e) Stream
+
+5. Server and Deployment Optimization
+“I’ll optimize the server environment — like scaling horizontally or using load balancers.”
+    a) Use PM2 cluster mode to utilize all CPU cores
+    b) Scale horizontally with load balancer (NGINX / AWS ELB)
+    c) Use connection pooling for DB connections
+    d) Enable compression middleware
+    e) Optimize Node.js event loop (no blocking operations)
+
+6: Give a Real Example (This impresses interviewers)
+“For example, once our /users API was taking 2.5s because it fetched related orders separately for each user.
+I used Promise.all() and added Redis caching, which reduced the response time to 150ms.”
+
+Q. If a problem occurs in your app, how will you make sure it doesn’t impact the entire application?
+1. Design for Isolation (Modular Architecture)
+    a) I structure my app in modules so that one failure doesn’t affect others.
+    b) Split large apps into microservices or modular components
+    c) Use separate routes/controllers for different features
+    d) I ensure each module in my Node.js app (like user, order, payment) is independent. 
+       So if one module fails, the others continue working.
+
+2. Add Proper Error Handling
+    I use centralized error handling middleware so that even if one API throws an error, the server continues to run.
+
+3. I run Node.js apps with PM2, which restarts the process automatically on crash and ensures high availability.
+
+
+Q. What is a Memory Leak?
+A memory leak happens when unused objects remain in memory because
+something in your code still holds a reference to them.
+
+Example:- 
+let leaks = [];
+
+function memoryLeak() {
+  // Each call pushes data into global array and never clears it
+  leaks.push(new Array(1000000).fill("*"));
+  console.log("Current leaks:", leaks.length);
+}
+
+// Call function repeatedly
+setInterval(memoryLeak, 1000);
+
+So if your code accidentally keeps a reference (like in global variables, closures, or event listeners),
+GC can’t free that memory, which causes a memory leak.
+
+How to Detect It: - 
+setInterval(() => console.log(process.memoryUsage()), 5000);
+Use tools like:- 
+1. Capture heap snapshots with --inspect and analyze in Chrome DevTools.
+2. clinic.js
+
+
 *******************************************************************************
 
 Angular : -
@@ -71,26 +144,12 @@ View is a virtual table that is use to store the data in VT insted of intrecting
 
 Today Activity
 ********** L-0
-Q.25
-Q.41
-Q.15
-Q.1
-Q.2
+
 
 ********** L-2
-Q.13
-Q.14
-Q.8
-Q.7
-
 
 Pattern
-Q.10
-Q.22
-Q.1
-Q.8
-Q.21
-Q.24
+
 
 */
 
