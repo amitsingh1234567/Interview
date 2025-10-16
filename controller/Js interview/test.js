@@ -1,13 +1,26 @@
-function checkPalinDrome(str){
+function main(obj, parentKey = '', result = {}){
+    var num = 12345;
+    var reversedNum = num.toString().split('').reverse().join('');
+    
+    return parseInt(reversedNum) * Math.sign(num)
 
-  for(let i = 1; i<= str.length; i++){
-    console.log(str.slice(0, i))
-  }
-
+  
 };
 
-var str = 'malylam';
-console.log(checkPalinDrome(str))
+
+const obj = {
+  name: "John",
+  age: 25,
+  address: {
+    city: "Delhi",
+    details: {
+      pin: "110001",
+      landmark: "Near Park"
+    }
+  }
+};
+console.log(main(obj));
+
 /*
 
 m
