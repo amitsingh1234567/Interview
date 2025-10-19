@@ -1,3 +1,24 @@
+/*
+
+L-0
+Q.43
+Q.32
+Q.31
+Q.56
+
+L-2
+Q.8
+Q.12
+Q.19
+
+Pattern
+Q.22
+
+
+* */
+
+
+
 function mergeObjDeeply(obj1, obj2){
   const result = { ...obj1 };
 

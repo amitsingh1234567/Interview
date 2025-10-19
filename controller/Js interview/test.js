@@ -1,110 +1,44 @@
-function main(obj, parentKey = '', result = {}){
-    var num = 12345;
-    var reversedNum = num.toString().split('').reverse().join('');
-    
-    return parseInt(reversedNum) * Math.sign(num)
-
+function main(str1, str2){
+  var current = [];
   
-};
+  for(let i = str2.length - 1; i >= 0; i--){
+    current.push(str2[i]);
+  };
 
-
-const obj = {
-  name: "John",
-  age: 25,
-  address: {
-    city: "Delhi",
-    details: {
-      pin: "110001",
-      landmark: "Near Park"
+  for(let char of str1){
+    if(!current.includes(char)){
+      current.push(char);
     }
-  }
-};
-console.log(main(obj));
+  };
+
+  var str = current.join('') + str2; 
+  var reversedStr = str.split('').reverse().join('');
+
+  if(str === reversedStr) return str;
+
+  return 'Given string is not able to make a palindrome';
+
+} 
+
+console.log(main("ivicc", "icp"))
+
+
+
+
+
 
 /*
 
-m
-ma
-mal
-maly
-malyl
+     *
+    * *
+   *   *
+  *     *
+ *       *
+*         *
+ *       *
+  *     *
+   *   *
+    * *
+     *
 
-selelct * from profile
-join profile_id as p_id on  p_id = profile.id
-* */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// var jwt = require('jwt');
-
-// function assignToken(){
-//   const accessToken = jwt.sign({email: "greet@yopmail.com", role: getRoles()[0]}, {expireIn: new Date().getMinutes() + 60});
-//   performTask(accessToken)
-// }
-
-// function getRoles(){
-//   const role = ['Manager', 'Team Lead', 'Developer'];
-//   return role;
-// }
-
-// function performTask(accessToken){
-//   var decodedPayload = jwt.verify(accessToken);
-  
-//   if(decodedPayload.role == 'Manager'){
-//     taskA()
-//   };
-
-//   if(decodedPayload.role == 'Team Lead'){
-//     taskB()
-//   };
-
-// }
-
-// function taskA(){
-//   console.log('Task A')
-// }
-
-// function taskB(){
-//   console.log('Task B')
-// }
-
-
-
-
-
+*/
