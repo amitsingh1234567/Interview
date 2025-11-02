@@ -1720,3 +1720,23 @@ function printDiagonalMatrix(size) {
 // Example usage
 printDiagonalMatrix(4);
 */
+
+function main(arr){
+  const mapKey = {}
+
+  for(let word of arr){
+    const storedKey = word.split('').sort().join('')
+    console.log(storedKey)
+
+    if(!mapKey[storedKey]){
+      mapKey[storedKey] = [];
+    };
+    mapKey[storedKey].push(word);
+  };
+
+  console.log(Object.values(mapKey))
+}
+
+var arr = ["eat", "tea", "tan", "ate", "nat", "bat"];
+// [["eat","tea","ate"],["tan","nat"],["bat"]]
+main(arr)

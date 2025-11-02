@@ -1,21 +1,40 @@
 /*
 
 L-0
-Q.43
-Q.32
-Q.31
-Q.56
+
 
 L-2
-Q.8
-Q.12
-Q.19
+
 
 Pattern
-Q.22
-
+Q.7
+Q.17
+Q.24
+Q.16
 
 * */
+
+/*
+import {Directive, ElementRef, HostListner} from  '@angular/core';
+
+@Directive({
+  selector: ['highlighter']
+});
+
+export class HighlightDirective {
+  constructor(private el: ElementRef){};
+
+  @HostListner('mouseenter') 
+  onMouseEnter(){
+    this.el.nativeElement.style.backgroundColor = 'green';
+  };
+
+  @HostListner('mouseleave') 
+  onMouseLeave(){
+    this.el.nativeElement.style.backgroundColor = null;
+  }
+};
+*/
 
 
 

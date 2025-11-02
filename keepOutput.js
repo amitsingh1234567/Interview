@@ -1,4 +1,9 @@
 /* 765
+Impetus Password:- QcGY6qLe_qu#TuC
+QcGY6qLe_qu#TuC
+
+Common.JS and PolyFill
+Mphasis password:- rS7gE$2X9Kx*T8q
 RSA Algorithm
 FromGroup 
 Accenture password *EQ9BsJVVs%H8pd
@@ -1176,8 +1181,6 @@ printPattern(n);
 
 
 
-
-
 /*
 LEVEL => 2
 Q.1 Write a function to find the maximum number of pairs that can be formed from an array. 1D, 2D
@@ -1591,5 +1594,137 @@ function largestConsecutiveZeros(str) {
 const str = "1031200140001";
 console.log(largestConsecutiveZeros(str)); 
 
+// Q.24 Write a function to find the longest common ending in two strings.
+function findLongestCommonEnding(str1, str2) {
+    let common = ""
+    let i = str1.length - 1;
+    let j = str2.length - 1;
+    console.log(i)
+    console.log(j)
+     while (i >= 0 && j >= 0 && str1[i] === str2[j]) {
+        common = str1[i] + common;
+        i--
+        j--
+     }
+     return common;
+}
+
+const str1 = "programming";
+const str2 = "gaming";
+console.log(findLongestCommonEnding(str1, str2));
+
+// Q.25 Write a program to group the anagaram
+function groupAnagaram(arr) {
+  const map = new Map();
+  for (let word of arr) {
+    const sorted = word.split('').sort().join('');
+
+    if (!map.has(sorted)) {
+      map.set(sorted, []);
+    }
+    map.get(sorted).push(word);
+  }
+  return Array.from(map.values());
+}
+
+var arr = ["eat", "tea", "tan", "ate", "nat", "bat"];
+console.log(groupAnagaram(arr));
+
+// Q. Write a function to format a number using thousands separators.
+function formatWithCommas(num) {
+  const str = String(num);
+  let result = "";
+  let count = 0;
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    result = str[i] + result;
+    count++;
+
+    if (count === 3 && i !== 0) {
+      result = "," + result;
+      count = 0;
+    };
+  }
+
+  return result;
+};
+
+console.log(formatWithCommas(1234567))
 
 */
+
+
+
+/*
+OPQ BASED SSECTION
+
+Q. 1 
+setTimeout(() => {
+  console.log('setTimeout-1');
+  Promise.resolve().then(() => {
+    console.log('Promise-1')
+  })
+}, 0);
+
+new Promise((resolve, reject) => {
+  console.log('Promise-2')
+  setTimeout(() => {
+    console.log('setTimeout-2');
+    resolve('Promise-3')
+  },0)
+}).then((res) => {
+  console.log('dot then.');
+  console.log(res)
+})
+
+Q.2 
+for(var i = 0; i<10; i++) {
+    setTimeout(() => {
+        console.log(++i)
+    }, 0)
+};
+
+Q.3 
+fun();
+var a = 10;
+function fun() {
+	console.log(a);
+	a = 11;
+}
+console.log(a);
+
+Q.4 
+var arr = [
+{firstname: "Greet-1", lastname: "Foo-1", address: "Noida-1"},
+{firstname: "Greet-2", lastname: "Foo-2", address: "Noida-2"},
+{firstname: "Greet-3", lastname: "Foo-3", address: "Noida-3"},
+{firstname: "Greet-4", lastname: "Foo-4", address: "Noida-4"},
+{firstname: "Greet-5", lastname: "Foo-5", address: "Noida-5"},
+];
+
+function displayName(){
+	return `${this.firstname} ${this.lastname}`
+};
+
+console.log(displayName.call(arr.slice(-1)[0]));
+
+Q.5 
+console.log([1,2,3,4,5,6].filter((m, i) => { if (m%2 === 0) return m; }));
+console.log([1,2,3,4,5,6].map((m, i) => { if (m%2 === 0) return m; } ));
+
+Q.6
+function userDetails(username) {
+  if (username) {
+    console.log(salary);
+    console.log(age);
+    let age = 30;
+    var salary = 10000;
+  }
+  console.log(salary);
+  console.log(age);
+};
+
+userDetails("Test");
+
+
+* */
