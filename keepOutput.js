@@ -1,4 +1,12 @@
-/* 765
+/*
+Lead code Link:-
+https://medium.com/@aminakbari.dev/top-10-must-solve-javascript-leetcode-problems-for-interviews-5cc56f8852c9
+https://www.youtube.com/watch?v=UWrFEnoTmcM
+https://github.com/JoshCrozier/leetcode-javascript
+https://github.com/JoshCrozier/leetcode-javascript/tree/master
+
+
+765
 Eagle Drift:
 Email:- amit.kumar@eagledrift.com
 PWD:- Y!592122892139up
