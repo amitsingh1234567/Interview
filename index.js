@@ -84,5 +84,5 @@ app.get('/test', (req, res, next) => {
     res.send(msg)
 })
 
-// Server is running up...
-app.listen(8000);
+const PORT = 8000;
+app.listen(PORT, () => console.log(`Server is running up on PORT: ${PORT}`));
