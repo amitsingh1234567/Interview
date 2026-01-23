@@ -250,6 +250,125 @@ Q.60 How to remove only special characters from a string
 
 
 
+
+/*
+LEVEL => 0
+Q.1 Deep clone an object
+
+function objectClone(obj){
+    if(obj === null || typeof obj != 'object'){
+        return obj;
+    };
+
+    const copyValue = Array.isArray(obj) ? [] : {};
+
+    for(let key in obj){
+        copyValue[key] = objectClone(obj[key]);
+    };
+
+    return copyValue;
+};
+
+const original = {
+  name: "Amit",
+  age: 28,
+  skills: ["JS", "Angular"],
+  address: {
+    city: "Delhi"
+  }
+};
+
+const copy = objectClone(original);
+copy.address.city = 'Updated city';
+
+console.log('original =>', original);
+console.log('copy =>', copy);
+
+Q.2 Compare two objects for equality
+
+function deepEqual(obj1, obj2){
+    if(obj1 === obj2) return true;
+
+    if(obj1 == null || typeof obj1 !== 'object' || obj2 == null || typeof obj2 != 'object'){
+        return false;
+    };
+
+    const keys1 = Object.keys(obj1);
+
+    const keys2 = Object.keys(obj2);
+
+    if(keys1.length != keys2.length) return false;
+
+    for(let key of keys1){
+        if(!keys2.includes(key) || !deepEqual(obj1[key], obj2[key])){
+            return false;
+        }
+    };
+
+    return true;
+}
+  
+  const obj1 = {
+    name: 'John',
+    age: 31,
+    address: {
+      city: 'New York',
+      postalCode: 10001
+    }
+  };
+  
+  const obj2 = {
+    name: 'John',
+    age: 30,
+    address: {
+      city: 'New York',
+      postalCode: 10001
+    }
+  };
+  
+  console.log(deepEqual(obj1, obj2));  
+
+Q.3  Group objects by a property
+
+function groupObj(arr, path) {
+    const result = {};
+
+    for (let obj of arr) {
+        const property = getNestedValue(obj, path);
+        if (!result[property]) {
+            result[property] = [];
+        };
+        result[property].push(obj);
+    };
+
+    return result;
+};
+
+
+function getNestedValue(obj, path) {
+  if (obj == null || !path) return obj;
+  let acc = obj;
+  for (const key of path.split('.')) {
+    if (acc == null) return undefined;
+    acc = acc[key];
+  }
+  return acc;
+}
+
+const users = [
+    { name: "Alice", age: 25, address: { city: "Delhi", country: "India" } },
+    { name: "Bob", age: 30, address: { city: "Mumbai", country: "India" } },
+    { name: "Charlie", age: 25, address: { city: "Delhi", country: "India" } },
+    { name: "David", age: 30, address: { city: "Bangalore", country: "India" } },
+];
+
+console.log(groupObj(users, "address.city"));
+
+
+*/
+
+
+
 /*
 LEVEL => 1
 Q.1 Print3D this pattern 1D, 2D, 
