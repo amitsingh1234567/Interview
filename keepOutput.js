@@ -18,7 +18,7 @@ QcGY6qLe_qu#TuC
 Common.JS and PolyFill
 Mphasis password:- rS7gE$2X9Kx*T8q
 RSA Algorithm
-FromGroup 
+FromGroup
 Accenture password *EQ9BsJVVs%H8pd
 stand stand alone
 Top 50 Q by chatGpt
@@ -33,7 +33,7 @@ https://www.youtube.com/watch?v=ufBbWIyKY2E
 Resursion Explaination
 https://chatgpt.com/share/68bc40ea-e580-8011-a4d3-83184c655efa
 
-Error handling 
+Error handling
 https://chatgpt.com/share/68cb6d82-be58-8013-94a7-b0a1ae76d018
 https://chatgpt.com/share/68cb6fb3-2cac-8011-a18e-d87bd18ab92b
 uncaughtException
@@ -45,15 +45,15 @@ https://chatgpt.com/share/683bc422-3264-8013-a7c5-6fd82301ba1c
 What is the difference between a shallow copy and a deep copy
 
 *******************************************************************************
-NodeJs :- 
-1. Synchronous Errors: - 
+NodeJs :-
+1. Synchronous Errors: -
 Usually caused by:
 Invalid code (ReferenceError, TypeError, SyntaxError)
 Logic mistakes (dividing by zero, invalid function calls)
 Explicit throw statements
 Can be caught using try...catch
 
-2. Asynchronous Errors: - 
+2. Asynchronous Errors: -
 Must be caught using:
 Callbacks → if (err) return ... Use Error-First Callbacks (classic Node.js style)
 Promises → .catch()
@@ -80,7 +80,7 @@ network, code logic, or external service.”
     b) Avoiding SELECT * (fetch only needed fields)
     c) Using pagination (LIMIT / OFFSET) for large results
 
-3. Caching Layer    
+3. Caching Layer
 “I’ll cache frequently requested data using Redis or in-memory caching to reduce database hits.”
 
 4. Code-Level Optimization
@@ -107,7 +107,7 @@ Q. If a problem occurs in your app, how will you make sure it doesn’t impact t
     a) I structure my app in modules so that one failure doesn’t affect others.
     b) Split large apps into microservices or modular components
     c) Use separate routes/controllers for different features
-    d) I ensure each module in my Node.js app (like user, order, payment) is independent. 
+    d) I ensure each module in my Node.js app (like user, order, payment) is independent.
        So if one module fails, the others continue working.
 
 2. Add Proper Error Handling
@@ -120,7 +120,7 @@ Q. What is a Memory Leak?
 A memory leak happens when unused objects remain in memory because
 something in your code still holds a reference to them.
 
-Example:- 
+Example:-
 let leaks = [];
 
 function memoryLeak() {
@@ -135,9 +135,9 @@ setInterval(memoryLeak, 1000);
 So if your code accidentally keeps a reference (like in global variables, closures, or event listeners),
 GC can’t free that memory, which causes a memory leak.
 
-How to Detect It: - 
+How to Detect It: -
 setInterval(() => console.log(process.memoryUsage()), 5000);
-Use tools like:- 
+Use tools like:-
 1. Capture heap snapshots with --inspect and analyze in Chrome DevTools.
 2. clinic.js
 
@@ -154,7 +154,7 @@ For asynchronous operations involving observables, the catchError operator from 
 4. Use Interceptors for API errors to avoid repeating catchError everywhere.
 
 The event loop is the heart of Node. js, enabling non-blocking, asynchronous execution.
-Unlike traditional multi-threaded models, Node. js is single-threaded but uses an event-driven, 
+Unlike traditional multi-threaded models, Node. js is single-threaded but uses an event-driven,
 non-blocking architecture to handle I/O-bound operations efficiently.
 
 
@@ -173,7 +173,6 @@ reversed number
 ********** L-2
 
 Pattern
-
 
 */
 
@@ -242,19 +241,16 @@ Q.54 Write a program of FizzBuzz (pending)
 Q.55 --------------------------------
 Q.56 Find Second Non Repeating Character 1D, 2D
 Q.57 How to make object immutable 1D, 2D, 3D
-Q.58 Group deeply objects by a property 
+Q.58 Group deeply objects by a property
 Q.59 How to remove space and any explemenatry fro a string
-Q.60 How to remove only special characters from a string 
+Q.60 How to remove only special characters from a string
 
 */
 
 
-
-
+// LEVEL => 0
+// Q.1 Deep clone an object
 /*
-LEVEL => 0
-Q.1 Deep clone an object
-
 function objectClone(obj){
     if(obj === null || typeof obj != 'object'){
         return obj;
@@ -283,9 +279,10 @@ copy.address.city = 'Updated city';
 
 console.log('original =>', original);
 console.log('copy =>', copy);
+*/
 
-Q.2 Compare two objects for equality
-
+// Q.2 Compare two objects for equality
+/*
 function deepEqual(obj1, obj2){
     if(obj1 === obj2) return true;
 
@@ -307,7 +304,7 @@ function deepEqual(obj1, obj2){
 
     return true;
 }
-  
+
   const obj1 = {
     name: 'John',
     age: 31,
@@ -316,7 +313,7 @@ function deepEqual(obj1, obj2){
       postalCode: 10001
     }
   };
-  
+
   const obj2 = {
     name: 'John',
     age: 30,
@@ -325,11 +322,12 @@ function deepEqual(obj1, obj2){
       postalCode: 10001
     }
   };
-  
-  console.log(deepEqual(obj1, obj2));  
 
-Q.3  Group objects by a property
+console.log(deepEqual(obj1, obj2));
+*/
 
+// Q.3  Group objects by a property
+/*
 function groupObj(arr, path) {
     const result = {};
 
@@ -343,7 +341,6 @@ function groupObj(arr, path) {
 
     return result;
 };
-
 
 function getNestedValue(obj, path) {
   if (obj == null || !path) return obj;
@@ -363,9 +360,96 @@ const users = [
 ];
 
 console.log(groupObj(users, "address.city"));
+*/
 
+// Q.4  Merge two objects deeply
+/*
+function mergeObjDeeply(obj1, obj2){
+    const result = {...obj1};
+
+    for(let key in obj2){
+        if(typeof obj2[key] === 'object' && !Array.isArray(obj2[key])){
+            if(key == 'arr'){
+                console.log(result[key])
+            }
+            result[key] = mergeObjDeeply(result[key], obj2[key]);
+        }else{
+            result[key] = obj2[key];
+        }
+    };
+
+    return result;
+}
+
+const obj1 = {
+  name: "John",
+  address: {
+    city: "Delhi",
+    pin: 110001
+  }
+};
+
+const obj2 = {
+  age: 25,
+  address: {
+    zone: "North",
+    pin: 560001,
+    arr: ["jbiubjk"]
+  }
+};
+console.log(mergeObjDeeply(obj1, obj2));
 
 */
+
+// Q.5  Convert nested object to flat object
+/* 
+function flattenObject(obj, parentKey = "", result = {}) {
+  for (let key in obj) {
+      const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+      if (typeof obj[key] === "object" && obj[key] !== null && !Array.isArray(obj[key])) {
+        flattenObject(obj[key], newKey, result);
+      } else {
+        result[newKey] = obj[key];
+      }
+  }
+  return result;
+}
+
+const obj = {
+  name: "John",
+  age: 25,
+  address: {
+    city: "Delhi",
+    details: {
+      pin: "110001",
+      landmark: "Near Park"
+    }
+  }
+};
+
+console.log(flattenObject(obj));
+*/
+
+// Q.6  Find keys with maximum value in an object
+/*
+function findMaxKey(obj){
+   const maxValue = Math.max(...Object.values(obj));
+   return Object.keys(obj).filter((key) => obj[key] === maxValue);
+}
+
+const scores = {
+  a: 10,
+  b: 25,
+  c: 15,
+  d: 25
+};
+
+
+console.log(findMaxKey(scores))
+*/
+
+
 
 
 
@@ -1315,7 +1399,7 @@ printPattern(n);
 
 /*
 LEVEL => 2
-Q.1 Write a function to find the maximum number of pairs that can be formed from an array. 1D, 2D
+Q.1 Write a function to find the maximum number of pairs that can be formed from an array. v-1 1D, 
 
 function maxPairs(arr) {
   const freq = {};
@@ -1820,8 +1904,8 @@ Q.3
 fun();
 var a = 10;
 function fun() {
-	console.log(a);
-	a = 11;
+    console.log(a);
+    a = 11;
 }
 console.log(a);
 
@@ -1835,7 +1919,7 @@ var arr = [
 ];
 
 function displayName(){
-	return `${this.firstname} ${this.lastname}`
+    return `${this.firstname} ${this.lastname}`
 };
 
 console.log(displayName.call(arr.slice(-1)[0]));

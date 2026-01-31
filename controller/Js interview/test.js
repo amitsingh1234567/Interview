@@ -1,33 +1,13 @@
-function groupObj(arr, path) {
-    const result = {};
+function maxSubArray(nums) {
+  let currentSum = nums[0];
+  let maxSum = nums[0];
 
-    for (let obj of arr) {
-        const property = getNestedValue(obj, path);
-        if (!result[property]) {
-            result[property] = [];
-        };
-        result[property].push(obj);
-    };
-
-    return result;
-};
-
-
-function getNestedValue(obj, path) {
-  if (obj == null || !path) return obj;
-  let acc = obj;
-  for (const key of path.split('.')) {
-    if (acc == null) return undefined;
-    acc = acc[key];
+  for (let i = 1; i < nums.length; i++) {
+    currentSum = Math.max(nums[i], currentSum + nums[i]);
+    maxSum = Math.max(maxSum, currentSum);
   }
-  return acc;
+
+  return maxSum;
 }
 
-const users = [
-    { name: "Alice", age: 25, address: { city: "Delhi", country: "India" } },
-    { name: "Bob", age: 30, address: { city: "Mumbai", country: "India" } },
-    { name: "Charlie", age: 25, address: { city: "Delhi", country: "India" } },
-    { name: "David", age: 30, address: { city: "Bangalore", country: "India" } },
-];
-
-console.log(groupObj(users, "address.city"));
+console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
