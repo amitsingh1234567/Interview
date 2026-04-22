@@ -85,4 +85,4 @@ app.get('/test', (req, res, next) => {
 })
 
 const PORT = 8000;
-app.listen(PORT, () => console.log(`Server is running up on PORT: ${PORT}`));
+app.listen(PORT);

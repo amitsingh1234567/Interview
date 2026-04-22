@@ -6,15 +6,6 @@ https://github.com/JoshCrozier/leetcode-javascript
 https://github.com/JoshCrozier/leetcode-javascript/tree/master
 
 
-765
-Eagle Drift:
-Email:- amit.kumar@eagledrift.com
-PWD:- Y!592122892139up
-HreatHR PWD:- Yb!58$12289#@39up
-
-Impetus Password:- QcGY6qLe_qu#TuC
-QcGY6qLe_qu#TuC
-
 Common.JS and PolyFill
 Mphasis password:- rS7gE$2X9Kx*T8q
 RSA Algorithm
@@ -178,26 +169,26 @@ Pattern
 
 /*
 LEVEL => 0
-Q.1  Deep clone an object (Top). 1D, 2D, 3D
-Q.2  Compare two objects for equality (Top). 1D, 2D, 3D
+Q.1  Deep clone an object (Top). *
+Q.2  Compare two objects for equality (Top). *
 Q.3  Group objects by a property (Top) 1D, 2D, 3D
 Q.4  Merge two objects deeply.(Top) 1D, 2D, 3D
-Q.5  Convert nested object to flat object.(Top) 1D, 2D, 3D
+Q.5  Convert nested object to flat object.(Top) *
 Q.6  Find keys with maximum value in an object. 1D, 2D
 Q.7  Implement array chunking (split array into smaller arrays) 1D, 2D
 Q.8  Find the longest substring without repeating characters. (Not needed)
-Q.9  Find the missing number in a sequence 1D, 2D
+Q.9  Find the missing number in a sequence *
 Q.10 Rotate an array k times. 1D, 2D, 3D
 Q.11 Find the intersection of two arrays. 1D, 2D
-Q.12 Move all zeros to the end of an array . 1D, 2D
-Q.13 Find the second largest element in an array (Top). 1D, 2D, 3D
+Q.12 Move all zeros to the end of an array *
+Q.13 Find the second largest element in an array (Top) *
 Q.14 Find duplicate numbers in an array. 1D, 2D
 Q.15 Flatten a nested array without using flat(). 1D, 2D, 3D
 Q.16 Reverse a string without using built-in reverse(). 1D, 2D
 Q.17 Check if a string is a palindrome. 1D, 2D
 Q.18 Find the first non-repeating character in a string. 1D, 2D
 Q.20 Count the occurrences of each character in a string. 1D, 2D
-Q.21 Reverse words in a sentence. 1D, 2D
+Q.21 Reverse words in a sentence *
 Q.22 Check if two strings are anagrams. 1D, 2D
 Q.23 Find the longest common prefix in an array of strings. (pending)
 Q.24 Remove duplicate characters from a string. 1D, 2D
@@ -208,35 +199,35 @@ Q.28 Count frequency of elements using object/Map. 1D, 2D
 Q.29 Implement memoization function. (pending)
 Q.30 -----------------------------------
 Q.31 Display this desired output { abc: 3, ccr: 2, jtv: 1 }
-    from this given Array ['abc','bac','bac','ccr','rcc','vtj'] 1D, 2D
+    from this given Array ['abc','bac','bac','ccr','rcc','vtj'] *
 
-Q.32 Find Common key value in to this two object
+Q.32 Find Common key value in to this two object *
     const input1 = {a:15, b:5, c:8, d:10, e:15}
-    const input2 = {a:5, e:15, f:10, d:10}; 1D, 2D
+    const input2 = {a:5, e:15, f:10, d:10}; 
 
-Q.32 Captilized first letter of word 1D, 2D
-Q.33 Remove duplicate from array 1D, 2D
-Q.34 Remove duplicate from array of object 1D, 2D
-Q.35 Array shorting 1D, 2D
-Q.36 Array of object shorting 1D, 2D
+Q.32 Captilized first letter of word *
+Q.33 Remove duplicate from array *
+Q.34 Remove duplicate from array of object *
+Q.35 Array shorting *
+Q.36 Array of object shorting *
 Q.37 find the position of first and final occurrence of an element in an array element is 5 1D, 2D
-Q.38 Remove all the zero at the end 1D, 2D
+Q.38 Remove all the zero at the end *
 Q.39 --------------------------------
-Q.40 Write a program to find Third Largest number (Top) 1D, 2D, 3D
+Q.40 Write a program to find Third Largest number *
 Q.41 Write a program of Two Sum 1D, 2D, 3D, 4D
 Q.42 --------------------------------
 Q.43 Write a function that returns the deepest key-value pair in a nested object 1D, 2D, 3D
 Q.44 Write a program for setZero Matrix (pending)
 Q.45 -----------------------------------------
-Q.46 Write a program to check valid brackets 1D, 2D, 3D
-Q.47 Find the Longest Key in an Object 1D, 2D, 3D
+Q.46 Write a program to check valid brackets *
+Q.47 Find the Longest Key in an Object *
 Q.48 Find index of Captial letter to given Array 1D, 2D
 Q.49 if i have five words how do i convert first second and four word as captial letter 1D, 2D
-Q.50 Reverse string word wise 1D, 2D
+Q.50 Reverse string word wise *
 Q.51 Display only non repeaing value of the given Array 1D, 2D
 Q.52 Replace a specific letter from the different symbol of the given string 1D, 2D
-Q.52 Write a program to print Captial A-Z using loop 1D, 2D
-Q.53 Write a program to print Captial a-z using loop 1D, 2D
+Q.52 Write a program to print Captial A-Z using loop *
+Q.53 Write a program to print Captial a-z using loop *
 Q.54 Write a program of FizzBuzz (pending)
 Q.55 --------------------------------
 Q.56 Find Second Non Repeating Character 1D, 2D

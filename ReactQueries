@@ -1,0 +1,155 @@
+Q.1 What is Vite 
+Q.2 What Controlled component
+Q.3 What Uncontrolled component
+Q.4 Why be need to pass the function to the child component from parent component 
+Q.5 What is pure function
+Q.6 What is impure function
+Q.7 What is pure component
+Q.8 What is impure component 	
+Q.8 What is derived state
+Q.9 Smart vs dump component (React/Angular)
+Q.10 What is High order component
+Q.11 What is the difference between Component and function
+Q.12 useMemo vs useCallback
+Q.13 what aysncthunk (react-redux)
+Q.14 Redux => Redux ToolKit => AsyncThunk =>  RTK Query
+
+Context API(To pass the data between component)
+
+Need to view again:-
+1. https://www.youtube.com/watch?v=lbIHvpCGH6A&list=PL8p2I9GklV463WUKdVzUZ17IDZ3SwoSTu&index=43
+(#40 Pass Function in Component as Props)
+
+2. #52 Context API Reactjs
+
+
+Q. “How do you structure a React app?”
+I follow a modular structure by separating components, pages, services, hooks, and routes. Reusable UI components go into a common folder, API logic is isolated in services, and routing is centralized. For large-scale apps, I prefer feature-based architecture to improve scalability and maintainability.
+
+I want to create a project like e-commerce website where feature will be as following 1. Authentication system using email id and password 2. product list 3. Add to card 4. filter 5. shorting 6. pagination
+
+I want to create a project like e-commerce website where feature will be as following 1. Authentication system using email id and password 2. product list 3. Add to card 4. filter 5. shorting 6. pagination
+
+
+
+
+
+
+src/
+│
+├── assets/            # images, icons, fonts
+│
+├── components/        # reusable UI components
+│   ├── common/        # buttons, inputs, loaders
+│   ├── layout/        # Navbar, Footer, Sidebar
+│
+├── pages/             # route-level components
+│   ├── Home.jsx
+│   ├── Login.jsx
+│   ├── Dashboard.jsx
+│
+├── routes/            # routing config
+│   └── AppRoutes.jsx
+│
+├── services/          # API calls (axios/fetch)
+│   └── userService.js
+│
+├── hooks/             # custom hooks
+│   └── useAuth.js
+│
+├── context/           # React Context (global state)
+│   └── AuthContext.jsx
+│
+├── utils/             # helper functions
+│   └── formatDate.js
+│
+├── constants/         # static values
+│   └── appConstants.js
+│
+├── App.jsx            # main app component
+├── main.jsx / index.js
+└── styles/            # global CSS
+
+
+
+
+
+
+
+********************************************************************** Basic Form *******************************************************************************
+
+import { useState } from "react";
+import Count from "./Count";
+import UserDetails from "./UserDetails";
+import Card from "./Card";
+import Layout from "./Layout";
+import Wrapper from "./Wrapper";
+
+function User() {
+    const [checkBoxValue, setCheckBoxValue] = useState([]);
+    const [gender, setGender] = useState('male');
+    const [city, setCity] = useState('delhi');
+
+    const handleCheckBox = (event) => {
+        if (event.target.checked) {
+            setCheckBoxValue([...checkBoxValue, event.target.value]);
+        } else {
+            setCheckBoxValue([...checkBoxValue.filter(value => value != event.target.value)]);
+        }
+    };
+
+    const handleGender = (event) => {
+        setGender(event.target.value);
+    };
+
+    const handleCity = (event) => {
+        setCity(event.target.value)
+    }
+
+    return (
+        <>
+            <h2>User Login Component</h2>
+            <div>
+                <h3>Select Skills</h3>
+                <input type="checkbox" onChange={handleCheckBox} id="node" value="node" />
+                <label htmlFor="node">Node</label><br />
+
+                <input type="checkbox" onChange={handleCheckBox} id="javascript" value="javascript" />
+                <label htmlFor="javascript">Javascript</label><br />
+
+                <input type="checkbox" onChange={handleCheckBox} id="react" value="react" />
+                <label htmlFor="react">React</label><br />
+
+                <input type="checkbox" onChange={handleCheckBox} id="mongoDb" value="mongoDb" />
+                <label htmlFor="mongoDb">mongoDb</label><br />
+
+                <h2>Selected skills: {checkBoxValue.join(', ')} </h2>
+                <hr />
+            </div>
+
+            <div>
+                <h3>Handle Check Box</h3>
+                <p>Select Gender</p>
+                <input type="radio" onChange={handleGender} checked={gender == 'male'} id="male" value="male" name="gender" />
+                <label htmlFor="male">Male</label>
+
+                <input type="radio" onChange={handleGender} checked={gender == 'female'} id="female" value="female" name="gender" />
+                <label htmlFor="female">Female</label>
+                <h2>Selected Gender: {gender}</h2>
+                <hr />
+            </div>
+
+            <div>
+                <h3>Handle Dropdown</h3>
+                <select onChange={handleCity} defaultValue={"delhi"}>
+                    <option value="noida">Noida</option>
+                    <option value="bihar">Bihar</option>
+                    <option value="delhi">Delhi</option>
+                </select>
+                <h2>Selected City: {city}</h2>
+            </div>
+        </>
+    )
+};
+
+export default User;

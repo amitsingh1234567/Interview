@@ -1,13 +1,19 @@
-function maxSubArray(nums) {
-  let currentSum = nums[0];
-  let maxSum = nums[0];
+function permute(str) {
+  if (str.length <= 1) return [str];
 
-  for (let i = 1; i < nums.length; i++) {
-    currentSum = Math.max(nums[i], currentSum + nums[i]);
-    maxSum = Math.max(maxSum, currentSum);
+  const result = [];
+
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+    const rest = str.slice(0, i) + str.slice(i + 1);
+
+    for (const perm of permute(rest)) {
+      result.push(char + perm);
+    }
   }
-
-  return maxSum;
+  return result;
 }
 
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // 6
+console.log(permute("abc"));
+
+console.log("abc".slice(1) ,'***')
