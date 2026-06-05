@@ -113,4 +113,66 @@ Validate Pin
 Rearrange Spaces
 Letter Count
 
+================================================*Scenario Based Question*====================================================
+Q.1 Design reusable utility functions
+Q.2 Optimize data processing
+Q.3 Large dataset array handling in JS/TS
+
+
+
+
+
+
+
+==================================================*Lead Code*=============================================================
+Array based question:-                          
+Q.1 Two Sum *                                 
+Q.2 Remove Duplicates from Sorted Array *        
+Q.3 Search Insert Position*
+Q.4 Search in Rotated Sorted Array
+Q.5 Find First and Last Position of Element in Sorted Array *
+Q.6 Longest Common Prefix
+Q.7 Container With Most Water
+Q.8 Valid Sudoku
+Q.9 3Sum
+Q.10 Next Permutation
+Q.11 Best Time to Buy and Sell Stock => (Track minimum price.)
+Q.12 Remove Element => (In-place update.)
+Q.13 Contains Duplicate => (Set / HashMap.)
+Q.14 Move Zeroes => (Two pointers.)
+Q.15 Maximum Subarray => (Kadane’s Algorithm.)
+Q.16 Missing Number => (Sum / XOR.)
+Q.17 Find Largest and Second Largest
+Q.18 Rotate Array => (Right rotate by k steps.)
+Q.19 Product of Array Except Self => (Without division.)
+Q.20 Find First and Last Position => (Binary Search.) => Duplicate
+Q.21 Merge Intervals => (Sorting based.)
+Q.22 Merge Sorted Arrays => (Two arrays merge logic.)
+Q.23 Sort Colors (0,1,2) => (Dutch National Flag.)
+Q.24 Majority Element => (Moore Voting Algorithm.)
+Q.25 Subarray Sum Equals K => (Prefix sum + HashMap.)
+Q.26 Trapping Rain Water => (Two pointers.)
+Q.27 Longest Consecutive Sequence => (Set based.)
+Q.28 Maximum Product Subarray => (Important tricky one.)
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

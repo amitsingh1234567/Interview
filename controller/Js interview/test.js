@@ -1,19 +1,27 @@
-function permute(str) {
-  if (str.length <= 1) return [str];
+function thirdLargest(arr) {
+    if(arr.length < 3)
+    return "Array must have three numbers";
 
-  const result = [];
+    arr = [...new Set(arr)];
+    
+    var first  = -Infinity;
+    var second = -Infinity;
+    var third  = -Infinity;
 
-  for (let i = 0; i < str.length; i++) {
-    const char = str[i];
-    const rest = str.slice(0, i) + str.slice(i + 1);
-
-    for (const perm of permute(rest)) {
-      result.push(char + perm);
+    for(let num of arr){
+        if(first <= num){
+            third  = second;
+            second = first;
+            first  = num;
+        }else if(second <= num){
+            third = second;
+            second = num;
+        }else if(third <= num){
+            third = num;
+        }
     }
-  }
-  return result;
-}
+    
+    return {first, second, third};
+};
 
-console.log(permute("abc"));
-
-console.log("abc".slice(1) ,'***')
+console.log(thirdLargest([10, 20, 4, 45, 99, 99])); 
