@@ -135,8 +135,8 @@ Q.6 Longest Common Prefix
 Q.7 Container With Most Water
 Q.8 Valid Sudoku
 Q.9 3Sum
-Q.10 Next Permutation
-Q.11 Best Time to Buy and Sell Stock => (Track minimum price.)
+Q.10 Next Permutation *
+Q.11 Best Time to Buy and Sell Stock => (Track minimum price.) *
 Q.12 Remove Element => (In-place update.)
 Q.13 Contains Duplicate => (Set / HashMap.)
 Q.14 Move Zeroes => (Two pointers.)

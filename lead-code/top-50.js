@@ -3,14 +3,16 @@ Array Based Questions:-
 Q.1 Two Sum *
 Q.2 Reverse Integer
 Q.3 Find the contiguous subarray (containing at least one number) which has the largest sum.
-Q.4 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ]
-Q.5 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+Q.4 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ] #
+Q.5 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] #
 Q.6 Remove Duplicates from Sorted Array *
 Q.7 Search Insert Position *
 Q.8 Find the N position in the Array *
 Q.9 Find First and Last Position of Element in Sorted Array *
 Q.10 Find first largest, second largest, third largest
-
+Q.11 Best Time to Buy and Sell Stock #
+Q.12 Remove Element #
+Q.13 Maximum Subarray
 */
 
 
@@ -245,10 +247,70 @@ function findLargestAndSecondLargest(arr) {
     thirdLargest: thirdLargest === -Infinity ? null : thirdLargest
   };
 }
-
 console.log(findLargestAndSecondLargest([10, 20, 4, 45, 99, 99])); 
-
-
-
-
 */
+
+// Q.11 Best Time to Buy and Sell Stock
+/*
+function maxProfit(arr){
+    var minPrice = arr[0];
+    var maxProfit = 0;
+
+    for(let price of arr){
+        if(price < minPrice){
+            minPrice = price;
+        }else{
+            let currentProfit = price - minPrice
+            maxProfit = Math.max(maxProfit, currentProfit);
+        }
+    }
+
+    return maxProfit;
+};
+
+const arr = [3, 5, 1, 7, 4, 9, 33];
+console.log(maxProfit(arr));
+*/
+
+// Q.12 Remove Element
+/*
+function removeElement(nums, val) {
+    let k = 0;
+
+    for (let i = 0; i < nums.length; i++) {
+        if (nums[i] !== val) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+
+
+    console.log(nums)
+    return k;
+}
+
+nums = [3,2,2,3]
+val = 3
+
+console.log(removeElement(nums, val));
+*/
+
+// Q.13 Maximum Subarray
+/*
+function maxSubArray(nums) {
+    let currentSum = nums[0];
+    let maxSum = nums[0];
+
+    for (let i = 1; i < nums.length; i++) {
+        currentSum = Math.max(nums[i], currentSum + nums[i]);
+        maxSum = Math.max(maxSum, currentSum);
+    }
+
+    return maxSum;
+};
+
+nums = [-1, -2, -3, -4, -5]
+console.log(maxSubArray(nums))
+
+ 
+ */

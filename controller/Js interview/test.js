@@ -1,27 +1,16 @@
-function thirdLargest(arr) {
-    if(arr.length < 3)
-    return "Array must have three numbers";
+function majorityElement(nums) {
 
-    arr = [...new Set(arr)];
-    
-    var first  = -Infinity;
-    var second = -Infinity;
-    var third  = -Infinity;
+    const map = new Map();
 
-    for(let num of arr){
-        if(first <= num){
-            third  = second;
-            second = first;
-            first  = num;
-        }else if(second <= num){
-            third = second;
-            second = num;
-        }else if(third <= num){
-            third = num;
+    for(const num of nums) {
+        map.set(num, (map.get(num) || 0) + 1);
+
+        if(map.get(num) > nums.length / 2) {
+            return num;
         }
     }
-    
-    return {first, second, third};
-};
+}
 
-console.log(thirdLargest([10, 20, 4, 45, 99, 99])); 
+const nums = [2, 2, 1, 1, 1, 2, 2];
+
+console.log(majorityElement(nums));
