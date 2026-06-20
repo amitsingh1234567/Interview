@@ -1,16 +1,40 @@
-function majorityElement(nums) {
+function getSelectedkey(user, targetKeys){
+    const result = {};
+    
+    function getKey(source, target, path, index = 0){
+        const key = path[index];
+        
+        if(index === path.length - 1){
+            target[key] = source[key];
+            return;
+        };
+        
+        target[key] = target[key] || {};
+        
+        getKey(
+            source[key],
+            target[key],
+            path,
+            index + 1
+        );
+    };
+    
+    targetKeys.forEach(item => {
+        getKey(user, result, item.split('.'));
+    });
+    
+    return result
+};
 
-    const map = new Map();
+const user = {
+  name: "Amit",
+  age: 30,
+  city: "Delhi",
+  role: "Developer",
+  add: {
+      contact: "8955525555",
+      email: "greet@gmail.com"
+  }
+};
 
-    for(const num of nums) {
-        map.set(num, (map.get(num) || 0) + 1);
-
-        if(map.get(num) > nums.length / 2) {
-            return num;
-        }
-    }
-}
-
-const nums = [2, 2, 1, 1, 1, 2, 2];
-
-console.log(majorityElement(nums));
+console.log(getSelectedkey(user, ['name', 'age', 'add.contact']))

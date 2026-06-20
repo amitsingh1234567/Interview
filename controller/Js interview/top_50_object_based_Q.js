@@ -183,6 +183,8 @@ console.log(queryStringToObject("search=javascript%20tutorial&city=New%20Delhi")
 
 // Q.7 Extract Specific Keys: Create a function that accepts an object and an array of target keys, returning a picked sub-object.
 /*
+Plain Object =>
+---------------
 function pick(obj, keys) {
   return keys.reduce((result, key) => {
     if (key in obj) {
@@ -200,6 +202,50 @@ const user = {
 };
 
 console.log(pick(user, ["name", "city"]));
+
+Nested Object =>
+----------------
+function getSelectedkey(user, targetKeys){
+    const result = {};
+    
+    function getKey(source, target, path, index = 0){
+        const key = path[index];
+        
+        if(index === path.length - 1){
+            target[key] = source[key];
+            return;
+        };
+        
+        target[key] = target[key] || {};
+        
+        getKey(
+            source[key],
+            target[key],
+            path,
+            index + 1
+        );
+    };
+    
+    targetKeys.forEach(item => {
+        getKey(user, result, item.split('.'));
+    });
+    
+    return result
+};
+
+const user = {
+  name: "Amit",
+  age: 30,
+  city: "Delhi",
+  role: "Developer",
+  add: {
+      contact: "8955525555",
+      email: "greet@gmail.com"
+  }
+};
+
+console.log(getSelectedkey(user, ['name', 'age', 'add.contact']))
+
 */
 
 // Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.
