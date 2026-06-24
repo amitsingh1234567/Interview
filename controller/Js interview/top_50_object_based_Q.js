@@ -2,26 +2,26 @@
 =================> TOP 50 OBJECT BASED Q <================
 
 =================> Foundational Object Manipulation <================
-Q.1 Create from Arrays: Convert two separate arrays of keys and values into a single JavaScript object. 
-Q.2 Count Property Occurrences: Count occurrences of unique string characters or array items, storing results in an object. 
-Q.3 Check Empty Object: Write a utility to reliably check if a given object is completely empty. 
-Q.4 Remove Null/Undefined: Filter out all keys that contain null or undefined values from a profile configuration object 
-Q.5 Invert Keys & Values: Swap an object’s keys with its values (assuming values are unique strings).
-Q.6 Object to Query String: Convert an object like { search: "js", page: 2 } into a URL query parameter string.
-Q.7 Extract Specific Keys: Create a function that accepts an object and an array of target keys, returning a picked sub-object.
-Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.
+Q.1 Create from Arrays: Convert two separate arrays of keys and values into a single JavaScript object.#
+Q.2 Count Property Occurrences: Count occurrences of unique string characters or array items, storing results in an object.# 
+Q.3 Check Empty Object: Write a utility to reliably check if a given object is completely empty.#
+Q.4 Remove Null/Undefined: Filter out all keys that contain null or undefined values from a profile configuration object# 
+Q.5 Invert Keys & Values: Swap an object’s keys with its values (assuming values are unique strings).#
+Q.6 Object to Query String: Convert an object like { search: "js", page: 2 } into a URL query parameter string.#
+Q.7 Extract Specific Keys: Create a function that accepts an object and an array of target keys, returning a picked sub-object.#
+Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.#
 
 =================> Intermediate Transformation <================
-Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical
-Q.2 Deep Clone Implementation: Write a native recursive deep clone function to completely isolate nested structures
-Q.3 Merge Non-Overwriting: Combine two data objects, preventing values in the second object from replacing keys in the first.
+Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical#
+Q.2 Deep Clone Implementation: Write a native recursive deep clone function to completely isolate nested structures#
+Q.3 Merge Non-Overwriting: Combine two data objects, preventing values in the second object from replacing keys in the first.#
 Q.4 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.
 Q.5 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.
-Q.6 Set Deep Value by Path: Dynamically set or update an object's nested properties using a path string.
+Q.6 Set Deep Value by Path: Dynamically set or update an object's nested properties using a path string.#
 Q.7 Group Array of Objects: Group a list of users into an object categorized by a shared property like role or age.
 Q.8 Sum Property Values: Accumulate the total cost from an array of item objects representing a digital shopping cart.
 Q.9 Key Case Converter: Convert all keys within an object dynamically from snake_case format over to camelCase.
-Q.10 Flatten Nested Object: Transform a highly nested JSON structure into a flat single-level key-value dictionary
+Q.10 Flatten Nested Object: Transform a highly nested JSON structure into a flat single-level key-value dictionary#
 Q.11 Unflatten Flat Object: Take a flattened object containing dot-notation keys and rebuild its nested structure.
 Q.12 Frequency Mapping: Read a long paragraph of text and generate a word-frequency counter dictionary object.
 Q.13 Map Object Values: Transform the values inside an object using a callback function while keeping the keys intact.

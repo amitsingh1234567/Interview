@@ -1,40 +1,48 @@
-function getSelectedkey(user, targetKeys){
-    const result = {};
-    
-    function getKey(source, target, path, index = 0){
-        const key = path[index];
-        
-        if(index === path.length - 1){
-            target[key] = source[key];
-            return;
-        };
-        
-        target[key] = target[key] || {};
-        
-        getKey(
-            source[key],
-            target[key],
-            path,
-            index + 1
-        );
-    };
-    
-    targetKeys.forEach(item => {
-        getKey(user, result, item.split('.'));
-    });
-    
-    return result
-};
+function flattenObject(obj, parentKey = "", result = {}) {
+  for (const key in obj) {
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
 
-const user = {
-  name: "Amit",
-  age: 30,
-  city: "Delhi",
-  role: "Developer",
-  add: {
-      contact: "8955525555",
-      email: "greet@gmail.com"
+    const value = obj[key];
+
+    if (typeof value === "object" && value !== null) {
+      if (Array.isArray(value)) {
+        value.forEach((item, index) => {
+          if (
+            typeof item === "object" &&
+            item !== null
+          ) {
+            flattenObject(
+              item,
+              `${newKey}.${index}`,
+              result
+            );
+          } else {
+            result[`${newKey}.${index}`] = item;
+          }
+        });
+      } else {
+        flattenObject(value, newKey, result);
+      }
+    } else {
+      result[newKey] = value;
+    }
   }
+
+  return result;
+}
+
+const obj = {
+  name: "John",
+  age: 25,
+  address: {
+    city: "Delhi",
+    details: {
+      pin: "110001",
+      landmark: "Near Park"
+    }
+  },
+  hobbies: [{ name: "Reading", age: 30 }, { name: "Swimming", age: 25 }],
+  education: ["Bachelors", "Masters", "PhD"]
 };
 
-console.log(getSelectedkey(user, ['name', 'age', 'add.contact']))
+console.log(flattenObject(obj));
