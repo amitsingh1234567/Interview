@@ -1,48 +1,22 @@
-function flattenObject(obj, parentKey = "", result = {}) {
-  for (const key in obj) {
-    const newKey = parentKey ? `${parentKey}.${key}` : key;
+function groupBy(arr, key) {
+  return arr.reduce((result, item) => {
+    const groupKey = item[key];
 
-    const value = obj[key];
-
-    if (typeof value === "object" && value !== null) {
-      if (Array.isArray(value)) {
-        value.forEach((item, index) => {
-          if (
-            typeof item === "object" &&
-            item !== null
-          ) {
-            flattenObject(
-              item,
-              `${newKey}.${index}`,
-              result
-            );
-          } else {
-            result[`${newKey}.${index}`] = item;
-          }
-        });
-      } else {
-        flattenObject(value, newKey, result);
-      }
-    } else {
-      result[newKey] = value;
+    if (!result[groupKey]) {
+      result[groupKey] = [];
     }
-  }
 
-  return result;
-}
+    result[groupKey].push(item);
 
-const obj = {
-  name: "John",
-  age: 25,
-  address: {
-    city: "Delhi",
-    details: {
-      pin: "110001",
-      landmark: "Near Park"
-    }
-  },
-  hobbies: [{ name: "Reading", age: 30 }, { name: "Swimming", age: 25 }],
-  education: ["Bachelors", "Masters", "PhD"]
+    return result;
+  }, {});
 };
 
-console.log(flattenObject(obj));
+const users = [
+  { name: "Amit", role: "Developer" },
+  { name: "Rahul", role: "Tester" },
+  { name: "John", role: "Developer" },
+  { name: "Neha", role: "Tester" }
+];
+
+console.log(groupBy(users, "role"));
