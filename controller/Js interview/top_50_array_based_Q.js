@@ -6,11 +6,13 @@
 =================> Medium Problems <================
 Q.1 Two Sum Problem: Use a Map or Set to store complements in O(n) time.
 Q.2 Rotate Array by K Steps: Use slice operations or reverse sub-segments.
-Q.3 Maximum Subarray Sum (Kadane's Algorithm): Keep a running local max and global max
+Q.3 Maximum Subarray Sum (Kadane's Algorithm): Keep a running local max and global max.
 Q.4 Find All Pairs with a Given Sum: Use a hash table to find matching pairs.
 Q.5 Intersection of Two Arrays: Filter elements present in both sets arr1.filter(x => set2.has(x)).
-Q.6 Union of Two Arrays: Merge arrays and pass them through new Set()
-Q.7 Find the Majority Element (> N/2 times): Use Boyer-Moore Voting Algorithm
+Q.6 Union of Two Arrays: Merge arrays and pass them through new Set().
+Q.7 Find the Majority Element (> N/2 times): Use Boyer-Moore Voting Algorithm.
+Q.8 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ].#
+Q.9 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]].#
 
 */
 
@@ -189,5 +191,51 @@ function majorityElement(nums) {
 const nums = [2, 2, 1, 1, 1, 2, 2];
 
 console.log(majorityElement(nums));
+
+*/
+
+// Q.8 Write a program for permutation for "abc"
+/*
+function premute(str){
+  if(str.length <= 1) return [str];
+
+  const result = [];
+
+  for(let i = 0; i < str.length; i++){
+    const char = str[i];
+    const rest = str.slice(0, i) + str.slice(i + 1);
+
+    for(let per of premute(rest)){
+      result.push(char + per);
+    }
+  }
+  return result;
+}
+
+const str = "abc";
+console.log(premute(str));
+
+*/
+
+// Q.9 Write a program for permutation for [1,2,3]
+/* 
+function premute(str){
+  if(str.length <= 1) return [str];
+
+  const result = [];
+
+  for(let i = 0; i < str.length; i++){
+    const char = str[i];
+    const rest = str.slice(0, i).concat(str.slice(i + 1));
+
+    for(let per of premute(rest)){
+      result.push([char,  ...per]);
+    }
+  }
+  return result;
+}
+
+const str = [1, 2, 3];
+console.log(premute(str));
 
 */

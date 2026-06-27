@@ -2,14 +2,14 @@
 =================> TOP 50 OBJECT BASED Q <================
 
 =================> Foundational Object Manipulation <================
-Q.1 Create from Arrays: Convert two separate arrays of keys and values into a single JavaScript object.#
-Q.2 Count Property Occurrences: Count occurrences of unique string characters or array items, storing results in an object.# 
-Q.3 Check Empty Object: Write a utility to reliably check if a given object is completely empty.#
-Q.4 Remove Null/Undefined: Filter out all keys that contain null or undefined values from a profile configuration object.# 
-Q.5 Invert Keys & Values: Swap an object’s keys with its values (assuming values are unique strings).#
-Q.6 Object to Query String: Convert an object like { search: "js", page: 2 } into a URL query parameter string.#
-Q.7 Extract Specific Keys: Create a function that accepts an object and an array of target keys, returning a picked sub-object.#
-Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.#
+Q.1 Create from Arrays: Convert two separate arrays of keys and values into a single JavaScript object.#.
+Q.2 Count Property Occurrences: Count occurrences of unique string characters or array items, storing results in an object.#. 
+Q.3 Check Empty Object: Write a utility to reliably check if a given object is completely empty.#.
+Q.4 Remove Null/Undefined: Filter out all keys that contain null or undefined values from a profile configuration object.#.
+Q.5 Invert Keys & Values: Swap an object’s keys with its values (assuming values are unique strings).#.
+Q.6 Object to Query String: Convert an object like { search: "js", page: 2 } into a URL query parameter string.#.
+Q.7 Extract Specific Keys: Create a function that accepts an object and an array of target keys, returning a picked sub-object.#.
+Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.#.
 
 =================> Intermediate Transformation <================
 Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical.#
@@ -25,6 +25,15 @@ Q.10 Flatten Nested Object: Transform a highly nested JSON structure into a flat
 Q.11 Unflatten Flat Object: Take a flattened object containing dot-notation keys and rebuild its nested structure.#
 Q.12 Frequency Mapping: Read a long paragraph of text and generate a word-frequency counter dictionary object.#
 Q.13 Map Object Values: Transform the values inside an object using a callback function while keeping the keys intact.#
+Q.14 Write a function that returns the deepest key-value pair in a nested object.#
+Q.15 Object Key Sorting: Sort the keys of an object alphabetically, returning a new object with the same values but ordered keys.+
+
+=================> Advanced Object Manipulation <================
+Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.+
+Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies.#
+Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.#
+
+
 */
 
 
@@ -769,8 +778,150 @@ console.log(result);
 
 */
 
+// Q.14 Write a function that returns the deepest key-value pair in a nested object
+/*
+function findDeepestPair(obj, depth = 0, parentKey = '') {
+  let deepest = { key: parentKey, value: obj, depth };
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+      if (typeof value === 'object' && value !== null) {
+        const deeper = findDeepestPair(value, depth + 1, newKey);
+        
+        if (deeper.depth > deepest.depth) {
+          deepest = deeper;
+        }
+      } else {
+        if (depth + 1 > deepest.depth) {
+          deepest = { key: newKey, value, depth };
+        }
+      }
+    }
+  }
+  return deepest;
+}
+
+const nestedObject = {
+  name: "John",
+  address: {
+    street: "Main St",
+    city: "New York",
+    coordinates: {
+      lat: 40.7128,
+      long: -74.0060,
+      detail: {
+        zone: 3,
+        info: {
+          code: "A1B2"
+        }
+      }
+    }
+  },
+  contact: {
+    phone: "123-456-7890",
+    email: "john@example.com"
+  }
+};
+
+const deepestPair = findDeepestPair(nestedObject);
+console.log(deepestPair);
+
+*/
 
 
+// =================> Advanced Transformation <================
+// Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies
+/*
+class Cache {
+    constructor(){
+        this.store = {};
+    };
+    
+    set(key, value, ttl = 5000){
+        this.store[key] = {
+            value,
+            expiry: Date.now() + ttl
+        };
+    };
+    
+    get(key){
+        const item = this.store[key];
+        
+        if(!item) return null;
+        
+        if(Date.now() > item.expiry) {
+            delete this.store[key];
+            return null;
+        };
+        
+        return item.value;
+    }
+    
+    has(key){
+        return key in this.store;
+    }
+    
+    delete(key){
+        delete this.store[key];
+    };
+};
+
+const cache = new Cache();
+
+cache.set("user", {
+    name: "Greet",
+    age: 25
+}, 6000);
+
+console.log(cache.get('user'))
+
+setTimeout(() => {
+    console.log(cache.get('user'))
+    console.log(cache.has('user'))
+}, 7000)
+
+*/
+
+// Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.
+/*
+  function memoize(fun){
+    const cache = {};
+    
+    return function (...args){  
+        const key = JSON.stringify(args);
+        
+        if(key in cache){
+            console.log("Cache Hit..");
+            return cache[key];
+        };
+        
+        console.log('Cache Miss');
+        const result = fun(...args);
+        
+        cache[key] = result;
+        
+        return result;
+    }
+};
+
+function add(a, b){
+    console.log('Calculating...');
+    return a + b;
+};
+
+function mul(a, b){
+    console.log('Calculating...');
+    return a * b;
+};
+
+const memoizeAdd = memoize(mul);
+console.log(memoizeAdd(10, 20));
+console.log(memoizeAdd(10, 20));
+
+*/
 
 
 

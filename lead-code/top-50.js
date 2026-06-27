@@ -3,8 +3,8 @@ Array Based Questions:-
 Q.1 Two Sum *
 Q.2 Reverse Integer
 Q.3 Find the contiguous subarray (containing at least one number) which has the largest sum.
-Q.4 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ] #
-Q.5 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] #
+Q.4 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ] # (Moved in top_50_array_based_Q.js)
+Q.5 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]] # (Moved in top_50_array_based_Q.js)
 Q.6 Remove Duplicates from Sorted Array *
 Q.7 Search Insert Position *
 Q.8 Find the N position in the Array *
@@ -103,7 +103,6 @@ function premute(str){
 
 const str = [1, 2, 3];
 console.log(premute(str));
-
 
 */
 

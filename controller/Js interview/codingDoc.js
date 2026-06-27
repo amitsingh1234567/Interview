@@ -85,7 +85,7 @@ EX:-
 543212345   
 
 Q.7 Write a function that flattens a deeply nested object, so all keys are brought to the top level, separated by dots => DONE *
-Q.8 Write a function that returns the deepest key-value pair in a nested object => DONE
+Q.8 Write a function that returns the deepest key-value pair in a nested object => DONE (Moved in top_50_object_based_Q.js)
 Q.9 Write a function that converts a JavaScript object into a query string that can be used in a URL 
 (Without Nested Object) => DONE
 Q.10 Write a function to compare two objects for equality. Make sure to account for nested objects
