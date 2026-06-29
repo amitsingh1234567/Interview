@@ -12,7 +12,7 @@ Q.7 Extract Specific Keys: Create a function that accepts an object and an array
 Q.8 Omit Specific Keys: Write a function to exclude given keys from an object while returning the remaining properties.#.
 
 =================> Intermediate Transformation <================
-Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical.#
+Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical.#.
 Q.2 Deep Clone Implementation: Write a native recursive deep clone function to completely isolate nested structures.#
 Q.3 Merge Non-Overwriting: Combine two data objects, preventing values in the second object from replacing keys in the first.#
 Q.4 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.+
