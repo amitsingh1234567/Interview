@@ -1,35 +1,27 @@
-function countLeaves(obj) {
-  let count = 0;
-
-  for (const key in obj) {
-    const value = obj[key];
-
-    if (
-      typeof value === "object" &&
-      value !== null &&
-      !Array.isArray(value)
-    ) {
-      count += countLeaves(value);
-    } else {
-      count++;
-    }
-  }
-
-  return count;
+// 1. Define a prototype object
+const vehiclePrototype = {
+  wheels: 4,
+  drive() { return "Vroom!"; }
 };
 
+// 2. Create an object inheriting from the prototype
+const myCar = Object.create(vehiclePrototype);
 
-const nestedObject = {
-  a: 1,
-  b: {
-    c: 2,
-    d: {
-      e: 3,
-      f: 4
-    }
-  },
-  g: 5
-};
+// 3. Assign a direct property (own property) to the instance
+myCar.color = "crimson";
 
-const leafCount = countLeaves(nestedObject);
-console.log(leafCount);
+// --- The Existence Checks ---
+
+// Check A: Direct Property
+console.log(Object.hasOwn(myCar, "color"));  // true (Exists directly on myCar)
+
+// Check B: Inherited Property
+console.log(Object.hasOwn(myCar, "wheels")); // false (Belongs to prototype chain)
+console.log(Object.hasOwn(myCar, "drive"));  // false (Belongs to prototype chain)
+
+// Check C: Completely Missing Property
+console.log(Object.hasOwn(myCar, "wings"));  // false
+
+console.log("wheels" in myCar);               // true  (Checks the full chain)
+console.log(Object.hasOwn(myCar, "wheels")); // false (Checks direct object only)
+

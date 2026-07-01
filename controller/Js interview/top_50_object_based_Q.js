@@ -35,6 +35,13 @@ Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache util
 Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.#
 Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.n+
 Q.5 Write a program to check valid brackets. n+
+Q.6 Sorting Objects by Keys: Take an unsorted config object and output an identical object with keys ordered alphabetically.n+
+Q.7 Diff Two Objects: Compare two configurations and return an object explicitly detailing changed, added, or removed keys.n+
+Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array by evaluating a unique key like id.n+
+Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.n+
+Q.10 Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.n+
+Q.11 Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.n+
+
 */
 
 
@@ -869,6 +876,38 @@ console.log(getValueByPath(obj, "users.0.name"));
 
 
 // =================> Advanced Transformation <================
+
+// Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.
+/*
+function filterObject(obj, predicate) {
+  const result = {};
+
+  for (const key in obj) {
+    if (predicate(obj[key], key)) {
+      result[key] = obj[key];
+    }
+  }
+
+  return result;
+}
+
+const inventory = {
+  apples: 15,
+  bananas: 3,
+  oranges: 24,
+  secretPasscode: "admin123",
+  peaches: 0
+};
+
+const filtered = filterObject(
+  inventory,
+  value => typeof value === "number" && value > 5
+);
+
+console.log(filtered);
+
+*/
+
 // Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies
 /*
 class Cache {
@@ -1029,5 +1068,244 @@ console.log(isValidBrackets("({[})"));
 
 */
 
+// Q.6 Sorting Objects by Keys: Take an unsorted config object and output an identical object with keys ordered alphabetically.
+/*
+Plain Object =>
+-------------
+function sortObjectKeys(obj) {
+  const result = {};
 
+  const sortedKeys = Object.keys(obj).sort();
+
+  for (const key of sortedKeys) {
+    result[key] = obj[key];
+  }
+
+  return result;
+}
+
+const config = {
+  theme: "dark",
+  apiUrl: "https://api.example.com",
+  autoSave: true,
+  language: "en"
+};
+
+console.log(sortObjectKeys(config));
+
+Nested Object =>
+-------------
+function sortKeysDeep(obj) {
+  if (
+    typeof obj !== "object" ||
+    obj === null ||
+    Array.isArray(obj)
+  ) {
+    return obj;
+  }
+
+  const result = {};
+
+  const sortedKeys = Object.keys(obj).sort();
+
+  for (const key of sortedKeys) {
+    result[key] = sortKeysDeep(obj[key]);
+  }
+
+  return result;
+}
+
+const obj = {
+  z: 1,
+  a: {
+    d: 4,
+    b: 2
+  },
+  c: 3
+};
+
+console.log(sortKeysDeep(obj));
+
+*/
+
+// Q.7 Diff Two Objects: Compare two configurations and return an object explicitly detailing changed, added, or removed keys.
+/*
+function diffObjects(oldObj, newObj) {
+  const result = {
+    added: {},
+    removed: {},
+    changed: {}
+  };
+
+  for (const key in oldObj) {
+    if (!(key in newObj)) {
+      result.removed[key] = oldObj[key];
+    } else if (oldObj[key] !== newObj[key]) {
+      result.changed[key] = {
+        oldValue: oldObj[key],
+        newValue: newObj[key]
+      };
+    }
+  }
+
+  for (const key in newObj) {
+    if (!(key in oldObj)) {
+      result.added[key] = newObj[key];
+    }
+  }
+
+  return result;
+};
+
+
+const oldConfig = {
+  theme: "light",
+  language: "en",
+  notifications: true
+};
+
+const newConfig = {
+  theme: "dark",
+  language: "en",
+  autoSave: true
+};
+
+console.log(diffObjects(oldConfig, newConfig));
+
+*/
+
+// Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array by evaluating a unique key like id.
+/*
+function removeDuplicates(arr, key) {
+  const seen = new Set();
+  const result = [];
+
+  for (const item of arr) {
+    if (!seen.has(item[key])) {
+      seen.add(item[key]);
+      result.push(item);
+    }
+  }
+
+  return result;
+}
+
+const users = [
+  { id: 1, name: "Amit" },
+  { id: 2, name: "Rahul" },
+  { id: 1, name: "Amit" },
+  { id: 3, name: "Neha" },
+  { id: 2, name: "Rahul" }
+];
+
+console.log(removeDuplicates(users, "id"));
+
+*/
+
+// Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.
+/*
+function objectToArray(obj) {
+  return Object.entries(obj).map(([id, name]) => ({
+    id,
+    name
+  }));
+};
+
+const users = {
+  101: "Amit",
+  102: "Rahul",
+  103: "Neha"
+};
+
+console.log(objectToArray(users));
+
+Interview Follow-Up 2 => Convert back to Object from Array of Objects
+---------------------
+function arrayToObject(arr) {
+  return arr.reduce((result, item) => {
+    result[item.id] = item.name;
+    return result;
+  }, {});
+};
+
+const arr = [
+  { id: "101", name: "Amit" },
+  { id: "102", name: "Rahul" }
+];
+
+console.log(arrayToObject(arr));
+
+*/
+
+// Q.10 Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.
+/*
+const companyDatabase = {
+  id: "co_991",
+  name: "TechCorp",
+  departments: [
+    {
+      deptId: "d_eng",
+      name: "Engineering",
+      tasks: [
+        { taskId: "t1", title: "Fix bug A", status: "assigned" },
+        { taskId: "t2", title: "Legacy audit", status: "unassigned" }, 
+        { taskId: "t3", title: "Deploy app", status: "assigned" }
+      ]
+    },
+    {
+      deptId: "d_hr",
+      name: "Human Resources",
+      tasks: [
+        { taskId: "t4", title: "Payroll check", status: "assigned" },
+        { taskId: "t5", title: "Archive files", status: "unassigned" } 
+      ]
+    }
+  ]
+};
+
+function removeUnassignedTasks(companyObj) {
+  return {
+    ...companyObj,
+    departments: companyObj.departments.map(dept => ({
+      ...dept,
+      tasks: dept.tasks.filter(task => task.status !== "unassigned")
+    }))
+  };
+}
+
+const sanitizedDatabase = removeUnassignedTasks(companyDatabase);
+console.log(JSON.stringify(sanitizedDatabase, null, 2));
+
+*/
+
+// Q.11 Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.
+/*
+// 1. Define a prototype object
+const vehiclePrototype = {
+  wheels: 4,
+  drive() { return "Vroom!"; }
+};
+
+// 2. Create an object inheriting from the prototype
+const myCar = Object.create(vehiclePrototype);
+
+// 3. Assign a direct property (own property) to the instance
+myCar.color = "crimson";
+
+// --- The Existence Checks ---
+
+// Check A: Direct Property
+console.log(Object.hasOwn(myCar, "color"));  // true (Exists directly on myCar)
+
+// Check B: Inherited Property
+console.log(Object.hasOwn(myCar, "wheels")); // false (Belongs to prototype chain)
+console.log(Object.hasOwn(myCar, "drive"));  // false (Belongs to prototype chain)
+
+// Check C: Completely Missing Property
+console.log(Object.hasOwn(myCar, "wings"));  // false
+
+console.log("wheels" in myCar);               // true  (Checks the full chain)
+console.log(Object.hasOwn(myCar, "wheels")); // false (Checks direct object only)
+
+*/
 
