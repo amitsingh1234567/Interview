@@ -645,33 +645,27 @@ console.log(keysToCamelCase(data));
 
 // Q.10 Flatten Nested Object: Transform a highly nested JSON structure into a flat single-level key-value dictionary
 /*
-function flattenObject(obj, parentKey = "", result = {}) {
-  for (const key in obj) {
-    const newKey = parentKey
-      ? `${parentKey}.${key}`
-      : key;
-
+function flattenObj(obj, parentKey = '', result = {}) {
+  for (let key in obj) {
     const value = obj[key];
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
 
-    if (
-      typeof value === "object" &&
-      value !== null
-    ) {
+    if (typeof value === 'object' && value != null) {
       if (Array.isArray(value)) {
         value.forEach((item, index) => {
-          flattenObject(
-            item,
-            `${newKey}.${index}`,
-            result
-          );
-        });
+          if (typeof item === 'object' && item != null) {
+            flattenObj(item, `${newKey}.${index}`, result);
+          } else {
+            result[`${key}.${index}`] = item;
+          }
+        })
       } else {
-        flattenObject(value, newKey, result);
+        flattenObj(value, newKey, result);
       }
     } else {
       result[newKey] = value;
     }
-  }
+  };
 
   return result;
 }
@@ -689,8 +683,7 @@ const obj = {
   hobbies: [{ name: "Reading", age: 30 }, { name: "Swimming", age: 25 }],
   education: ["Bachelors", "Masters", "PhD"]
 };
-
-console.log(flattenObject(obj));
+console.log(flattenObj(obj));
 
 */
 
