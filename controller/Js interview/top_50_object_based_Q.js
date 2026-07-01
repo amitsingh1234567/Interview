@@ -26,14 +26,15 @@ Q.11 Unflatten Flat Object: Take a flattened object containing dot-notation keys
 Q.12 Frequency Mapping: Read a long paragraph of text and generate a word-frequency counter dictionary object.#
 Q.13 Map Object Values: Transform the values inside an object using a callback function while keeping the keys intact.#
 Q.14 Write a function that returns the deepest key-value pair in a nested object.#
-Q.15 Object Key Sorting: Sort the keys of an object alphabetically, returning a new object with the same values but ordered keys.+
+Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string dot-notation path like 'user.profile.id'n+
+Q.16 Object Key Sorting: Sort the keys of an object alphabetically, returning a new object with the same values but ordered keys.+
 
 =================> Advanced Object Manipulation <================
 Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.+
 Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies.#
 Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.#
-
-
+Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.n+
+Q.5 Write a program to check valid brackets. n+
 */
 
 
@@ -824,6 +825,48 @@ console.log(deepestPair);
 
 */
 
+// Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string dot-notation path like 'user.profile.id'
+/*
+function getValueByPath(obj, path) {
+  const keys = path.split(".");
+
+  let current = obj;
+
+  for (const key of keys) {
+    if (current == null) {
+      return undefined;
+    }
+
+    current = current[key];
+  }
+
+  return current;
+}
+
+const obj = {
+  users: [
+    {
+      name: "Amit"
+    }
+  ],
+  education: [
+    "B.Tech",
+    "M.Tech"
+  ]
+};
+
+const obj = {
+  user: {
+    profile: {
+      id: 101,
+      name: "Amit"
+    }
+  }
+};
+console.log(getValueByPath(obj, "users.0.name"));
+
+*/
+
 
 // =================> Advanced Transformation <================
 // Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies
@@ -913,6 +956,76 @@ function mul(a, b){
 const memoizeAdd = memoize(mul);
 console.log(memoizeAdd(10, 20));
 console.log(memoizeAdd(10, 20));
+
+*/
+
+// Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.
+/*
+function countLeaves(obj) {
+  let count = 0;
+
+  for (const key in obj) {
+    const value = obj[key];
+
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      !Array.isArray(value)
+    ) {
+      count += countLeaves(value);
+    } else {
+      count++;
+    }
+  }
+
+  return count;
+};
+
+
+const nestedObject = {
+  a: 1,
+  b: {
+    c: 2,
+    d: {
+      e: 3,
+      f: 4
+    }
+  },
+  g: 5
+};
+
+const leafCount = countLeaves(nestedObject);
+console.log(leafCount);
+
+*/
+
+// Q.5 Write a program to check valid brackets
+/*
+function isValidBrackets(s) {
+    const stack = [];
+    const bracketMap = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    };
+
+    for (let char of s) {
+        if (['{', '(', '['].includes(char)) {
+            stack.push(char);
+        } else if (['}', ']', ')'].includes(char)) {
+            if (stack.pop() !== bracketMap[char]) {
+                return false;
+            }
+        }
+    }
+    return stack.length === 0;
+}
+
+
+console.log(isValidBrackets("({[]})"));      
+console.log(isValidBrackets("({[})"));      
+console.log(isValidBrackets("(([]))"));          
+console.log(isValidBrackets("({[})"));
 
 */
 
