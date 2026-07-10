@@ -1,27 +1,39 @@
-// 1. Define a prototype object
-const vehiclePrototype = {
-  wheels: 4,
-  drive() { return "Vroom!"; }
+function flattenObj(obj, parentKey = '', result = {}) {
+  for (let key in obj) {
+    const value = obj[key];
+    const newKey = parentKey ? `${parentKey}.${key}` : key;
+
+    if (typeof value === 'object' && value != null) {
+      if (Array.isArray(value)) {
+        value.forEach((item, index) => {
+          if (typeof item === 'object' && item != null) {
+            flattenObj(item, `${newKey}.${index}`, result);
+          } else {
+            result[`${key}.${index}`] = item;
+          }
+        })
+      } else {
+        flattenObj(value, newKey, result);
+      }
+    } else {
+      result[newKey] = value;
+    }
+  };
+
+  return result;
+}
+
+const obj = {
+  name: "John",
+  age: 25,
+  address: {
+    city: "Delhi",
+    details: {
+      pin: "110001",
+      landmark: "Near Park"
+    }
+  },
+  hobbies: [{ name: "Reading", age: 30 }, { name: "Swimming", age: 25 }],
+  education: ["Bachelors", "Masters", "PhD"]
 };
-
-// 2. Create an object inheriting from the prototype
-const myCar = Object.create(vehiclePrototype);
-
-// 3. Assign a direct property (own property) to the instance
-myCar.color = "crimson";
-
-// --- The Existence Checks ---
-
-// Check A: Direct Property
-console.log(Object.hasOwn(myCar, "color"));  // true (Exists directly on myCar)
-
-// Check B: Inherited Property
-console.log(Object.hasOwn(myCar, "wheels")); // false (Belongs to prototype chain)
-console.log(Object.hasOwn(myCar, "drive"));  // false (Belongs to prototype chain)
-
-// Check C: Completely Missing Property
-console.log(Object.hasOwn(myCar, "wings"));  // false
-
-console.log("wheels" in myCar);               // true  (Checks the full chain)
-console.log(Object.hasOwn(myCar, "wheels")); // false (Checks direct object only)
-
+console.log(flattenObj(obj));

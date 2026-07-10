@@ -527,6 +527,25 @@ promise.then((result)=> {
     return err
 })
 
++++++++++++++++++++++++++
+const promise = new Promise((res, rej) => {
+    rej(2)
+})
+
+promise.then((result)=> {
+    console.log(result)
+    return result*2;
+}).catch((err)=> {
+    console.log(err)
+    // return err
+}).then((result)=> {
+    console.log(result)
+    return result*2;
+}).then((result)=> {
+    console.log(result)
+    return result*2;
+})
+
 Q.7 
 function generateOTP(){
     return  Math.floor(Math.random() * 9000 + 1000);
@@ -807,6 +826,42 @@ console.log([] == [])
 // console.log(deepCopy.address === original.address); // false
 // console.log(deepCopy.birthdate === original.birthdate); // false
 
+
+/*
+
+// const fs = require('fs');
+
+// setTimeout(() => console.log('setTimeout-1'), 3);
+
+// fs.readFile(__filename, () => {
+//   console.log('fs.readFile-1');
+// });
+
+// setTimeout(() => console.log('setTimeout-1'), 0);
+// setTimeout(() => {
+//   console.log('setTimeout-2')
+//   process.nextTick(() => console.log('this is the inner next tick inside setTimeout'));
+// }, 0);
+// setTimeout(() => console.log('setTimeout-3'), 0);
+// setImmediate(() => console.log('setImmediate-1'));
+
+// process.nextTick(() => console.log('process.nextTick-1'));
+// process.nextTick(() =>  {
+//   console.log('process.nextTick-2');
+//   process.nextTick(() => console.log('this is the inner next tick inside next tick'));
+// });
+
+// process.nextTick(() => console.log('process.nextTick-3'));
+
+// Promise.resolve().then(() => console.log('Promise.resolve-1'));
+// Promise.resolve().then(() => {
+//   console.log('Promise.resolve-2');
+//   process.nextTick(() => console.log('this is the inner next tick inside inner promise resolve'));
+// });
+
+// Promise.resolve().then(() => console.log('Promise.resolve-3'));
+
+*/
 
 
 

@@ -44,7 +44,26 @@ Q.11 Property Existence: Check if a specific property exists directly on an obje
 
 */
 
+/*
+Foundational:- 
 
+
+Intermediate:-
+Deep Clone Implementation
+Write a function that returns the deepest key-value pair in a nested object
+Extract Specific Keys
+Set Deep Value by Path
+Deep Object Comparison
+Flatten Nested Object
+Unflatten Flat Object
+Object-Based Cache Mechanism
+Memoization Cache Storage
+Object Key Sorting
+
+Advanced:-
+
+
+*/
 
 
 
