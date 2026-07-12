@@ -1,39 +1,39 @@
-function flattenObj(obj, parentKey = '', result = {}) {
-  for (let key in obj) {
+function countLeaves(obj) {
+  let count = 0;
+
+  for (const key in obj) {
     const value = obj[key];
-    const newKey = parentKey ? `${parentKey}.${key}` : key;
 
-    if (typeof value === 'object' && value != null) {
-      if (Array.isArray(value)) {
-        value.forEach((item, index) => {
-          if (typeof item === 'object' && item != null) {
-            flattenObj(item, `${newKey}.${index}`, result);
-          } else {
-            result[`${key}.${index}`] = item;
-          }
-        })
-      } else {
-        flattenObj(value, newKey, result);
-      }
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      !Array.isArray(value)
+    ) {
+      count += countLeaves(value);
+      console.log("🚀 ~ countLeaves ~ count:", count)
+      
     } else {
-      result[newKey] = value;
+      count++;
     }
-  };
+  }
 
-  return result;
-}
+  return count;
+};
 
-const obj = {
-  name: "John",
-  age: 25,
-  address: {
-    city: "Delhi",
-    details: {
-      pin: "110001",
-      landmark: "Near Park"
+
+const nestedObject = {
+  a: 'x',
+  b: {
+    c: 'y',
+    d: {
+      e: 'z',
+      f: 'w',
     }
   },
-  hobbies: [{ name: "Reading", age: 30 }, { name: "Swimming", age: 25 }],
-  education: ["Bachelors", "Masters", "PhD"]
+  g: 'v',
+  h: 'u',
+  i: 't',
 };
-console.log(flattenObj(obj));
+
+const leafCount = countLeaves(nestedObject);
+console.log(leafCount);

@@ -15,8 +15,8 @@ Q.8 Omit Specific Keys: Write a function to exclude given keys from an object wh
 Q.1 Deep Object Comparison: Build a deep equality validator to see if two nested objects are identical.#.
 Q.2 Deep Clone Implementation: Write a native recursive deep clone function to completely isolate nested structures.#
 Q.3 Merge Non-Overwriting: Combine two data objects, preventing values in the second object from replacing keys in the first.#
-Q.4 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.+
-Q.5 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.+
+Q.4 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.#
+Q.5 Deep Merge Objects: Merge two complex nested objects recursively, combining matching inner objects together.#
 Q.6 Set Deep Value by Path: Dynamically set or update an object's nested properties using a path string.#
 Q.7 Group Array of Objects: Group a list of users into an object categorized by a shared property like role or age.#
 Q.8 Sum Property Values: Accumulate the total cost from an array of item objects representing a digital shopping cart.#
@@ -30,7 +30,7 @@ Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string
 Q.16 Object Key Sorting: Sort the keys of an object alphabetically, returning a new object with the same values but ordered keys.+
 
 =================> Advanced Object Manipulation <================
-Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.+
+Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.#
 Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies.#
 Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.#
 Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.n+
@@ -45,10 +45,7 @@ Q.11 Property Existence: Check if a specific property exists directly on an obje
 */
 
 /*
-Foundational:- 
 
-
-Intermediate:-
 Deep Clone Implementation
 Write a function that returns the deepest key-value pair in a nested object
 Extract Specific Keys
@@ -59,9 +56,9 @@ Unflatten Flat Object
 Object-Based Cache Mechanism
 Memoization Cache Storage
 Object Key Sorting
-
-Advanced:-
-
+Deep Merge Objects
+Group Array of Objects
+Writae a program to check valid brackets
 
 */
 
@@ -1019,6 +1016,8 @@ console.log(memoizeAdd(10, 20));
 
 // Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.
 /*
+Leaf Node Count:- 
+---------------
 function countLeaves(obj) {
   let count = 0;
 
@@ -1054,6 +1053,64 @@ const nestedObject = {
 
 const leafCount = countLeaves(nestedObject);
 console.log(leafCount);
+
+Nested Object Count:- 
+-------------------
+function countLeafNode(obj){
+    var count = 0;
+    
+    for(let key in obj){
+        const value = obj[key];
+        if(typeof value === 'object' && value != null && !Array.isArray(value)){
+            count++;
+            count += countLeafNode(value);
+        }
+    };
+    
+    return count;
+};
+
+Count every object, including the root object:- 
+---------------------------------------------
+function countObjects(obj) {
+  let count = 1; // Count the current object
+
+  for (const key in obj) {
+    const value = obj[key];
+
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      !Array.isArray(value)
+    ) {
+      count += countObjects(value);
+    }
+  }
+
+  return count;
+}
+
+Count all keys in the object (including nested objects) :-
+-------------------------------------------------------
+function countKeys(obj) {
+  let count = 0;
+
+  for (const key in obj) {
+    count++; // Count every key
+
+    const value = obj[key];
+
+    if (
+      typeof value === "object" &&
+      value !== null &&
+      !Array.isArray(value)
+    ) {
+      count += countKeys(value);
+    }
+  }
+
+  return count;
+}
 
 */
 
