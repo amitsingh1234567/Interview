@@ -26,19 +26,18 @@ Q.11 Unflatten Flat Object: Take a flattened object containing dot-notation keys
 Q.12 Frequency Mapping: Read a long paragraph of text and generate a word-frequency counter dictionary object.#
 Q.13 Map Object Values: Transform the values inside an object using a callback function while keeping the keys intact.#
 Q.14 Write a function that returns the deepest key-value pair in a nested object.#
-Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string dot-notation path like 'user.profile.id'n+
-Q.16 Object Key Sorting: Sort the keys of an object alphabetically, returning a new object with the same values but ordered keys.+
+Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string dot-notation path like 'user.profile.id'#
 
 =================> Advanced Object Manipulation <================
 Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.#
 Q.2 Object-Based Cache Mechanism: Implement a custom temporary memory cache utilizing key-value lookup strategies.#
 Q.3 Memoization Cache Storage: Write a memoize function that caches expensive function returns inside an internal object lookup.#
-Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.n+
-Q.5 Write a program to check valid brackets. n+
-Q.6 Sorting Objects by Keys: Take an unsorted config object and output an identical object with keys ordered alphabetically.n+
+Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.#
+Q.5 Write a program to check valid brackets. #
+Q.6 Sorting Objects by Keys: Take an unsorted config object and output an identical object with keys ordered alphabetically.#
 Q.7 Diff Two Objects: Compare two configurations and return an object explicitly detailing changed, added, or removed keys.n+
-Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array by evaluating a unique key like id.n+
-Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.n+
+Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array by evaluating a unique key like id.#
+Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.#
 Q.10 Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.n+
 Q.11 Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.n+
 
@@ -55,11 +54,14 @@ Flatten Nested Object
 Unflatten Flat Object
 Object-Based Cache Mechanism
 Memoization Cache Storage
-Object Key Sorting
+Sorting Objects by Keys
 Deep Merge Objects
 Group Array of Objects
-Writae a program to check valid brackets
-
+Write a program to check valid brackets
+Count Leaves in Tree Object
+Array of Objects Deduplication
+Transform Object to Array
+Find Deep Value by Path
 */
 
 

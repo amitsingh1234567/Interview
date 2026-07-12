@@ -1,39 +1,34 @@
-function countLeaves(obj) {
-  let count = 0;
+function getValueByPath(obj, path) {
+  const keys = path.split(".");
 
-  for (const key in obj) {
-    const value = obj[key];
+  let current = obj;
 
-    if (
-      typeof value === "object" &&
-      value !== null &&
-      !Array.isArray(value)
-    ) {
-      count += countLeaves(value);
-      console.log("🚀 ~ countLeaves ~ count:", count)
-      
-    } else {
-      count++;
+  for (const key of keys) {
+    if (current == null) {
+      return undefined;
     }
+
+    current = current[key];
   }
 
-  return count;
+  return current;
+}
+
+// const obj = {
+//   users: [
+//     {
+//       name: "Amit"
+//     }
+//   ],
+//   education: [
+//     "B.Tech",
+//     "M.Tech"
+//   ]
+// };
+
+const obj = {
+  101: "Amit",
+  102: "Rahul",
+  103: "Neha"
 };
-
-
-const nestedObject = {
-  a: 'x',
-  b: {
-    c: 'y',
-    d: {
-      e: 'z',
-      f: 'w',
-    }
-  },
-  g: 'v',
-  h: 'u',
-  i: 't',
-};
-
-const leafCount = countLeaves(nestedObject);
-console.log(leafCount);
+console.log(getValueByPath(obj, "102"));
