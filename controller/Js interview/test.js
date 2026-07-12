@@ -1,34 +1,41 @@
-function getValueByPath(obj, path) {
-  const keys = path.split(".");
+function diffObjects(oldObj, newObj) {
+  const result = {
+    added: {},
+    removed: {},
+    changed: {}
+  };
 
-  let current = obj;
-
-  for (const key of keys) {
-    if (current == null) {
-      return undefined;
+  for (const key in oldObj) {
+    if (!(key in newObj)) {
+      result.removed[key] = oldObj[key];
+    } else if (oldObj[key] !== newObj[key]) {
+      result.changed[key] = {
+        oldValue: oldObj[key],
+        newValue: newObj[key]
+      };
     }
-
-    current = current[key];
   }
 
-  return current;
-}
+  for (const key in newObj) {
+    if (!(key in oldObj)) {
+      result.added[key] = newObj[key];
+    }
+  }
 
-// const obj = {
-//   users: [
-//     {
-//       name: "Amit"
-//     }
-//   ],
-//   education: [
-//     "B.Tech",
-//     "M.Tech"
-//   ]
-// };
-
-const obj = {
-  101: "Amit",
-  102: "Rahul",
-  103: "Neha"
+  return result;
 };
-console.log(getValueByPath(obj, "102"));
+
+
+const oldConfig = {
+  theme: "light",
+  language: "en",
+  notifications: true
+};
+
+const newConfig = {
+  theme: "dark",
+  language: "en",
+  autoSave: true
+};
+
+console.log(diffObjects(oldConfig, newConfig));

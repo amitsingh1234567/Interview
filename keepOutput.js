@@ -199,11 +199,11 @@ Q.28 Count frequency of elements using object/Map. 1D, 2D
 Q.29 Implement memoization function. (pending)
 Q.30 -----------------------------------
 Q.31 Display this desired output { abc: 3, ccr: 2, jtv: 1 }
-    from this given Array ['abc','bac','bac','ccr','rcc','vtj'] *
+    from this given Array ['abc','bac','bac','ccr','rcc','vtj'] * (Moved in top_50_object_based_Q.js)
 
 Q.32 Find Common key value in to this two object *
     const input1 = {a:15, b:5, c:8, d:10, e:15}
-    const input2 = {a:5, e:15, f:10, d:10}; 
+    const input2 = {a:5, e:15, f:10, d:10}; (Moved in top_50_object_based_Q.js)
 
 Q.32 Captilized first letter of word *
 Q.33 Remove duplicate from array *

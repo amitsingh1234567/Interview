@@ -1,4 +1,8 @@
 /*
+=================> REGEX BASIC <================
+Q.1 How to get only string from mixedString like => User_Name_2026
+Q.2 How to get only numbers from a string 
+
 =================> TOP 50 STRING BASED Q <================
 
 =================> Basic Manipulation & Reversals <================
@@ -13,10 +17,32 @@ Q.8 Find Most Frequent Character: Identify the single character that appears the
 Q.9 First Non-Repeating Character: Scan a string to return the first character that does not repeat anywhere.
 Q.10 Find All Substrings: Generate every possible continuous substring from a given string.
 Q.11 Longest Substring Without Repeating Characters: Use a sliding window approach to find the maximum length of a unique substring.
-
-
+Q.12 Count Vowels and Consonants: Compute the total number of vowels versus consonants in an alphanumeric string.
+Q.13 Palindrome Check: Determine if a string reads the same forwards and backwards, ignoring spaces and punctuation.
 
 */
+
+// =================> REGEX BASIC <================
+// Q.1 How to get only string from mixedString like => User_Name_2026
+/*
+const mixedString = "User_Name_2026!";
+
+// Leaves only lowercase and uppercase a-z letters
+const lettersOnly = mixedString.replace(/[^a-zA-Z]/g, ""); 
+
+console.log(lettersOnly); 
+*/
+
+// Q.2 How to get only numbers from a string
+/*
+const string = "abc123xyz456";
+const numbers = string.replace(/\D/g, ""); 
+console.log(numbers)
+
+*/
+
+
+
 
 
 // =================> Basic Manipulation & Reversals <================
@@ -229,4 +255,49 @@ console.log(longestUniqueSubstring("abcabcbb"));
 
 */
 
+// Q.12 Count Vowels and Consonants: Compute the total number of vowels versus consonants in an alphanumeric string
+/*
+function countVowelsAndConsonants(str) {
+  let vowels = 0;
+  let consonants = 0;
+
+  const vowelChars = 'aeiou';
+
+  for (const char of str.toLowerCase()) {
+
+    if (vowelChars.includes(char)) {
+      vowels++;
+    } else if (char >= 'a' && char <= 'z') {
+      consonants++;
+    }
+
+  }
+
+  return {
+    vowels,
+    consonants
+  };
+}
+
+console.log(countVowelsAndConsonants("JavaScript123!"));
+// { vowels: 3, consonants: 7 }
+
+*/
+
+// Q.13 Palindrome Check: Determine if a string reads the same forwards and backwards, ignoring spaces and punctuation.
+/*
+function isPalindrome(str) {
+  // 1. Remove non-alphanumeric characters and lowercase the string
+  const cleaned = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  
+  const reversed = cleaned.split('').reverse().join('');
+  
+  return cleaned === reversed;
+}
+
+console.log(isPalindrome("RaceCar"));             // true
+console.log(isPalindrome("A man, a plan, a canal: Panama")); // true
+console.log(isPalindrome("hello"));               // false
+
+*/
 

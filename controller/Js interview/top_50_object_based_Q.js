@@ -27,6 +27,14 @@ Q.12 Frequency Mapping: Read a long paragraph of text and generate a word-freque
 Q.13 Map Object Values: Transform the values inside an object using a callback function while keeping the keys intact.#
 Q.14 Write a function that returns the deepest key-value pair in a nested object.#
 Q.15 Find Deep Value by Path: Fetch an inner value from an object using a string dot-notation path like 'user.profile.id'#
+Q.16 Display this desired output { abc: 3, ccr: 2, jtv: 1 }
+    from this given Array ['abc','bac','bac','ccr','rcc','vtj']
+
+Q.17 Find Common key value in to this two object 
+    const input1 = {a:15, b:5, c:8, d:10, e:15}
+    const input2 = {a:5, e:15, f:10, d:10}; 
+
+
 
 =================> Advanced Object Manipulation <================
 Q.1 Object Key Filtering: Create a function that filters an object’s keys based on a provided predicate function.#
@@ -44,7 +52,6 @@ Q.11 Property Existence: Check if a specific property exists directly on an obje
 */
 
 /*
-
 Deep Clone Implementation
 Write a function that returns the deepest key-value pair in a nested object
 Extract Specific Keys
@@ -62,6 +69,8 @@ Count Leaves in Tree Object
 Array of Objects Deduplication
 Transform Object to Array
 Find Deep Value by Path
+ Display this desired output { abc: 3, ccr: 2, jtv: 1 }
+    from this given Array ['abc','bac','bac','ccr','rcc','vtj']
 */
 
 
@@ -892,6 +901,45 @@ console.log(getValueByPath(obj, "users.0.name"));
 
 */
 
+// Q.16 Display this desired output { abc: 3, ccr: 2, jtv: 1 }
+// from this given Array ['abc','bac','bac','ccr','rcc','vtj']
+/*
+function wordCount(arr) {
+    const sortedArr = arr.map(item => item.split('').sort().join(''));
+    
+    return sortedArr.reduce((result, key) => {
+        result[key] = (result[key] || 0) + 1;
+        return result;
+    }, {});
+    
+};
+
+const arr = ['abc','bac','bac','ccr','rcc','vtj'];
+console.log(wordCount(arr));
+*/
+
+// Q.17 Find Common key value in to this two object 
+//     const input1 = {a:15, b:5, c:8, d:10, e:15}
+//     const input2 = {a:5, e:15, f:10, d:10}; 
+/*
+function findCommonKeyValue(obj1, obj2) {
+    const result = {};
+    
+    for(let key in obj1){
+        if(obj2[key] === obj1[key]){
+            result[key] = obj2[key];
+        }
+    };
+    
+    return result;
+};
+
+const input1 = {a:15, b:5, c:8, d:10, e:15}
+const input2 = {a:5, e:15, f:10, d:10}; 
+
+console.log(findCommonKeyValue(input1, input2));
+
+*/
 
 // =================> Advanced Transformation <================
 
