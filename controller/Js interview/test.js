@@ -1,41 +1,15 @@
-function diffObjects(oldObj, newObj) {
-  const result = {
-    added: {},
-    removed: {},
-    changed: {}
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012",
+    details: {email: "test@gmail.com"}
   };
 
-  for (const key in oldObj) {
-    if (!(key in newObj)) {
-      result.removed[key] = oldObj[key];
-    } else if (oldObj[key] !== newObj[key]) {
-      result.changed[key] = {
-        oldValue: oldObj[key],
-        newValue: newObj[key]
-      };
-    }
-  }
-
-  for (const key in newObj) {
-    if (!(key in oldObj)) {
-      result.added[key] = newObj[key];
-    }
-  }
-
-  return result;
-};
+  Object.defineProperty(person, 'aadharNumber', {writable: false});
+  // For Nested Object   
+  Object.defineProperty(person.details, 'email', {writable: false, enumerable: false}); 
 
 
-const oldConfig = {
-  theme: "light",
-  language: "en",
-  notifications: true
-};
-
-const newConfig = {
-  theme: "dark",
-  language: "en",
-  autoSave: true
-};
-
-console.log(diffObjects(oldConfig, newConfig));
+console.log(person)
+person.aadharNumber = '7888-5846-9852';
+console.log(person)

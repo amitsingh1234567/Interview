@@ -34,6 +34,8 @@ Q.17 Find Common key value in to this two object
     const input1 = {a:15, b:5, c:8, d:10, e:15}
     const input2 = {a:5, e:15, f:10, d:10}; 
 
+Q.18 How to make object immutable.
+
 
 
 =================> Advanced Object Manipulation <================
@@ -940,6 +942,69 @@ const input2 = {a:5, e:15, f:10, d:10};
 console.log(findCommonKeyValue(input1, input2));
 
 */
+
+// Q.18 How to make object immutable 
+/*
+1. How to make imutable object on only one key 
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012",
+    details: {email: "test@gmail.com"}
+  };
+
+  Object.defineProperty(person, 'aadharNumber', {writable: false});
+  // For Nested Object   
+  Object.defineProperty(person.details, 'email', {writable: false}); 
+
+
+console.log(person)
+person.aadharNumber = '7888-5846-9852';
+console.log(person)
+
+2. I want hide a key in the given object 
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+  };
+  Object.defineProperty(person, 'aadharNumber', {enumerable: false});
+
+console.log(person)
+
+3. Using Object.freeze() to Prevent Adding, Updating and Deleting Properties
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+  
+Object.freeze(person);
+person.aadharNumber = '9964-6254-8965'
+console.log(person)
+
+4. Using Object.seal() to Prevent Adding or Deleting Properties (But Allow Updates)
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+
+Object.seal(person)
+console.log(person)
+
+5.Using Object.preventExtensions() to Prevent Adding Properties (But Allow Updates and Delete)
+const person = {
+    name: "John",
+    age: 25,
+    aadharNumber: "1234-5678-9012"
+};
+
+Object.preventExtensions(person);
+console.log(person)
+
+*/
+
 
 // =================> Advanced Transformation <================
 
