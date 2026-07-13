@@ -1,15 +1,17 @@
-const person = {
-    name: "John",
-    age: 25,
-    aadharNumber: "1234-5678-9012",
-    details: {email: "test@gmail.com"}
-  };
+function solveCryptogram(cipherText, mapping) {
+  // mapping example: { A: 'T', B: 'H', C: 'E' }
+  return cipherText
+    .split('')
+    .map(ch => {
+      const upper = ch.toUpperCase();
+      return mapping[upper] ? mapping[upper].toLowerCase() : ch;
+    })
+    .join('');
+}
 
-  Object.defineProperty(person, 'aadharNumber', {writable: false});
-  // For Nested Object   
-  Object.defineProperty(person.details, 'email', {writable: false, enumerable: false}); 
+const cipher = "XLMW MW E QYR.";
+const key = {
+  X: 'T', L: 'H', M: 'I', W: 'S', E: 'A', Q: 'F', Y: 'U', N: 'N', R: 'Y'
+};
 
-
-console.log(person)
-person.aadharNumber = '7888-5846-9852';
-console.log(person)
+console.log(solveCryptogram(cipher, key));
