@@ -45,11 +45,11 @@ Q.3 Memoization Cache Storage: Write a memoize function that caches expensive fu
 Q.4 Count Leaves in Tree Object: Calculate the total number of endpoint values inside an arbitrarily deep tree-like object.#
 Q.5 Write a program to check valid brackets. #
 Q.6 Sorting Objects by Keys: Take an unsorted config object and output an identical object with keys ordered alphabetically.#
-Q.7 Diff Two Objects: Compare two configurations and return an object explicitly detailing changed, added, or removed keys.n+
+Q.7 *Diff Two Objects: Compare two configurations and return an object explicitly detailing changed, added, or removed keys.n+
 Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array by evaluating a unique key like id.#
 Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.#
-Q.10 Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.n+
-Q.11 Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.n+
+Q.10 *Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.n+
+Q.11 *Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.n+
 
 */
 
@@ -58,7 +58,6 @@ Deep Clone Implementation
 Write a function that returns the deepest key-value pair in a nested object
 Extract Specific Keys
 Set Deep Value by Path
-Deep Object Comparison
 Flatten Nested Object
 Unflatten Flat Object
 Object-Based Cache Mechanism
@@ -73,6 +72,15 @@ Transform Object to Array
 Find Deep Value by Path
  Display this desired output { abc: 3, ccr: 2, jtv: 1 }
     from this given Array ['abc','bac','bac','ccr','rcc','vtj']
+  
+
+Today- 15-07
+Find Deep Value by Path
+Object Key Filtering
+Write a program to check valid brackets
+Transform Object to Array
+Deep Object Comparison
+Merge Non-Overwriting
 */
 
 

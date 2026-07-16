@@ -1004,7 +1004,7 @@ let firstOccurrence = -1;
 let lastOccurrence = -1;
 
 for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === element) {
+    if (arr[i] === element) {   
         if (firstOccurrence === -1) {
             firstOccurrence = i;  // Set first occurrence
         }
@@ -1719,6 +1719,18 @@ function printDiagonalMatrix(size) {
 
 // Example usage
 printDiagonalMatrix(4);
+*/
+
+// Q.25 How to reverse number
+/*
+function reverseNumber(num) {
+    const reversed = parseFloat(num.toString().split('').reverse().join(''));
+    return reversed * Math.sign(num);
+}
+
+console.log(reverseNumber(12345));  
+console.log(reverseNumber(-9876)); 
+
 */
 
 function main(arr){

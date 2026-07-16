@@ -1716,18 +1716,23 @@ var str = "a1b2c3d4";
 console.log(reverseLettersKeepNumbers(str))
 
 Q.18 Write a function to check if any word in a sentence repeats.
-function findRepeats(sentence) {
-  const words = sentence.toLowerCase().split(' ');
-  const seen = new Set();
-  const repeats = new Set();
-  for (const word of words) {
-    if (seen.has(word)) repeats.add(word);
-    seen.add(word);
-  }
-  return [...repeats].length != 0 ? "Repeat" : 'Non Repeat';
+function checkRepeatedWord(str){
+    const seen = new Set();
+    
+    const words = str.toLowerCase().split(' ');
+    for(let word of words) {
+        if(seen.has(word)){
+            return true;
+        }else {
+            seen.add(word);
+        }
+    }
+    
+    return false;
 }
 
-console.log(findRepeats("Hello hello world world")); 
+let str = "The cat chased the cat mouse."
+console.log(checkRepeatedWord(str));
 
 Q.19 Write a function to make a given string palindrome based on another string.
 function makePalindrome(str1, str2) {
@@ -1860,7 +1865,69 @@ console.log(formatWithCommas(1234567))
 
 */
 
+// Remove duplicate characters from a string
+/*
+function removeDuplicatesCaseInsensitive(str) {
+    const seen = new Set();
+    
+    return str.split('').filter(char => {
+        const lower = char.toLowerCase();
+        if (seen.has(lower)) return false;
+        seen.add(lower);
+        return true;
+    }).join('');
+    
+}
+var str = 'Hello World'
+console.log(removeDuplicatesCaseInsensitive(str)); 
 
+*/
+
+// Find all pairs in an array that sum to a target
+/*
+function findPairOfSum(arr, target){
+    const seen = new Set();
+    const result = [];
+    
+    for(let num of arr){
+        const complement = target - num;
+        
+        if(seen.has(complement)){
+            result.push([complement, num])
+        };
+        
+        seen.add(num);
+    };
+    
+    return result;
+}
+
+let arr = [3,7,2,8,9,1];
+let target = 10;
+console.log(findPairOfSum(arr, target));
+*/
+
+// Flatten a nested array without using flat()
+/*
+function flattenArray(arr) {
+    let result = [];
+
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            result.push(...flattenArray(arr[i]));
+        } else {
+            result.push(arr[i]);
+        }
+    }
+
+    return result;
+}
+
+const nested = [1, [2, [3, 4], 5], 6, [7, 8]];
+console.log(flattenArray(nested));
+
+
+*/
 
 /*
 OPQ BASED SSECTION
@@ -1934,4 +2001,4 @@ function userDetails(username) {
 userDetails("Test");
 
 
-* */
+ */
