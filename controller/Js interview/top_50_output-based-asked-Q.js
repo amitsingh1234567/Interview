@@ -69,5 +69,14 @@ function userDetails(username) {
 
 userDetails("Test");
 
+function myLogin() {
+  setTimeout(() => {
+    console.log("setTimeout");
+  }, 1000)
+};
+
+console.log("A");
+myLogin();
+console.log("B");
 
  */

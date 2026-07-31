@@ -54,33 +54,12 @@ Q.11 *Property Existence: Check if a specific property exists directly on an obj
 */
 
 /*
-Deep Clone Implementation
-Write a function that returns the deepest key-value pair in a nested object
-Extract Specific Keys
-Set Deep Value by Path
-Flatten Nested Object
-Unflatten Flat Object
-Object-Based Cache Mechanism
-Memoization Cache Storage
-Sorting Objects by Keys
-Deep Merge Objects
-Group Array of Objects
-Write a program to check valid brackets
-Count Leaves in Tree Object
-Array of Objects Deduplication
-Transform Object to Array
-Find Deep Value by Path
- Display this desired output { abc: 3, ccr: 2, jtv: 1 }
-    from this given Array ['abc','bac','bac','ccr','rcc','vtj']
-  
 
-Today- 15-07
-Find Deep Value by Path
-Object Key Filtering
-Write a program to check valid brackets
-Transform Object to Array
-Deep Object Comparison
-Merge Non-Overwriting
+28-07-2026
+Write a function to find the maximum number of pairs that can be formed from an array
+ 
+ 
+
 */
 
 
