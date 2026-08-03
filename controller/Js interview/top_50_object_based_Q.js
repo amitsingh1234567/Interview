@@ -50,7 +50,7 @@ Q.8 Array of Objects Deduplication: Filter out duplicate objects from an array b
 Q.9 Transform Object to Array: Map an object's structural key-value fields into a clean array of objects containing id descriptors.#
 Q.10 *Filter Nested Arrays: Remove nested objects matching specific criteria within a grand parent database object.n+
 Q.11 *Property Existence: Check if a specific property exists directly on an object versus inheriting from its prototype chain.n+
-
+Q.12 Search Optimization: Avoiding repeated iterations over an array of objects by creating a lookup map for O(1) access
 */
 
 /*
@@ -1487,3 +1487,20 @@ console.log(Object.hasOwn(myCar, "wheels")); // false (Checks direct object only
 
 */
 
+// Q.12 Search Optimization: Avoiding repeated iterations over an array of objects by creating a lookup map for O(1) access
+/*
+// Avoid: Iterating every single time you call .find()
+const users = [{id: 'u1', name: 'Alice'}, {id: 'u2', name: 'Bob'}];
+const user = users.find(u => u.id === 'u2');
+
+// Optimize: Map once, read instantly at scale
+const userMap = users.reduce((acc, user) => {
+  acc[user.id] = user;
+  return acc;
+}, {});
+const userFast = userMap['u2']; // O(1)
+
+console.log(userMap)
+
+
+*/

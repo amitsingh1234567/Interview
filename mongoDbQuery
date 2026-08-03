@@ -1,3 +1,24 @@
+/*
+$age => Read the value of the age field.
+
+{
+  $lookup: {
+    from: "products",
+    localField: "orders.productId",
+    foreignField: "_id",
+    as: "product"
+  }
+} ===>  Take the value from the orders.productId field of the current document. 
+CurrentDocument.orders.productId, which is 201
+
+One $ ($field) → field of the current document being processed.
+Two $$ ($$variable) → variable created using let.
+
+* */
+
+
+
+
 db.getCollection("products").find({})
 
 db.getCollection("order").find({})
@@ -114,6 +135,25 @@ db.getCollection("teachers").aggregate([
     }
 ])
 
+db.getCollection("teachers").aggregate([
+    {
+        $group: {
+            _id: {
+                age: "$age",
+                gender: "$gender"
+            },
+            totalPeople: { $sum: 1 }
+        }
+    },
+    {
+        $project: {
+            _id: 0,
+            age: "$_id.age",
+            gender: "$_id.gender",
+            totalPeople: 1
+        }
+    }
+]);
 
 db.getCollection("teachers").aggregate([
     {
@@ -180,5 +220,43 @@ db.getCollection("userDetails").aggregate([
     }
 ]);
 
+
+/********************************LOOOKUP USING PIPELINE AS CONDITION********************************* */
+db.user.aggregate([
+    {
+        $lookup: {
+            from: "order",
+            let: { userId: "$_id" },
+            pipeline: [
+                {
+                    $match: {
+                        $expr: {
+                            $eq: ["$userId", "$$userId"]
+                        }
+                    }
+                },
+                {
+                    $lookup: {
+                        from: "products",
+                        localField: "productId",
+                        foreignField: "_id",
+                        as: "product"
+                    }
+                },
+                {
+                    $unwind: "$product"
+                },
+                {
+                    $project: {
+                        _id: 1,
+                        quantity: 1,
+                        product: 1
+                    }
+                }
+            ],
+            as: "orders"
+        }
+    }
+])
 
 
