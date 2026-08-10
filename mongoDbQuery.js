@@ -220,6 +220,18 @@ db.getCollection("userDetails").aggregate([
     }
 ]);
 
+db.getCollection("userDetails").aggregate([
+    {
+        $group: {
+            _id: {
+                age: "$age",
+                gender: "$gender"
+            },
+            totalPeople: { $sum: 1 }
+        }
+    }
+]);
+
 
 /********************************LOOOKUP USING PIPELINE AS CONDITION********************************* */
 db.user.aggregate([

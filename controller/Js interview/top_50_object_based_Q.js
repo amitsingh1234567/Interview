@@ -57,8 +57,17 @@ Q.12 Search Optimization: Avoiding repeated iterations over an array of objects 
 
 28-07-2026
 Write a function to find the maximum number of pairs that can be formed from an array
- 
- 
+
+Deep Object Comparison
+Count Leaves in Tree Object
+Memoization Cache Storage
+Object-Based Cache Mechanism
+Unflatten Flat Object
+Sorting Objects by Keys
+Flatten Nested Object
+Deep Clone Implementation
+Set Deep Value by Path
+Find Deep Value by Path
 
 */
 

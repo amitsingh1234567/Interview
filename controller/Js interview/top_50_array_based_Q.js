@@ -13,10 +13,37 @@ Q.6 Union of Two Arrays: Merge arrays and pass them through new Set().
 Q.7 Find the Majority Element (> N/2 times): Use Boyer-Moore Voting Algorithm.
 Q.8 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ].#
 Q.9 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]].#
-
 */
 
+// =========> Must-Prepare Questions (Highest Interview Frequency) <=========== 
+/*
+First Non-Repeating Character
+Word Frequency Count
+Group Anagrams
+Valid Anagram
+Longest Substring Without Repeating Characters
+Contains Duplicate
+Longest Consecutive Sequence
+Subarray Sum Equals K
+Longest Subarray with Sum K
+Remove Duplicate Objects
+LRU Cache
 
+Q.1 Two Sum 
+Q.2 Median of Two Sorted Arrays 
+Q.3 Container With Most Water 
+Q.4 Longest Common Prefix 
+Q.5 3Sum
+Q.6 3Sum Closest 
+Q.7 4Sum
+Q.8 Remove Duplicates from Sorted Array 
+Q.9 Remove Element 
+Q.10 Next Permutation 
+Q.11 Search in Rotated Sorted Array 
+Q.12 Find First and Last Position of Element in Sorted Array
+Q.13 Search Insert Position Q.14 Valid Sudoku
+
+*/
 
 
 
