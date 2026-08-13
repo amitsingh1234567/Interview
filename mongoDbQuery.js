@@ -189,6 +189,17 @@ db.getCollection("userDetails").aggregate([
             hoobies: 1,
             user: 1
         }
+    },
+    {
+        $sort: {
+            age: 1
+        }
+    },
+    {
+        $skip: 2
+    },
+    {
+        $limit: 4
     }
 ])
 
