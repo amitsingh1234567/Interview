@@ -79,4 +79,40 @@ console.log("A");
 myLogin();
 console.log("B");
 
+Q.7
+const data = false;
+const data1 = new Boolean(false);
+
+if(data){
+console.log("fist")
+}
+
+if(data1){
+console.log("second")
+}
+
+Q.8
+console.log(1 + "2" + "2"); 
+console.log(1+ +"2" + "2");
+console.log(1+ -"1" + "2");
+console.log(+"1" + "1" + "2");
+console.log("A" - "B" + "2"); 
+console.log("A" - "B" + 2);     
+console.log(4 - "2" -1)
+
+Q.9
+function outer() {
+    let count = 0;
+    return function inner() {
+        return count++;
+    };
+}
+const counter = outer();
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+Q.10
+console.log([1,2,3] + [4,5,6])
+
  */

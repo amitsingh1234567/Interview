@@ -30,11 +30,18 @@ I want to create a project like e-commerce website where feature will be as foll
 
 I want to create a project like e-commerce website where feature will be as following 1. Authentication system using email id and password 2. product list 3. Add to card 4. filter 5. shorting 6. pagination
 
+Cognizant 2nd round:- 
+https://www.youtube.com/watch?v=h4QOOvzk0UM
+https://www.youtube.com/watch?v=mgibv2rXiEU
 
-https://www.youtube.com/watch?v=EG0LhIfmUSo
-https://www.youtube.com/watch?v=RA1StFpOQCQ&t=53s
 
-2nd round
+Live Interview 1st round: -
+https://www.youtube.com/watch?v=C1cpbFctYU8 => (Some practical implementation like To-do, CRUD and all)
+https://www.youtube.com/watch?v=RA1StFpOQCQ&t=53s => X
+https://www.youtube.com/watch?v=9cQsv91zBsc => Done
+https://www.youtube.com/watch?v=nWaHZT2o0VI
+
+Live Interview 2nd round: -
 https://www.youtube.com/watch?v=y74y2mb7UY0
 https://www.youtube.com/watch?v=JRVr-X4ERp8
 
@@ -79,84 +86,29 @@ src/
 
 
 
+𝗥𝗼𝘂𝗻𝗱 𝟭 - 𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗮𝗹
+1️⃣ Explain event loop and how asynchronous tasks are executed in JavaScript.
+ 2️⃣ Implement a custom hook in React that debounces input value.
+ 3️⃣ Create a reusable dropdown component that supports search and multi-select.
+ 4️⃣ How would you optimize React rendering performance in large lists (e.g., 10k+ rows)?
+ 5️⃣ Explain the difference between controlled and uncontrolled components with examples.
 
+𝗥𝗼𝘂𝗻𝗱 𝟮 - 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗧𝗲𝗰𝗵𝗻𝗶𝗰𝗮𝗹 / 𝗗𝗲𝘀𝗶𝗴𝗻
+1️⃣ How would you design a scalable React application for a dashboard with 100+ pages?
+ 2️⃣ Explain how code splitting and lazy loading improve performance.
+ 3️⃣ How do you handle API rate limits gracefully on the frontend?
+ 4️⃣ What is hydration in Next.js and when can it cause UI mismatches?
+ 5️⃣ How would you build a component library used by multiple teams?
+ 6️⃣ Explain CSR, SSR, and SSG — when would you use each?
+ 7️⃣ How would you design a frontend architecture that can handle 1M+ users daily?
 
+𝗥𝗼𝘂𝗻𝗱 𝟯 - 𝗠𝗮𝗻𝗮𝗴𝗲𝗿𝗶𝗮𝗹 / 𝗕𝗲𝗵𝗮𝘃𝗶𝗼𝗿𝗮𝗹
+1️⃣ Tell me about a time when a critical production bug broke the UI — how did you handle it?
+ 2️⃣ How do you prioritize technical debt vs. new features?
+ 3️⃣ Describe how you handle conflicts with designers or backend teams.
+ 4️⃣ How do you communicate complex technical decisions to non-technical stakeholders?
 
+𝗜 𝗵𝗮𝘃𝗲 𝗽𝗿𝗲𝗽𝗮𝗿𝗲𝗱 𝗜𝗻𝘁𝗲𝗿𝘃𝗶𝗲𝘄 𝗣𝗿𝗲𝗽𝗮𝗿𝗮𝘁𝗶𝗼𝗻 𝗚𝘂𝗶𝗱𝗲 𝗳𝗼𝗿 𝗙𝗿𝗼𝗻𝘁𝗲𝗻𝗱 𝗘𝗻𝗴𝗶𝗻𝗻𝗲𝗿𝘀.
+covering JavaScript, React, Next.js, System Design, and more.
 
-********************************************************************** Basic Form *******************************************************************************
-
-import { useState } from "react";
-import Count from "./Count";
-import UserDetails from "./UserDetails";
-import Card from "./Card";
-import Layout from "./Layout";
-import Wrapper from "./Wrapper";
-
-function User() {
-    const [checkBoxValue, setCheckBoxValue] = useState([]);
-    const [gender, setGender] = useState('male');
-    const [city, setCity] = useState('delhi');
-
-    const handleCheckBox = (event) => {
-        if (event.target.checked) {
-            setCheckBoxValue([...checkBoxValue, event.target.value]);
-        } else {
-            setCheckBoxValue([...checkBoxValue.filter(value => value != event.target.value)]);
-        }
-    };
-
-    const handleGender = (event) => {
-        setGender(event.target.value);
-    };
-
-    const handleCity = (event) => {
-        setCity(event.target.value)
-    }
-
-    return (
-        <>
-            <h2>User Login Component</h2>
-            <div>
-                <h3>Select Skills</h3>
-                <input type="checkbox" onChange={handleCheckBox} id="node" value="node" />
-                <label htmlFor="node">Node</label><br />
-
-                <input type="checkbox" onChange={handleCheckBox} id="javascript" value="javascript" />
-                <label htmlFor="javascript">Javascript</label><br />
-
-                <input type="checkbox" onChange={handleCheckBox} id="react" value="react" />
-                <label htmlFor="react">React</label><br />
-
-                <input type="checkbox" onChange={handleCheckBox} id="mongoDb" value="mongoDb" />
-                <label htmlFor="mongoDb">mongoDb</label><br />
-
-                <h2>Selected skills: {checkBoxValue.join(', ')} </h2>
-                <hr />
-            </div>
-
-            <div>
-                <h3>Handle Check Box</h3>
-                <p>Select Gender</p>
-                <input type="radio" onChange={handleGender} checked={gender == 'male'} id="male" value="male" name="gender" />
-                <label htmlFor="male">Male</label>
-
-                <input type="radio" onChange={handleGender} checked={gender == 'female'} id="female" value="female" name="gender" />
-                <label htmlFor="female">Female</label>
-                <h2>Selected Gender: {gender}</h2>
-                <hr />
-            </div>
-
-            <div>
-                <h3>Handle Dropdown</h3>
-                <select onChange={handleCity} defaultValue={"delhi"}>
-                    <option value="noida">Noida</option>
-                    <option value="bihar">Bihar</option>
-                    <option value="delhi">Delhi</option>
-                </select>
-                <h2>Selected City: {city}</h2>
-            </div>
-        </>
-    )
-};
-
-export default User;
+𝗚𝗲𝘁 𝘁𝗵𝗲 𝗚𝘂𝗶𝗱𝗲 𝗵𝗲𝗿𝗲 - https://lnkd.in/gP9BHyPn

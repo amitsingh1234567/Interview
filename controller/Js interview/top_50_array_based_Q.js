@@ -13,6 +13,7 @@ Q.6 Union of Two Arrays: Merge arrays and pass them through new Set().
 Q.7 Find the Majority Element (> N/2 times): Use Boyer-Moore Voting Algorithm.
 Q.8 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ].#
 Q.9 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]].#
+Q.10 Maximum difference between two element
 */
 
 // =========> Must-Prepare Questions (Highest Interview Frequency) <=========== 
@@ -29,7 +30,6 @@ Longest Subarray with Sum K
 Remove Duplicate Objects
 LRU Cache
 
-Q.1 Two Sum 
 Q.2 Median of Two Sorted Arrays 
 Q.3 Container With Most Water 
 Q.4 Longest Common Prefix 
@@ -264,5 +264,28 @@ function premute(str){
 
 const str = [1, 2, 3];
 console.log(premute(str));
+
+*/
+
+// Q.10 Maximum difference between two element
+/*
+function maxDifference(nums) {
+    let maxDiff = -1;
+
+    for(let i = 0; i < nums.length; i++) {
+        for(let j = i + 1; j < nums.length; j++) {
+            if(nums[j] > nums[i]) {
+                maxDiff = Math.max(maxDiff, nums[j] - nums[i])
+            }
+        }
+    };
+
+    return maxDiff;
+};
+
+
+const arr = [2,3,10, 6,4,8,1];
+
+console.log(maxDifference(arr));
 
 */

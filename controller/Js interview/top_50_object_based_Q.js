@@ -54,9 +54,15 @@ Q.12 Search Optimization: Avoiding repeated iterations over an array of objects 
 */
 
 /*
+MongoDb Revision Date :- 13-08
+
 
 28-07-2026
+Two Sum
 Write a function to find the maximum number of pairs that can be formed from an array
+Find all pairs in an array that sum to a target
+Maximum difference between two element
+Maximum Subarray Sum (Kadane's Algorithm): Keep a running local max and global max
 
 Deep Object Comparison
 Count Leaves in Tree Object
@@ -66,8 +72,10 @@ Unflatten Flat Object
 Sorting Objects by Keys
 Flatten Nested Object
 Deep Clone Implementation
-Set Deep Value by Path
-Find Deep Value by Path
+Set Deep Value by Path*
+Find Deep Value by Path*
+Extract Specific Keys
+
 
 */
 

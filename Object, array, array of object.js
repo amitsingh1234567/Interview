@@ -96,7 +96,7 @@ db.user.updateOne(
 //==========> Update an Array <==========
 db.user.updateOne(
   { _id: 1 },
-  {
+  { 
     $push: {
       skills: "Angular"
     }
@@ -218,6 +218,29 @@ db.user.updateOne(
         "order.price": {
           $lt: 5000
         }
+      }
+    ]
+  }
+);
+
+db.user.updateOne(
+  {
+    _id: 1
+  },
+  {
+    $inc: {
+      "order.$[order].quantity": 1,
+      "order.$[order].price": 500
+    },
+    $set: {
+      "order.$[order].status": "updated"
+    }
+  },
+  {
+    arrayFilters: [
+      {
+        "order.product": "Laptop",
+        "order.price": { $lt: 5000 }
       }
     ]
   }
