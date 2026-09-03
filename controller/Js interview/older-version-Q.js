@@ -7,6 +7,7 @@ Find index of Captial letter to given Array#
 Rotate Array by 2 place.#
 Find max occuring character in the given String#
 Find common value between two array#
+
 How to reverse number.#
 Replace a specific letter from the different symbol of the given string.#
 Write a program to print fibonacci series
@@ -17,6 +18,7 @@ How do you check if two strings are anagrams
 Find Second Non Repeating Character.#
 Find the Longest Key in an Object.#
 Given an array of objects, write a function that counts how many times each unique property value occurs.#
+
 find the position of first and final occurrence of an element in an array element is 5.#
 Remove all the zero at the end.#
 Write a program to find Second Largest number.#
@@ -28,6 +30,7 @@ Move all zeros to the end of an array.#
 Flatten a nested array without using flat().#
 Find the intersection of two arrays.#
 Remove duplicate characters from a string.#
+
 Find all pairs in an array that sum to a target.#
 Remove duplicate from array.#
 Remove duplicate from array of object.#
@@ -39,4 +42,5 @@ Write a function to reverse only the letters in a string.#
 Write a function to check if any word in a sentence repeats.#
 Write a function to move all capital letters in a string to the front.#
 Write a function to find the longest consecutive zeros in a given string
+Find the first missing odd number
 */

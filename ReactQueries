@@ -112,3 +112,435 @@ src/
 covering JavaScript, React, Next.js, System Design, and more.
 
 𝗚𝗲𝘁 𝘁𝗵𝗲 𝗚𝘂𝗶𝗱𝗲 𝗵𝗲𝗿𝗲 - https://lnkd.in/gP9BHyPn
+
+
+
+
+
+
+--------------------------------REDUX and Middlewaee Understanding --------------------------------------
+
+/*
+Button Click
+     │
+     ▼
+dispatch(action)
+     │
+     ▼
+Middleware
+     │
+     ├── Log action
+     ├── Call API
+     ├── Delay action
+     └── Modify action
+     │
+     ▼
+Reducer
+     │
+     ▼
+Store Updated
+*/
+
+/*
+Example 2: Redux Thunk (Most Common)
+
+You've already learned createAsyncThunk.
+
+Thunk itself is a middleware.
+
+When you do:
+
+dispatch(fetchEmployees());
+Middleware intercepts it.
+
+dispatch(fetchEmployees())
+          │
+          ▼
+     Thunk Middleware
+          │
+     API Call
+          │
+          ▼
+dispatch(success)
+          │
+          ▼
+Reducer
+
+Without middleware, Redux would only accept plain action objects.
+*/
+
+
+// store.js
+import { configureStore } from "@reduxjs/toolkit";
+
+import authReducer from "../features/auth/authSlice";
+import employeeReducer from "../features/employee/employeeSlice";
+import loggerMiddleware from "../middleware/loggerMiddleware";
+
+export const store = configureStore({
+  reducer: {
+    auth: authReducer,
+    employee: employeeReducer,
+  },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(loggerMiddleware),
+});
+
+
+// Instead of writing console.log() everywhere, we create one middleware.
+const loggerMiddleware = (store) => (next) => (action) => {
+
+  console.log("Action:", action.type);
+  console.log("Previous State:", store.getState());
+
+  const result = next(action);
+
+  console.log("New State:", store.getState());
+
+  return result;
+};
+
+export default loggerMiddleware;
+
+dispatch(deleteEmployee(5));
+
+// Logs
+/*
+Action: employee/delete
+
+Previous State:
+employees: [1,2,3,4,5]
+
+New State:
+employees: [1,2,3,4]
+*/
+
+// employeeThunk.js
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import api from "../../api/axios";
+
+export const fetchEmployees = createAsyncThunk(
+  "employee/fetchEmployees",
+
+  async () => {
+    const response = await api.get("/employees");
+
+    return response.data;
+  }
+);
+
+
+// employeeSlice.js
+import { createSlice } from "@reduxjs/toolkit";
+import { fetchEmployees } from "./employeeThunk";
+
+const employeeSlice = createSlice({
+  name: "employee",
+  initialState: {
+    list: [],
+    loading: false,
+    error: null,
+  },
+
+  reducers: {},
+
+  extraReducers: (builder) => {
+      builder
+      .addCase(fetchEmployees.pending, (state) => {
+        state.loading = true;
+      })
+      .addCase(fetchEmployees.fulfilled, (state, action) => {
+        state.loading = false;
+        state.list = action.payload;
+      })
+      .addCase(fetchEmployees.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.error.message;
+      });
+  },
+});
+
+export default employeeSlice.reducer;
+
+// EmployeePage.jsx
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchEmployees } from "../features/employee/employeeThunk";
+
+function EmployeePage() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchEmployees());
+  }, [dispatch]);
+
+  return <h2>Employees</h2>;
+}
+
+// axios.js
+import axios from "axios";
+
+const api = axios.create({
+  baseURL: "https://api.example.com",
+});
+
+api.interceptors.request.use((config) => {
+
+  const token = localStorage.getItem("token");
+
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+
+  return config;
+});
+
+export default api;
+// Now every API automatically gets: Authorization: Bearer xyz123
+
+// authThunk.js
+import { createAsyncThunk } from "@reduxjs/toolkit";
+import api from "../../api/axios";
+
+export const login = createAsyncThunk(
+  "auth/login",
+  async (credentials) => {
+
+    const response = await api.post("/login", credentials);
+
+    localStorage.setItem("token", response.data.accessToken);
+
+    return response.data.user;
+  }
+);
+
+// Login Component
+dispatch(login({
+  email,
+  password
+}));
+
+// How all middleware work together
+/*
+EmployeePage
+     │
+     ▼
+dispatch(fetchEmployees())
+     │
+     ▼
+Logger Middleware
+     │
+     ├── Action: employee/fetchEmployees/pending
+     └── next()
+     │
+     ▼
+Thunk Middleware
+     │
+     ▼
+Execute async function
+     │
+     ▼
+Axios
+     │
+     ▼
+Axios Request Interceptor
+     │
+     ▼
+Attach Bearer Token
+     │
+     ▼
+Backend
+     │
+     ▼
+Response
+     │
+     ▼
+Thunk dispatches fulfilled
+     │
+     ▼
+Logger logs fulfilled
+     │
+     ▼
+Reducer
+     │
+     ▼
+Redux Store Updated
+     │
+     ▼
+React UI Re-renders
+
+*/
+
+
+
+import { useState } from "react";
+// Parent
+function Dashboard() {
+  const [employeeName, setEmployeeName] = useState("");
+
+  const handleEmployee = (name) => {
+    setEmployeeName(name);
+  };
+
+  return (
+    <>
+      <h2>Employee: {employeeName}</h2>
+
+      <Employee onEmployeeSelect={handleEmployee} />
+    </>
+  );
+}
+
+// The parent passes the function:
+<Employee onEmployeeSelect={handleEmployee} />
+
+// Child
+function Employee({ onEmployeeSelect }) {
+
+  const handleClick = () => {
+    onEmployeeSelect("Amit");
+  };
+
+  return (
+    <button onClick={handleClick}>
+      Select Employee
+    </button>
+  );
+}
+
+
+
+
+
+
+
+// features/auth/authSlice.js
+
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  isAuthenticated: false,
+  user: null,
+};
+
+const authSlice = createSlice({
+  name: "auth",
+
+  initialState,
+
+  reducers: {
+    loginSuccess: (state, action) => {
+      state.isAuthenticated = true;
+      state.user = action.payload.user;
+    },
+
+    logout: (state) => {
+      state.isAuthenticated = false;
+      state.user = null;
+    },
+  },
+});
+
+export const { loginSuccess, logout } = authSlice.actions;
+
+export default authSlice.reducer;
+
+
+// middleware/authMiddleware.js
+import { logout } from "../features/auth/authSlice";
+
+const authMiddleware = (store) => (next) => (action) => {
+
+  // Check whether this action requires authentication
+  if (action.meta?.requiresAuth) {
+
+    const token = localStorage.getItem("token");
+
+    if (!token) {
+      console.log("No authentication token");
+
+      store.dispatch(logout());
+
+      return;
+    }
+  }
+
+  // Allow the action to continue
+  return next(action);
+};
+
+export default authMiddleware;
+
+// app/store.js
+
+import { configureStore } from "@reduxjs/toolkit";
+
+import authReducer from "../features/auth/authSlice";
+import authMiddleware from "../middleware/authMiddleware";
+
+export const store = configureStore({
+
+  reducer: {
+    auth: authReducer,
+  },
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(authMiddleware),
+});
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+import { useReducer } from "react";
+
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+  switch (action.type) {
+    case "increment":
+      return { count: state.count + 1 };
+
+    case "decrement":
+      return { count: state.count - 1 };
+
+    case "reset":
+      return initialState;
+
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <h2>{state.count}</h2>
+
+      <button onClick={() => dispatch({ type: "increment" })}>+</button>
+
+      <button onClick={() => dispatch({ type: "decrement" })}>-</button>
+
+      <button onClick={() => dispatch({ type: "reset" })}>Reset</button>
+    </div>
+  );
+}
+
+// useState
+setLoading(true);
+setError("");
+
+try {
+  const user = await login();
+
+  setUser(user);
+  setLoading(false);
+} catch {
+  setLoading(false);
+  setError("Invalid password");
+}
+
+// Notice one action ("Login") is updating 3–4 different states.

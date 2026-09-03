@@ -311,6 +311,26 @@ db.user.updateOne(
   {
     $pull: {
       orders: {
+        product: { $in: ["Mouse", "Keyboard"] }
+      }
+    }
+  }
+);
+  
+db.user.updateOne(
+  { _id: 1 },
+  {
+    $pullAll: {
+      skills: ["Node.js", "MongoDB"]
+    }
+  }
+);
+
+db.user.updateOne(
+  { _id: 1 },
+  {
+    $pull: {
+      orders: {
         product: "Mouse"
       }
     }
@@ -326,6 +346,33 @@ db.user.updateOne(
         product: "Keyboard",
         price: 3000,
         quantity: 1
+      }
+    }
+  }
+);
+
+db.user.updateOne(
+  { _id: 1 },
+  {
+    $push: {
+      orders: {
+        $each: [
+          {
+            product: "Keyboard",
+            price: 3000,
+            quantity: 1
+          },
+          {
+            product: "Monitor",
+            price: 15000,
+            quantity: 2
+          },
+          {
+            product: "Headphones",
+            price: 2500,
+            quantity: 1
+          }
+        ]
       }
     }
   }
