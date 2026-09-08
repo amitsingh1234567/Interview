@@ -42,6 +42,51 @@ console.log(numbers)
 */
 
 
+/*
+Reverse a string  
+Example: "hello" → "olleh"
+
+Check if a string is a palindrome  
+Example: "madam" → true
+
+Find the first non‑repeating character  
+Example: "swiss" → "w"
+
+Count vowels and consonants in a string  
+Example: "interview" → vowels = 4, consonants = 5
+
+Check if two strings are anagrams  
+Example: "listen" and "silent" → true
+
+Remove duplicate characters from a string  
+Example: "programming" → "progamin"
+
+Find the longest word in a sentence  
+Example: "I love programming" → "programming"
+
+Check if a string contains only digits  
+Example: "12345" → true, "12a45" → false
+
+Find the frequency of each character  
+Example: "banana" → { b:1, a:3, n:2 }
+
+Rotate a string by k positions  
+Example: "abcdef", k=2 → "cdefab"
+
+🚀 Advanced String Questions
+Implement substring search (without using built‑in functions) → like indexOf.
+
+Longest substring without repeating characters → classic sliding window problem.
+
+Check if a string can be rearranged to form a palindrome.
+
+Find all permutations of a string.
+
+Compress a string (Run Length Encoding) → "aaabbc" → "a3b2c1".
+
+
+*/
+
 
 
 

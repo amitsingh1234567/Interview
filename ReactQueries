@@ -544,3 +544,135 @@ try {
 }
 
 // Notice one action ("Login") is updating 3–4 different states.
+
+
+
+
+📌 First Round (Core Concepts & Hooks)
+These are designed to test your fundamentals and ability to explain clearly:
+
+What is React and why is it popular?
+
+Difference between props and state.
+
+Explain the Virtual DOM and how React uses it.
+
+What is JSX and how does it work under the hood?
+
+Explain the React component lifecycle using Hooks (useEffect vs class lifecycle methods).
+
+What is the difference between controlled and uncontrolled components?
+
+Explain useState and useEffect with examples.
+
+Why are keys important in lists? What happens if you don’t use them?
+
+Difference between functional and class components.
+
+How does React handle re-rendering? What causes unnecessary re-renders?
+
+
+📌 Second Round (Performance, State Management & Coding)
+Here interviewers test if you can handle real-world scenarios:
+
+Difference between useMemo and useCallback. When would you use them? *
+
+Explain React Batching and what changed in React 18.
+
+How would you optimize a React app’s performance? *
+
+Explain Context API vs Redux. When would you choose one over the other? *
+
+What are React Router basics (useNavigate, useParams)?
+
+Explain how you would fetch data in React (fetch/axios, useEffect, error handling).
+
+What is React.memo and how does it help? *
+
+How do you debug a React app? Common tools and strategies.
+
+Build a simple counter component with increment/decrement.
+
+Build a Todo list with add/delete functionality.
+
+Implement search filter on a list of items.
+
+Explain how you would handle API loading states and errors. *
+
+--------------------------------------------------------------------
+Q.1 How would you optimize a React app’s performance?
+
+1. Code Splitting technique Use React.lazy() and Suspense
+2. Tree Shaking & Dependency Audit: Remove unused libraries and functions.
+3. Virtualization: Use libraries like react-window or react-virtualized for lists over 100 items.
+ Renders only visible nodes, turning multi-second renders into instant ones
+4. Fragments: Replace unnecessary <div> wrappers with <>...</> to reduce DOM nodes.
+5. Lazy Loading Images: Load images only when they enter the viewport.
+6. Debouncing and throtling 
+7. Localized state => Try to to keep the state closer to the component insted of over the top side 
+8. CDN technique for the static content
+
+Q.2 How do you debug a React app? Common tools and strategies.
+Future reference When I will start work: https://www.youtube.com/watch?v=-ToCso4x7xg
+1. Profiler :-
+  * Shows which components re-render and why.
+  * How many time it got re-render due to any state changes
+  * Time it took to re-render
+
+2. React Developer Tools (Browser Extension)
+   * Inspect the React component tree
+   * See props, state, and hooks values in real time.
+   * Props, hooks, renderBy, source ther is also some button clicking on 
+   and naviagate to the element tabe and code of the component as well 
+
+3. Browser DevTools
+  * Console: Log values with console.log, console.table, or console.group.
+  * Network Tab: Check API requests, responses, and errors.
+    
+
+
+
+------------------------------------------------------------
+Revise Hooks deeply (useState, useEffect, useMemo, useCallback).
+
+Practice small coding tasks (Todo, counter, API fetch).
+
+Be ready to explain why you chose a solution (not just how).
+
+Brush up JavaScript ES6+ concepts — they are often tested before React.
+
+Counter Example: - 
+import React from 'react';
+import { useState } from 'react'
+
+function App() {
+    const [count, setCount] = useState(0);
+  
+  const styles = {
+    main: {
+      padding: '20px',
+    },
+    title: {
+      color: '#5C6AC4',
+      marginBottom: '10px',
+      marginRight: '10px'
+    },
+  };
+
+  return (
+    <>
+    
+    <h3>Conter: {count}</h3>
+    <button onClick={() => setCount(count + 1)}>Increment</button>
+    <button onClick={() => setCount((prev => prev > 0 ? prev - 1: 0))}
+    disabled={count === 0} >Decrement</button>
+    <br />
+    <button onClick={() => setCount(0)}>Reset</button>
+    </>
+  )
+}
+
+export default App
+
+
+

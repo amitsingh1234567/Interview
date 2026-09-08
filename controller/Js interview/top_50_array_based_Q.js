@@ -14,6 +14,16 @@ Q.7 Find the Majority Element (> N/2 times): Use Boyer-Moore Voting Algorithm.
 Q.8 Write a program for permutation for "abc" => [ 'abc', 'acb', 'bac', 'bca', 'cab', 'cba' ].#
 Q.9 Write a program for permutation for [1,2,3] => [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]].#
 Q.10 Maximum difference between two element
+
+
+
+======================> CUSTOM AS PER THE INTERVIEW STANDARD <===========================
+Q.1 Move all zero to the the using two pointer approach
+Q.2 Reverse array from index
+Q.3 Rotate array by specific position
+Q.4 Array shorting
+Q.5 Array of object shorting
+Q.6 Remove duplicates
 */
 
 // =========> Must-Prepare Questions (Highest Interview Frequency) <=========== 
@@ -287,5 +297,191 @@ function maxDifference(nums) {
 const arr = [2,3,10, 6,4,8,1];
 
 console.log(maxDifference(arr));
+
+*/
+
+
+// ======================> CUSTOM AS PER THE INTERVIEW STANDARD <===========================
+// Q.1 Move all zero to the the using two pointer approach
+/*
+function moveZeroes(nums) {
+  if (!nums || nums.length <= 1) return nums;
+
+  let writePointer = 0;
+
+  // Step 1: Overwrite zeroes with non-zero elements
+  for (let readPointer = 0; readPointer < nums.length; readPointer++) {
+    if (nums[readPointer] !== 0) {
+      nums[writePointer] = nums[readPointer];
+      writePointer++;
+    }
+  }
+
+//   console.log(nums)
+
+  // Step 2: Fill remaining positions with zeroes
+  while (writePointer < nums.length) {
+    nums[writePointer] = 0;
+    writePointer++;
+  }
+
+  return nums;
+}
+
+// Example Usage:
+const input = [0, 1, 0, 3, 12];
+console.log(moveZeroes(input)); // Output: [1, 3, 12, 0, 0]
+
+*/
+
+// Q.2 Reverse array from index
+/*
+function reverseFromIndex(nums, k) {
+  let start = k 
+  let end = nums.length - 1;
+
+  while (start < end) {
+    // [nums[start], nums[end]] = [nums[end], nums[start]];
+    // start++;
+    // end--;
+    const temp = nums[start];
+    nums[start] = nums[end];
+    nums[end] = temp;
+    start++;
+    end--;
+  }
+
+  return nums;
+}
+
+// Example Usage:
+const arr2 = [10, 20, 30, 4, 50];
+console.log(reverseFromIndex(arr2, 2)); 
+*/
+
+// Q.3 Rotate array by specific position
+/*
+function rotateArrayInPlace(nums, k) {
+  k = k % nums.length;
+
+  function reverse(start, end) {
+    while (start < end) {
+    //   [nums[start], nums[end]] = [nums[end], nums[start]];
+    //   start++;
+    //   end--;
+        const temp = nums[start];
+        nums[start] = nums[end];
+        nums[end] = temp;
+        start++;
+        end--;
+    }
+  }
+
+  // Reverse first part
+  reverse(0, k - 1);
+  // Reverse second part
+  reverse(k, nums.length - 1);
+  // Reverse whole array
+  reverse(0, nums.length - 1);
+
+  return nums;
+}
+
+// Example Usage:
+const arr2 = [10, 20, 30, 40, 50];
+console.log(rotateArrayInPlace(arr2, 2));
+
+
+Inbuild Method
+--------------
+function rotateArray(nums, k) {
+  if (!nums || nums.length === 0) return nums;
+
+  // Normalize k in case it's larger than array length
+  k = k % nums.length;
+
+  // Slice and concatenate
+  return nums.slice(k).concat(nums.slice(0, k));
+}
+
+// Example Usage:
+const arr = [10, 20, 30, 40, 50];
+console.log(rotateArray(arr, 2)); 
+// Output: [30, 40, 50, 10, 20]
+
+*/
+
+// Array shorting
+/*
+function sortArray(nums) {
+  if (!nums || nums.length <= 1) return nums;
+
+  for (let i = 0; i < nums.length - 1; i++) {
+    for (let j = 0; j < nums.length - i - 1; j++) {
+      if (nums[j] > nums[j + 1]) {
+        let temp = nums[j];
+        nums[j] = nums[j + 1];
+        nums[j + 1] = temp;
+      }
+    }
+  }
+
+  return nums;
+}
+
+const arr = [50, 20, 40, 10, 30];
+console.log(sortArray(arr));
+
+*/
+
+// Array of object shorting
+/*
+function sortObjects(arr, key) {
+  if (!arr || arr.length <= 1) return arr;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    for (let j = 0; j < arr.length - i - 1; j++) {
+      if (arr[j][key] > arr[j + 1][key]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+      }
+    }
+  }
+
+  return arr;
+}
+
+const people = [
+  { name: "Amit", age: 30 },
+  { name: "Ravi", age: 25 },
+  { name: "Neha", age: 28 },
+  { name: "Kiran", age: 35 }
+];
+
+console.log(sortObjects(people, "name"));
+
+*/
+
+// Remove duplicates
+/*
+function findDuplicates(nums) {
+  const duplicates = [];
+
+  for (let i = 0; i < nums.length; i++) {
+    for (let j = i + 1; j < nums.length; j++) {
+      if (nums[i] === nums[j] && !duplicates.includes(nums[i])) {
+        duplicates.push(nums[i]);
+      }
+    }
+  }
+
+  return duplicates;
+}
+
+// Example Usage:
+const arr = [10, 20, 30, 20, 40, 10, 50, 30];
+console.log(findDuplicates(arr));
+
 
 */
